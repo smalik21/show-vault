@@ -1,0 +1,37 @@
+// Colours
+$dark-slate: #112b3c;
+$slate: #205375;
+$orange: #f66b0e;
+$light: #efefef;
+$dark: #151515;
+$yellow: #ffc107;
+$gray: #b7b7b7;
+$black: #000000;
+$white: #ffffff;
+
+// Font Sizing
+$font-size-base: 16px; // width > 768px (default)
+$font-size-tablet: 14px; // width <= 768px
+$font-size-phone: 12px; // width <= 480px
+
+$font-xs: 0.75rem; // 12px
+$font-sm: 0.875rem; // 14px
+$font-md: 1rem; // 16px
+$font-lg: 1.25rem; // 20px
+$font-xl: 1.5rem; // 24px
+$font-xxl: 2rem; // 32px
+
+// Font Families
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Playfair Display", serif;
+
+// Spacing
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+
+// Screen Sizing
+$screen-tablet: 768px;
+$screen-phone: 480px;

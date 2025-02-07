@@ -1,0 +1,60 @@
+@use "@/_styles/mixins" as *;
+
+.button {
+  @include flex-center;
+  font-family: var(--font-primary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Text Sizes
+.sm {
+  font-size: var(--font-xs); // 12px
+}
+
+.md {
+  font-size: var(--font-md); // 16px
+}
+
+.lg {
+  font-size: var(--font-lg); // 20px
+}
+
+// Padding
+.sm {
+  padding: 5px 20px;
+}
+
+.md {
+  padding: 10px 30px;
+}
+
+// Border Radius
+.sm {
+  border-radius: 5px;
+}
+
+.md {
+  border-radius: 10px;
+}
+
+.full {
+  border-radius: 50px;
+}
+
+// Full Width
+.fullWidth {
+  width: 100%;
+}
+
+// Outline Button Style
+.outline {
+  background-color: transparent !important;
+  border: 2px solid currentColor;
+}

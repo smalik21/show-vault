@@ -1,0 +1,51 @@
+@use "variables" as *;
+@use "theme";
+@use "mixins";
+
+:root {
+  font-size: $font-size-base; // Controls everything
+
+  // Font Sizes
+  --font-xs: #{$font-xs};
+  --font-sm: #{$font-sm};
+  --font-md: #{$font-md};
+  --font-lg: #{$font-lg};
+  --font-xl: #{$font-xl};
+  --font-xxl: #{$font-xxl};
+
+  // Font Families
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+
+  // Spacing
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+}
+
+@media (max-width: $screen-tablet) {
+  :root {
+    font-size: $font-size-tablet;
+  }
+}
+
+@media (max-width: $screen-phone) {
+  :root {
+    font-size: $font-size-phone;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+  font-family: var(--font-primary);
+  height: 100dvh;
+}

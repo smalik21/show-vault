@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+:root {
+  --primary-text-color: #{$black};
+  --secondary-text-color: #{$gray};
+  --background-color: #{$light};
+}
+
+[data-theme="dark"] {
+  --primary-text-color: #{$white};
+  --secondary-text-color: #{$gray};
+  --background-color: #{$dark-slate};
+}

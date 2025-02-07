@@ -1,0 +1,6 @@
+@use "@/_styles/mixins" as *;
+
+.main {
+  @include flex-center;
+  height: 100%;
+}
