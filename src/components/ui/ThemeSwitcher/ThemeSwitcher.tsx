@@ -3,11 +3,10 @@
 import styles from "./ThemeSwitcher.module.scss";
 import { ThemeType } from "@/types/types";
 import { useEffect, useState } from "react";
-import { HeartFilledIcon, YellowStarIcon } from "@/lib/icons";
+import { YellowStarIcon } from "@/lib/icons";
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<ThemeType | null>(null);
-  const [displayMsg, setDisplayMsg] = useState<boolean>(false);
 
   useEffect(() => {
     // Get saved theme from localStorage
@@ -31,28 +30,7 @@ const ThemeSwitcher = () => {
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
-
-    setDisplayMsg(true);
-    setTimeout(() => {
-      setDisplayMsg(false);
-    }, 1000);
   };
-
-  if (displayMsg) {
-    return (
-      <div
-        style={{
-          fontSize: "86px",
-          fontWeight: 800,
-          display: "flex",
-          alignItems: "center",
-          gap: "2rem",
-        }}
-      >
-        I LOVE YOU <HeartFilledIcon width={200} height={200} />
-      </div>
-    );
-  }
 
   // Prevent flashing (only render button when theme is set)
   if (!theme) return null;
