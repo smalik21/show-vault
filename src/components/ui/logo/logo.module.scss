@@ -1,0 +1,13 @@
+@use "@/_styles/mixins" as *;
+
+.logo {
+  @include flex-center;
+  @include border;
+
+  .title {
+    font-family: var(--font-secondary);
+    font-size: var(--font-xxl);
+    color: var(--primary-highlight-color);
+    font-weight: bold;
+  }
+}

@@ -5,3 +5,14 @@ export type IconPropsType = {
   height?: number;
   fillColor?: string;
 };
+
+export type PresetColors =
+  | "dark-slate"
+  | "slate"
+  | "orange"
+  | "light"
+  | "dark"
+  | "yellow"
+  | "gray"
+  | "black"
+  | "white";

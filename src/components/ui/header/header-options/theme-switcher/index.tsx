@@ -1,9 +1,9 @@
 "use client";
 
-import styles from "./ThemeSwitcher.module.scss";
+import styles from "./theme-switcher.module.scss";
 import { ThemeType } from "@/types/types";
 import { useEffect, useState } from "react";
-import { YellowStarIcon } from "@/lib/icons";
+import { LightThemeIcon } from "@/lib/icons";
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<ThemeType | null>(null);
@@ -36,10 +36,9 @@ const ThemeSwitcher = () => {
   if (!theme) return null;
 
   return (
-    <button onClick={toggleTheme} className={styles.switchContainer}>
-      <YellowStarIcon width={30} height={30} />
-      Switch to {theme === "light" ? "Dark" : "Light"} Mode
-    </button>
+    <div onClick={toggleTheme} className={styles.switchContainer}>
+      <LightThemeIcon />
+    </div>
   );
 };
 

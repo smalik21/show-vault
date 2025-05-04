@@ -15,7 +15,7 @@
 
 // Text Sizes
 .sm {
-  font-size: var(--font-xs); // 12px
+  font-size: var(--font-sm); // 12px
 }
 
 .md {
@@ -56,5 +56,33 @@
 // Outline Button Style
 .outline {
   background-color: transparent !important;
-  border: 2px solid currentColor;
+  border: 1px solid currentColor;
+}
+
+// Preset Colors
+@each $color-name,
+  $color-value
+    in (
+      "dark-slate": var(--color-dark-slate),
+      "slate": var(--color-slate),
+      "orange": var(--color-orange),
+      "light": var(--color-light),
+      "dark": var(--color-dark),
+      "yellow": var(--color-yellow),
+      "gray": var(--color-gray),
+      "black": var(--color-black),
+      "white": var(--color-white)
+    )
+{
+  .text-#{$color-name} {
+    color: #{$color-value};
+  }
+
+  .bg-#{$color-name} {
+    background-color: #{$color-value};
+  }
+
+  .outline-#{$color-name} {
+    border-color: #{$color-value};
+  }
 }

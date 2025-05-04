@@ -1,0 +1,7 @@
+@use "@/_styles/mixins" as *;
+
+.headerOptions {
+  @include flex-center;
+  @include border;
+  gap: var(--spacing-xl);
+}

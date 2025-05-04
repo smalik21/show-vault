@@ -7,3 +7,7 @@
 @mixin box-shadow($level: 1) {
   box-shadow: 0 #{$level * 2}px #{$level * 4}px rgba(0, 0, 0, 0.1);
 }
+
+@mixin border($level: 1) {
+  border: #{$level}px solid;
+}

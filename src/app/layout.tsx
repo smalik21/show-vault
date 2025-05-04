@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/_styles/globals.scss";
+import Header from "@/components/ui/header";
 
 export const metadata: Metadata = {
   title: "ShowVault",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

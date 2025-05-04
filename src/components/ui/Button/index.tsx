@@ -1,14 +1,16 @@
 "use client";
 
-import styles from "./Button.module.scss";
+import { PresetColors } from "@/types/types";
+import styles from "./button.module.scss";
 
 type ButtonPropsType = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   textSize?: "sm" | "md" | "lg"; // 12px, 16px, 20px
   padding?: "sm" | "md"; // sm: (20px 5px), md: (30px 10px)
   borderRadius?: "sm" | "md" | "full"; // sm: 5px, md: 10px, full: 50px
-  textColor?: string; // Custom text color
-  bgColor?: string; // Custom background color
+  textColor?: PresetColors;
+  bgColor?: PresetColors;
+  outlineColor?: PresetColors;
   fullWidth?: boolean;
   onClick?: () => void;
   disabled?: boolean;
@@ -22,6 +24,7 @@ const Button = ({
   borderRadius = "md",
   textColor,
   bgColor,
+  outlineColor,
   fullWidth = false,
   onClick,
   disabled = false,
@@ -35,12 +38,11 @@ const Button = ({
         ${styles[padding]} 
         ${styles[borderRadius]} 
         ${fullWidth ? styles.fullWidth : ""}  
-        ${outline ? styles.outline : ""}
+        ${outline ? styles.outline : ""} 
+        ${textColor ? styles[`text-${textColor}`] : ""} 
+        ${bgColor && !outline ? styles[`bg-${bgColor}`] : ""} 
+        ${outline && outlineColor ? styles[`outline-${outlineColor}`] : ""}
       `}
-      style={{
-        color: textColor,
-        backgroundColor: outline ? "transparent" : bgColor,
-      }}
       onClick={onClick}
       disabled={disabled}
     >

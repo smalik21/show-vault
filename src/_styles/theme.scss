@@ -1,13 +1,31 @@
 @use "variables" as *;
 
 :root {
+  --color-dark-slate: #{$dark-slate};
+  --color-slate: #{$slate};
+  --color-orange: #{$orange};
+  --color-light: #{$light};
+  --color-dark: #{$dark};
+  --color-yellow: #{$yellow};
+  --color-gray: #{$gray};
+  --color-black: #{$black};
+  --color-white: #{$white};
   --primary-text-color: #{$black};
   --secondary-text-color: #{$gray};
   --background-color: #{$light};
+  --primary-highlight-color: #{$orange};
+}
+
+[data-theme="light"] {
+  --primary-text-color: #{$black};
+  --secondary-text-color: #{$gray};
+  --background-color: #{$light};
+  --primary-highlight-color: #{$orange};
 }
 
 [data-theme="dark"] {
   --primary-text-color: #{$white};
   --secondary-text-color: #{$gray};
   --background-color: #{$dark-slate};
+  --primary-highlight-color: #{$orange};
 }
