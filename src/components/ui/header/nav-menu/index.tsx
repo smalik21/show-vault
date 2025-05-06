@@ -11,7 +11,7 @@ const NavMenu = () => {
   const pathname = usePathname();
 
   return (
-    <menu className={styles.navMenu}>
+    <div className={styles.navMenu}>
       {NAV_LINKS.map((link) => (
         <div key={link.name} className={styles.linkContainer}>
           <Link
@@ -24,7 +24,7 @@ const NavMenu = () => {
           </Link>
         </div>
       ))}
-    </menu>
+    </div>
   );
 };
 

@@ -1,5 +1,11 @@
+@use "@/_styles/mixins" as *;
+
 .navMenu {
   display: flex;
+  justify-content: center;
+  @include border;
+  width: 100%;
+  gap: clamp(1rem, 10%, 4rem);
 
   .linkContainer {
     position: relative;
@@ -16,11 +22,12 @@
           display: block;
           position: absolute;
           margin-top: 10px;
-          margin-left: calc(50% - 5px);
-          width: 10px;
-          height: 10px;
+          margin-left: calc(50% - 4px);
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
           background-color: var(--primary-highlight-color);
+          box-shadow: 0 0 4px 2px var(--primary-highlight-color);
         }
       }
     }

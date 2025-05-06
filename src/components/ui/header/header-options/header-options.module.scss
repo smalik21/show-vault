@@ -3,5 +3,5 @@
 .headerOptions {
   @include flex-center;
   @include border;
-  gap: var(--spacing-xl);
+  gap: clamp(1.5rem, 10%, 2rem);
 }

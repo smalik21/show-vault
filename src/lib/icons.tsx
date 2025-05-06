@@ -37,7 +37,7 @@ export const YellowStarIcon = ({ width = 17, height = 18 }: IconPropsType) => (
   </svg>
 );
 
-export const SearchIcon = ({ width = 31, height = 31 }: IconPropsType) => (
+export const SearchIcon = ({ width = 25, height = 25 }: IconPropsType) => (
   <svg
     width={width}
     height={height}
@@ -188,7 +188,7 @@ export const MovieProjectorIcon = ({
   </svg>
 );
 
-export const LightThemeIcon = ({ width = 31, height = 31 }: IconPropsType) => (
+export const LightThemeIcon = ({ width = 25, height = 25 }: IconPropsType) => (
   <svg
     width={width}
     height={height}

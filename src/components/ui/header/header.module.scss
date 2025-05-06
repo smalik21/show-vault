@@ -1,5 +1,20 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: 5rem;
+  padding: 0 clamp(2rem, 5%, 6rem);
+  gap: clamp(2rem, 5%, 6rem);
+
+  .logo {
+    display: flex;
+  }
+
+  .navMenu {
+    flex-grow: 1;
+  }
+
+  .headerOptions {
+    display: flex;
+  }
 }

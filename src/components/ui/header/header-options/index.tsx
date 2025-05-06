@@ -6,11 +6,15 @@ import Button from "../../button";
 const HeaderOptions = () => {
   return (
     <div className={styles.headerOptions}>
-      <SearchBar />
-      <ThemeSwitcher />
+      <Button>
+        <SearchBar />
+      </Button>
+      <Button>
+        <ThemeSwitcher />
+      </Button>
       <Button
         borderRadius="full"
-        textSize="lg"
+        textSize="sm"
         padding="sm"
         textColor="white"
         bgColor="orange"

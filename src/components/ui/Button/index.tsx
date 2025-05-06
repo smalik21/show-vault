@@ -2,6 +2,7 @@
 
 import { PresetColors } from "@/types/types";
 import styles from "./button.module.scss";
+import clsx from "clsx";
 
 type ButtonPropsType = {
   children?: React.ReactNode;
@@ -19,9 +20,9 @@ type ButtonPropsType = {
 
 const Button = ({
   children,
-  textSize = "md",
-  padding = "sm",
-  borderRadius = "md",
+  textSize,
+  padding,
+  borderRadius,
   textColor,
   bgColor,
   outlineColor,
@@ -32,17 +33,17 @@ const Button = ({
 }: ButtonPropsType) => {
   return (
     <button
-      className={`
-        ${styles.button} 
-        ${styles[textSize]} 
-        ${styles[padding]} 
-        ${styles[borderRadius]} 
-        ${fullWidth ? styles.fullWidth : ""}  
-        ${outline ? styles.outline : ""} 
-        ${textColor ? styles[`text-${textColor}`] : ""} 
-        ${bgColor && !outline ? styles[`bg-${bgColor}`] : ""} 
-        ${outline && outlineColor ? styles[`outline-${outlineColor}`] : ""}
-      `}
+      className={clsx(
+        styles.button,
+        textSize && styles[textSize],
+        padding && styles[padding],
+        borderRadius && styles[borderRadius],
+        fullWidth && styles.fullWidth,
+        outline && styles.outline,
+        textColor && styles[`text-${textColor}`],
+        bgColor && !outline && styles[`bg-${bgColor}`],
+        outline && outlineColor && styles[`outline-${outlineColor}`]
+      )}
       onClick={onClick}
       disabled={disabled}
     >
