@@ -3,7 +3,6 @@
 .navMenu {
   display: flex;
   justify-content: center;
-  @include border;
   width: 100%;
   gap: clamp(1rem, 10%, 4rem);
 
@@ -13,6 +12,10 @@
     .link {
       text-decoration: none;
       color: var(--secondary-text-color);
+
+      &:hover {
+        color: var(--primary-text-color);
+      }
 
       &.active {
         color: var(--primary-text-color);

@@ -1,6 +1,6 @@
-import { IconPropsType } from "@/types/types";
+import { IconPropsType } from "@/types/propTypes";
 
-export const YellowStarIcon = ({ width = 17, height = 18 }: IconPropsType) => (
+export const YellowStarIcon = ({ width = 19, height = 20 }: IconPropsType) => (
   <svg
     width={width}
     height={height}

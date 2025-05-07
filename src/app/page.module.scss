@@ -1,6 +1,9 @@
 @use "@/_styles/mixins" as *;
 
-.main {
+.home {
   @include flex-center;
-  height: 100%;
+
+  .bannerSlideshow {
+    width: 100vw;
+  }
 }

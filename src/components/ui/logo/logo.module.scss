@@ -2,7 +2,6 @@
 
 .logo {
   @include flex-center;
-  @include border;
 
   .title {
     font-family: var(--font-secondary);

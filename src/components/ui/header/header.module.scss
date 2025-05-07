@@ -5,6 +5,8 @@
   height: 5rem;
   padding: 0 clamp(2rem, 5%, 6rem);
   gap: clamp(2rem, 5%, 6rem);
+  z-index: 10;
+  position: relative;
 
   .logo {
     display: flex;
