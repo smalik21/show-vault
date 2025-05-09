@@ -6,9 +6,9 @@ import clsx from "clsx";
 
 type ButtonPropsType = {
   children?: React.ReactNode;
-  textSize?: "sm" | "md" | "lg"; // 12px, 16px, 20px
-  padding?: "sm" | "md"; // sm: (20px 5px), md: (30px 10px)
-  borderRadius?: "sm" | "md" | "full"; // sm: 5px, md: 10px, full: 50px
+  textSize?: "xs" | "sm" | "md" | "lg";
+  padding?: "sm" | "md";
+  borderRadius?: "sm" | "md" | "full";
   textColor?: PresetColors;
   bgColor?: PresetColors;
   outlineColor?: PresetColors;
@@ -35,9 +35,9 @@ const Button = ({
     <button
       className={clsx(
         styles.button,
-        textSize && styles[textSize],
-        padding && styles[padding],
-        borderRadius && styles[borderRadius],
+        textSize && styles[`text-${textSize}`],
+        padding && styles[`padding-${padding}`],
+        borderRadius && styles[`radius-${borderRadius}`],
         fullWidth && styles.fullWidth,
         outline && styles.outline,
         textColor && styles[`text-${textColor}`],

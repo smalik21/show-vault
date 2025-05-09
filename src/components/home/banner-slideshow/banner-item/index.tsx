@@ -39,7 +39,7 @@ const BannerItem = (vm: BannerItemType) => {
             textColor="white"
             bgColor="orange"
             padding="md"
-            textSize="sm"
+            textSize="xs"
             borderRadius="full"
           >
             WATCH TRAILER
@@ -48,7 +48,7 @@ const BannerItem = (vm: BannerItemType) => {
             textColor="white"
             bgColor="dark"
             padding="md"
-            textSize="sm"
+            textSize="xs"
             borderRadius="full"
           >
             ADD TO WATCHLIST

@@ -15,37 +15,41 @@
 }
 
 // Text Sizes
-.sm {
-  font-size: var(--font-sm); // 12px
+.text-xs {
+  font-size: var(--font-xs);
 }
 
-.md {
-  font-size: var(--font-md); // 16px
+.text-sm {
+  font-size: var(--font-sm);
 }
 
-.lg {
-  font-size: var(--font-lg); // 20px
+.text-md {
+  font-size: var(--font-md);
+}
+
+.text-lg {
+  font-size: var(--font-lg);
 }
 
 // Padding
-.sm {
+.padding-sm {
   padding: 5px 20px;
 }
 
-.md {
+.padding-md {
   padding: 10px 30px;
 }
 
 // Border Radius
-.sm {
+.radius-sm {
   border-radius: 5px;
 }
 
-.md {
+.radius-md {
   border-radius: 10px;
 }
 
-.full {
+.radius-full {
   border-radius: 50px;
 }
 

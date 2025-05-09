@@ -3,7 +3,7 @@
 import styles from "./theme-switcher.module.scss";
 import { ThemeType } from "@/types/types";
 import { useEffect, useState } from "react";
-import { LightThemeIcon } from "@/lib/icons";
+import { ThemeIcon } from "@/lib/icons";
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<ThemeType | null>(null);
@@ -37,7 +37,7 @@ const ThemeSwitcher = () => {
 
   return (
     <div onClick={toggleTheme} className={styles.switchContainer}>
-      <LightThemeIcon />
+      <ThemeIcon />
     </div>
   );
 };
