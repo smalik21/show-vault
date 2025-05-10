@@ -10,3 +10,8 @@ export type PresetColors =
   | "gray"
   | "black"
   | "white";
+
+export type Option = {
+  label: string;
+  value: string;
+};

@@ -10,17 +10,21 @@
   --color-gray: #{$gray};
   --color-black: #{$black};
   --color-white: #{$white};
-  --primary-text-color: #{$black};
+  --primary-text-color: #{$white};
   --secondary-text-color: #{$gray};
-  --background-color: #{$light};
+  --background-color: #{$dark-slate};
   --primary-highlight-color: #{$orange};
+  --primary-color: #{$dark-slate};
+  --secondary-color: #{$slate};
 }
 
 [data-theme="light"] {
-  --primary-text-color: #{$black};
+  --primary-text-color: #{$white};
   --secondary-text-color: #{$gray};
-  --background-color: #{$light};
+  --background-color: #{$dark-slate};
   --primary-highlight-color: #{$orange};
+  --primary-color: #{$dark-slate};
+  --secondary-color: #{$slate};
 }
 
 [data-theme="dark"] {
@@ -28,4 +32,6 @@
   --secondary-text-color: #{$gray};
   --background-color: #{$dark-slate};
   --primary-highlight-color: #{$orange};
+  --primary-color: #{$dark-slate};
+  --secondary-color: #{$slate};
 }

@@ -1,22 +1,8 @@
 "use client";
 
-import { PresetColors } from "@/types/types";
+import { ButtonPropsType } from "@/types/propTypes";
 import styles from "./button.module.scss";
 import clsx from "clsx";
-
-type ButtonPropsType = {
-  children?: React.ReactNode;
-  textSize?: "xs" | "sm" | "md" | "lg";
-  padding?: "sm" | "md";
-  borderRadius?: "sm" | "md" | "full";
-  textColor?: PresetColors;
-  bgColor?: PresetColors;
-  outlineColor?: PresetColors;
-  fullWidth?: boolean;
-  onClick?: () => void;
-  disabled?: boolean;
-  outline?: boolean;
-};
 
 const Button = ({
   children,
@@ -26,10 +12,11 @@ const Button = ({
   textColor,
   bgColor,
   outlineColor,
+  fontWeight,
   fullWidth = false,
-  onClick,
   disabled = false,
   outline = false,
+  onClick,
 }: ButtonPropsType) => {
   return (
     <button
@@ -44,6 +31,7 @@ const Button = ({
         bgColor && !outline && styles[`bg-${bgColor}`],
         outline && outlineColor && styles[`outline-${outlineColor}`]
       )}
+      style={{ fontWeight: fontWeight }}
       onClick={onClick}
       disabled={disabled}
     >

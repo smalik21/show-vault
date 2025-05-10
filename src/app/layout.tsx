@@ -1,6 +1,13 @@
+import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import "@/_styles/globals.scss";
 import Header from "@/components/ui/header";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "ShowVault",
@@ -13,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <body>
         <Header />
         {children}

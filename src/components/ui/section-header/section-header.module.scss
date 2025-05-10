@@ -1,0 +1,11 @@
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  padding: 2rem 5rem;
+  gap: var(--spacing-xxl);
+
+  .title {
+    font-weight: 200;
+    font-size: var(--font-xxl);
+  }
+}
