@@ -1,6 +1,12 @@
 export type ThemeType = "light" | "dark";
 
-export type PresetColors =
+export type TextSize = "xs" | "sm" | "md" | "lg";
+
+export type BorderRadius = "sm" | "md" | "full";
+
+export type Padding = "sm" | "md";
+
+export type PresetColor =
   | "dark-slate"
   | "slate"
   | "orange"
@@ -15,3 +21,5 @@ export type Option = {
   label: string;
   value: string;
 };
+
+export type ShowType = "movie" | "show";

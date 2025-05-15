@@ -1,4 +1,11 @@
-import { Option, PresetColors } from "./types";
+import {
+  BorderRadius,
+  Option,
+  Padding,
+  PresetColor,
+  ShowType,
+  TextSize,
+} from "./types";
 
 export type BannerItemType = {
   imdb: number;
@@ -10,12 +17,12 @@ export type BannerItemType = {
 
 export type ButtonPropsType = {
   children?: React.ReactNode;
-  textSize?: "xs" | "sm" | "md" | "lg";
-  padding?: "sm" | "md";
-  borderRadius?: "sm" | "md" | "full";
-  textColor?: PresetColors;
-  bgColor?: PresetColors;
-  outlineColor?: PresetColors;
+  textSize?: TextSize;
+  padding?: Padding;
+  borderRadius?: BorderRadius;
+  textColor?: PresetColor;
+  bgColor?: PresetColor;
+  outlineColor?: PresetColor;
   fontWeight?: number;
   fullWidth?: boolean;
   disabled?: boolean;
@@ -33,16 +40,25 @@ export type RadioButtonsPropsType = {
   selectedValue: string;
   setSelectedValue: (value: string) => void;
   options: Option[];
-  textColor?: PresetColors;
-  bgColor?: PresetColors;
-  highlightColor?: PresetColors;
-  borderRadius?: "sm" | "md" | "full";
-  padding?: "sm" | "md";
-  textSize?: "xs" | "sm" | "md" | "lg";
+  textColor?: PresetColor;
+  bgColor?: PresetColor;
+  highlightColor?: PresetColor;
+  borderRadius?: BorderRadius;
+  padding?: Padding;
+  textSize?: TextSize;
   fontWeight?: number;
 };
 
 export type SectionHeaderPropsType = {
   title: string;
+  isTitleLink?: boolean;
   children?: React.ReactNode;
+};
+
+export type CardPropsType = {
+  imageSrc: string;
+  title: string;
+  releaseYear: number;
+  imdb: number;
+  showType: ShowType;
 };

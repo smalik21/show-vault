@@ -8,7 +8,13 @@ import { BannerItemType } from "@/types/propTypes";
 const BannerSlideshow = () => {
   return (
     <div className={styles.bannerSlideshow}>
-      <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={3000}>
+      <Carousel
+        id="home-banner-carousel"
+        autoplay={{ dotDuration: true }}
+        autoplaySpeed={3000}
+        arrows
+        draggable
+      >
         {BANNER_ITEMS.map((bannerItem: BannerItemType) => {
           return (
             <div key={`banner-item-${bannerItem.title}`}>

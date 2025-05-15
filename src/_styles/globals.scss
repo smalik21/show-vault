@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "theme";
 @use "mixins";
+@use "overrides";
 
 :root {
   font-size: $font-size-base; // Controls everything

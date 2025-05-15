@@ -4,6 +4,24 @@
   padding: 2rem 5rem;
   gap: var(--spacing-xxl);
 
+  &.link {
+    gap: var(--spacing-lg);
+
+    .titleLink {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-lg);
+      cursor: pointer;
+
+      &:hover {
+        gap: var(--spacing-xl);
+        transition: gap 0.2s ease-in-out;
+
+        color: var(--primary-highlight-color);
+      }
+    }
+  }
+
   .title {
     font-weight: 200;
     font-size: var(--font-xxl);

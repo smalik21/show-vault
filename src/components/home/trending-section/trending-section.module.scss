@@ -1,5 +1,14 @@
 .trendingSection {
+  padding-bottom: 2.5rem;
+
   .viewAllButton {
     margin-left: auto;
+  }
+
+  .trendingContent {
+    .carousel {
+      margin: 0 2.5rem;
+      padding: 0 2.5rem;
+    }
   }
 }
