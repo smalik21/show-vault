@@ -1,7 +1,8 @@
 @use "@/_styles/mixins" as *;
 
 .logo {
-  @include flex-center;
+  display: flex;
+  align-items: center;
 
   .title {
     font-family: var(--font-secondary);

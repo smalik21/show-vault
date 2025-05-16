@@ -23,3 +23,13 @@ export type Option = {
 };
 
 export type ShowType = "movie" | "show";
+
+export type LinkType = {
+  name: string;
+  path: string;
+};
+
+export type FooterColumnType = {
+  title: string;
+  links: LinkType[];
+};

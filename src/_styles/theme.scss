@@ -17,6 +17,8 @@
   --secondary-highlight-color: #{$yellow};
   --primary-color: #{$dark-slate};
   --secondary-color: #{$slate};
+  --header-background-color: #{$dark};
+  --footer-background-color: #{$dark};
 }
 
 [data-theme="light"] {
@@ -27,6 +29,8 @@
   --secondary-highlight-color: #{$yellow};
   --primary-color: #{$dark-slate};
   --secondary-color: #{$slate};
+  --header-background-color: #{$dark};
+  --footer-background-color: #{$dark};
 }
 
 [data-theme="dark"] {
@@ -37,4 +41,6 @@
   --secondary-highlight-color: #{$yellow};
   --primary-color: #{$dark-slate};
   --secondary-color: #{$slate};
+  --header-background-color: #{$dark};
+  --footer-background-color: #{$dark};
 }

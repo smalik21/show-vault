@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Logo from "../logo";
 import HeaderOptions from "./header-options";
 
@@ -5,8 +8,22 @@ import styles from "./header.module.scss";
 import NavMenu from "./nav-menu";
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const banner = document.getElementById("home-banner-slideshow");
+      if (!banner) return;
+      const bannerBottom = banner.getBoundingClientRect().bottom;
+      setScrolled(bannerBottom <= 80);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled && styles.headerSolid}`}>
       <div className={styles.logo}>
         <Logo />
       </div>
