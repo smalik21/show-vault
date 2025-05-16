@@ -2,12 +2,13 @@ import React from "react";
 import styles from "./latest-shows.module.scss";
 import SectionHeader from "@/components/ui/section-header";
 import CardItem from "@/components/ui/card-item";
+import CardsContainer from "@/components/ui/cards-container";
 
 const LatestShows = () => {
   return (
     <div className={styles.latestShows}>
       <SectionHeader title="Latest TV Shows" isTitleLink></SectionHeader>
-      <div className={styles.cardsContainer}>
+      <CardsContainer>
         {Array.from({ length: 10 }).map((_, idx) => (
           <CardItem
             key={`card-item-${idx}`}
@@ -18,7 +19,7 @@ const LatestShows = () => {
             showType={idx % 2 === 0 ? "movie" : "show"}
           />
         ))}
-      </div>
+      </CardsContainer>
     </div>
   );
 };

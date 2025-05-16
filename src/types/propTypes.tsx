@@ -62,3 +62,7 @@ export type CardPropsType = {
   imdb: number;
   showType: ShowType;
 };
+
+export type CardsContainerProps = {
+  children: React.ReactNode;
+};

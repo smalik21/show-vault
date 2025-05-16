@@ -3,6 +3,7 @@ import BannerSlideshow from "@/components/home/banner-slideshow";
 import TrendingSection from "@/components/home/trending-section";
 import LatestMovies from "@/components/home/latest-movies";
 import LatestShows from "@/components/home/latest-shows";
+import ComingSoon from "@/components/home/coming-soon";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
       </section>
       <section id="latest-shows-section" className={styles.latestShows}>
         <LatestShows />
+      </section>
+      <section id="coming-soon-section" className={styles.comingSoon}>
+        <ComingSoon />
       </section>
     </div>
   );

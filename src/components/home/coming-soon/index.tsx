@@ -1,13 +1,20 @@
 import React from "react";
-import styles from "./latest-movies.module.scss";
+import styles from "./coming-soon.module.scss";
 import SectionHeader from "@/components/ui/section-header";
+import Button from "@/components/ui/button";
 import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 
-const LatestMovies = () => {
+const ComingSoon = () => {
   return (
-    <div className={styles.latestMovies}>
-      <SectionHeader title="Latest Movies" isTitleLink></SectionHeader>
+    <div className={styles.comingSoon}>
+      <SectionHeader title="Coming Soon">
+        <div className={styles.viewAllButton}>
+          <Button textColor="gray" textSize="lg">
+            View All
+          </Button>
+        </div>
+      </SectionHeader>
       <CardsContainer>
         {Array.from({ length: 10 }).map((_, idx) => (
           <CardItem
@@ -24,4 +31,4 @@ const LatestMovies = () => {
   );
 };
 
-export default LatestMovies;
+export default ComingSoon;
