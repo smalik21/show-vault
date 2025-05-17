@@ -9,8 +9,8 @@ export const NAV_LINKS: LinkType[] = [
 
 export const TRENDING_TYPES: Option[] = [
   { label: "All", value: "all" },
-  { label: "Movies", value: "movies" },
-  { label: "TV Shows", value: "tvshows" },
+  { label: "Movies", value: "movie" },
+  { label: "TV Shows", value: "tv" },
 ];
 
 export const FOOTER_CONTENT: FooterColumnType[] = [

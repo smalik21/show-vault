@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import styles from "./trending-section.module.scss";
 import SectionHeader from "@/components/ui/section-header";
@@ -9,10 +9,25 @@ import { TRENDING_TYPES } from "@/lib/constants";
 import Button from "@/components/ui/button";
 import CardItem from "@/components/ui/card-item";
 import { Carousel } from "antd";
+import { CardPropsType, TrendingSectionPropsType } from "@/types/propTypes";
+import { TransformTrendingData } from "@/lib/utils";
 
-const TrendingSection = () => {
+const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
   const [selectedTrendingType, setSelectedTrendingType] =
     useState<string>("all");
+  const [trendingData, setTrendingData] = useState<CardPropsType[]>([]);
+
+  const fetchTrendingData = useCallback(
+    async (type: string) => {
+      const data = await GetTrending(type);
+      setTrendingData(TransformTrendingData(data));
+    },
+    [GetTrending]
+  );
+
+  useEffect(() => {
+    fetchTrendingData(selectedTrendingType);
+  }, [selectedTrendingType, fetchTrendingData]);
 
   return (
     <div className={styles.trendingSection}>
@@ -38,25 +53,57 @@ const TrendingSection = () => {
         </div>
       </SectionHeader>
       <div className={styles.trendingContent}>
-        {/* TODO: Add responsive object field */}
         <Carousel
           id="trending-section-carousel"
           className={styles.carousel}
-          slidesToShow={4}
-          slidesToScroll={4}
+          slidesToScroll={6}
           arrows
           draggable
           variableWidth
           dots={false}
+          responsive={[
+            {
+              breakpoint: 1600,
+              settings: {
+                slidesToShow: 6,
+                slidesToScroll: 6,
+                variableWidth: false,
+              },
+            },
+            {
+              breakpoint: 1400,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                variableWidth: false,
+              },
+            },
+            {
+              breakpoint: 980,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                variableWidth: false,
+              },
+            },
+            {
+              breakpoint: 756,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                variableWidth: false,
+              },
+            },
+          ]}
         >
-          {Array.from({ length: 12 }).map((_, idx) => (
+          {trendingData.map((item) => (
             <CardItem
-              key={`card-item-${idx}`}
-              imageSrc={`https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-              title={`Title ${idx + 1}`}
-              releaseYear={2023 - idx}
-              imdb={6.9}
-              showType={idx % 2 === 0 ? "movie" : "show"}
+              key={`card-item-${item.title}`}
+              imageSrc={item.imageSrc}
+              title={item.title}
+              releaseYear={item.releaseYear}
+              imdb={item.imdb}
+              showType={item.showType}
             />
           ))}
         </Carousel>

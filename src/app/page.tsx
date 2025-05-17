@@ -4,6 +4,7 @@ import TrendingSection from "@/components/home/trending-section";
 import LatestMovies from "@/components/home/latest-movies";
 import LatestShows from "@/components/home/latest-shows";
 import ComingSoon from "@/components/home/coming-soon";
+import { GetTrending } from "@/lib/actions";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <BannerSlideshow />
       </section>
       <section id="home-trending-section" className={styles.trending}>
-        <TrendingSection />
+        <TrendingSection GetTrending={GetTrending} />
       </section>
       <section id="latest-movies-section" className={styles.latestMovies}>
         <LatestMovies />

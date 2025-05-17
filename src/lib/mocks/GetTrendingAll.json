@@ -1,0 +1,432 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "backdrop_path": "/svdtJsa1ZhZ31zcc5XGEMbbI52j.jpg",
+      "id": 241554,
+      "name": "Murderbot",
+      "original_name": "Murderbot",
+      "overview": "In a high-tech future, a rogue security robot secretly gains free will. To stay hidden, it reluctantly joins a new mission protecting scientists on a dangerous planet...even though it just wants to binge soap operas.",
+      "poster_path": "/okL4xDzMxlvbpKYnyEnmHSOfRHw.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        35,
+        18,
+        10765
+      ],
+      "popularity": 110.4677,
+      "first_air_date": "2025-05-15",
+      "vote_average": 7.3,
+      "vote_count": 17,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/qdKGpTHVaaKaFTnRynQDg4qHdEv.jpg",
+      "id": 950387,
+      "title": "A Minecraft Movie",
+      "original_title": "A Minecraft Movie",
+      "overview": "Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they'll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.",
+      "poster_path": "/yFHHfHcUgGAxziP1C3lLt0q2T4s.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10751,
+        35,
+        12,
+        14
+      ],
+      "popularity": 767.9151,
+      "release_date": "2025-03-31",
+      "video": false,
+      "vote_average": 6.487,
+      "vote_count": 1137
+    },
+    {
+      "backdrop_path": "/nBrkOZyI75artyizuBFeya48KbO.jpg",
+      "id": 86831,
+      "name": "Love, Death & Robots",
+      "original_name": "Love, Death & Robots",
+      "overview": "Terrifying creatures, wicked surprises and dark comedy converge in this NSFW anthology of animated stories presented by Tim Miller and David Fincher.",
+      "poster_path": "/asDqvkE66EegtKJJXIRhBJPxscr.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        10765
+      ],
+      "popularity": 121.1779,
+      "first_air_date": "2019-03-15",
+      "vote_average": 8.24,
+      "vote_count": 3500,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/eElF5eTwJyXh6hFEFa8LDMEmnHz.jpg",
+      "id": 224819,
+      "name": "Dear Hongrang",
+      "original_name": "탄금",
+      "overview": "When a long-missing heir returns with lost memories, love and suspicion entwine. Is he truly Hongrang, or a stranger disturbing hearts and family ties?",
+      "poster_path": "/mWGil4jL1jaCoZkZuaNThh0aoVC.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "ko",
+      "genre_ids": [
+        18,
+        9648
+      ],
+      "popularity": 35.4208,
+      "first_air_date": "2025-05-16",
+      "vote_average": 8,
+      "vote_count": 1,
+      "origin_country": [
+        "KR"
+      ]
+    },
+    {
+      "backdrop_path": "/fTrQsdMS2MUw00RnzH0r3JWHhts.jpg",
+      "id": 1197306,
+      "title": "A Working Man",
+      "original_title": "A Working Man",
+      "overview": "Levon Cade left behind a decorated military career in the black ops to live a simple life working construction. But when his boss's daughter, who is like family to him, is taken by human traffickers, his search to bring her home uncovers a world of corruption far greater than he ever could have imagined.",
+      "poster_path": "/6FRFIogh3zFnVWn7Z6zcYnIbRcX.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "popularity": 335.4882,
+      "release_date": "2025-03-26",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 719
+    },
+    {
+      "backdrop_path": "/j0NUh5irX7q2jIRtbLo8TZyRn6y.jpg",
+      "id": 574475,
+      "title": "Final Destination Bloodlines",
+      "original_title": "Final Destination Bloodlines",
+      "overview": "Plagued by a violent recurring nightmare, college student Stefanie heads home to track down the one person who might be able to break the cycle and save her family from the grisly demise that inevitably awaits them all.",
+      "poster_path": "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "popularity": 305.7915,
+      "release_date": "2025-05-09",
+      "video": false,
+      "vote_average": 7.276,
+      "vote_count": 127
+    },
+    {
+      "backdrop_path": "/kCGwvjpqM1owt9kI4pkYPJWJLvc.jpg",
+      "id": 83867,
+      "name": "Andor",
+      "original_name": "Andor",
+      "overview": "In an era filled with danger, deception and intrigue, Cassian Andor will discover the difference he can make in the struggle against the tyrannical Galactic Empire. He embarks on a path that is destined to turn him into a rebel hero.",
+      "poster_path": "/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10765,
+        10759,
+        18
+      ],
+      "popularity": 157.5516,
+      "first_air_date": "2022-09-21",
+      "vote_average": 8.238,
+      "vote_count": 1474,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/tyfO9jHgkhypUFizRVYD0bytPjP.jpg",
+      "id": 447273,
+      "title": "Snow White",
+      "original_title": "Snow White",
+      "overview": "Following the benevolent King's disappearance, the Evil Queen dominated the once fair land with a cruel streak. Princess Snow White flees the castle when the Queen, in her jealousy over Snow White's inner beauty, tries to kill her. Deep into the dark woods, she stumbles upon seven magical dwarves and a young bandit named Jonathan. Together, they strive to survive the Queen's relentless pursuit and aspire to take back the kingdom.",
+      "poster_path": "/oLxWocqheC8XbXbxqJ3x422j9PW.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10751,
+        14
+      ],
+      "popularity": 358.0439,
+      "release_date": "2025-03-12",
+      "video": false,
+      "vote_average": 4.323,
+      "vote_count": 789
+    },
+    {
+      "backdrop_path": "/7ONMDhnErvpkKvkZqM82ud7bzcT.jpg",
+      "id": 575265,
+      "title": "Mission: Impossible - The Final Reckoning",
+      "original_title": "Mission: Impossible - The Final Reckoning",
+      "overview": "Ethan Hunt and the IMF team continue their search for the terrifying AI known as the Entity — which has infiltrated intelligence networks all over the globe — with the world's governments and a mysterious ghost from Ethan's past on their trail. Joined by new allies and armed with the means to shut the Entity down for good, Hunt is in a race against time to prevent the world as we know it from changing forever.",
+      "poster_path": "/z53D72EAOxGRqdr7KXXWp9dJiDe.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        12,
+        53
+      ],
+      "popularity": 117.4008,
+      "release_date": "2025-05-17",
+      "video": false,
+      "vote_average": 7.923,
+      "vote_count": 13
+    },
+    {
+      "backdrop_path": "/8UuyKCIaX0MqcECmcgPxFCANkq4.jpg",
+      "id": 113959,
+      "name": "Duster",
+      "original_name": "Duster",
+      "overview": "In 1972, the first Black female FBI agent heads to the Southwest and recruits a gutsy getaway driver in a bold effort to take down a growing crime syndicate.",
+      "poster_path": "/wYBsKEFU0qHdhSI9QtQjL8HELMn.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "popularity": 33.4773,
+      "first_air_date": "2025-05-15",
+      "vote_average": 6.4,
+      "vote_count": 9,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/clIn3tF321TcsajGGNoWMGcz0ii.jpg",
+      "id": 248716,
+      "name": "Rotten Legacy",
+      "original_name": "Legado",
+      "overview": "After a grave illness, a media mogul discovers his children's tactics threaten the empire he carefully built — and he'll do whatever it takes to save it.",
+      "poster_path": "/cbfVpoQDQEtaQ7z3H43waHvX2o3.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "es",
+      "genre_ids": [
+        18
+      ],
+      "popularity": 18.4043,
+      "first_air_date": "2025-05-16",
+      "vote_average": 10,
+      "vote_count": 1,
+      "origin_country": [
+        "ES"
+      ]
+    },
+    {
+      "backdrop_path": "/vx4UhH0RKQOG5etc2qVikStLFqG.jpg",
+      "id": 255779,
+      "name": "Bet",
+      "original_name": "Bet",
+      "overview": "At a private school where gambling determines social status, a skillful new student with a mysterious past is shaking things up — and betting on revenge.",
+      "poster_path": "/e3ENTAEDEO949khpVkJWgcWnwGG.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        9648,
+        80
+      ],
+      "popularity": 26.1053,
+      "first_air_date": "2025-05-15",
+      "vote_average": 6.625,
+      "vote_count": 8,
+      "origin_country": [
+        "CA"
+      ]
+    },
+    {
+      "backdrop_path": "/nAxGnGHOsfzufThz20zgmRwKur3.jpg",
+      "id": 1233413,
+      "title": "Sinners",
+      "original_title": "Sinners",
+      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+      "poster_path": "/jYfMTSiFFK7ffbY2lay4zyvTkEk.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "popularity": 112.9343,
+      "release_date": "2025-04-16",
+      "video": false,
+      "vote_average": 7.564,
+      "vote_count": 703
+    },
+    {
+      "backdrop_path": "/n4R5Ad6rwf87lmllFNuYR3io30V.jpg",
+      "id": 1249213,
+      "title": "Drop",
+      "original_title": "Drop",
+      "overview": "Violet, a widowed mother on her first date in years, arrives at an upscale restaurant where she is relieved that her date, Henry, is more charming and handsome than she expected. But their chemistry begins to curdle as Violet begins being irritated and then terrorized by a series of anonymous drops to her phone.",
+      "poster_path": "/dS2S5lpfgRIRQOb7LDCjNsQqKjp.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        53
+      ],
+      "popularity": 61.9849,
+      "release_date": "2025-04-10",
+      "video": false,
+      "vote_average": 6.542,
+      "vote_count": 312
+    },
+    {
+      "backdrop_path": "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg",
+      "id": 100088,
+      "name": "The Last of Us",
+      "original_name": "The Last of Us",
+      "overview": "Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival.",
+      "poster_path": "/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18
+      ],
+      "popularity": 300.5665,
+      "first_air_date": "2023-01-15",
+      "vote_average": 8.569,
+      "vote_count": 5939,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
+      "id": 986056,
+      "title": "Thunderbolts*",
+      "original_title": "Thunderbolts*",
+      "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+      "poster_path": "/m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "popularity": 239.5162,
+      "release_date": "2025-04-30",
+      "video": false,
+      "vote_average": 7.484,
+      "vote_count": 863
+    },
+    {
+      "backdrop_path": "/jrpLhYHxsE7XVZCtP8LZrfhlvIy.jpg",
+      "id": 1303055,
+      "title": "A Breed Apart",
+      "original_title": "A Breed Apart",
+      "overview": "When Violet accepts an invitation to a private island with some of the world's most famous social influencers, she expects a weekend of unrivaled viral opportunity. She soon becomes part of her own horrific reality show when the guests are pitted against each other to capture the island's legendary man-eating dogs before they become victims of the monstrous canines.",
+      "poster_path": "/6IiNUUV6H2W1wUc8e1w4GfuQCOE.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        9648,
+        28
+      ],
+      "popularity": 14.1111,
+      "release_date": "2025-05-16",
+      "video": false,
+      "vote_average": 5,
+      "vote_count": 3
+    },
+    {
+      "backdrop_path": "/f7RaZEBSJQRx5ijJMQlCShNkRrA.jpg",
+      "id": 261009,
+      "name": "Football Parents",
+      "original_name": "Voetbalouders",
+      "overview": "When it comes to their children's amateur football careers, this group of parents has no shame, no chill — and a peculiar sense of team spirit.",
+      "poster_path": "/i9lwC7UIpWX6YSUcdJSrTBNvD9M.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "nl",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 10.1605,
+      "first_air_date": "2025-05-16",
+      "vote_average": 5.2,
+      "vote_count": 4,
+      "origin_country": [
+        "NL"
+      ]
+    },
+    {
+      "backdrop_path": "/cJvUJEEQ86LSjl4gFLkYpdCJC96.jpg",
+      "id": 1241436,
+      "title": "Warfare",
+      "original_title": "Warfare",
+      "overview": "A platoon of Navy SEALs embarks on a dangerous mission in Ramadi, Iraq, with the chaos and brotherhood of war retold through their memories of the event.",
+      "poster_path": "/srj9rYrjefyWqkLc6l2xjTGeBGO.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10752,
+        28
+      ],
+      "popularity": 384.6248,
+      "release_date": "2025-04-09",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 313
+    },
+    {
+      "backdrop_path": "/8eifdha9GQeZAkexgtD45546XKx.jpg",
+      "id": 822119,
+      "title": "Captain America: Brave New World",
+      "original_title": "Captain America: Brave New World",
+      "overview": "After meeting with newly elected U.S. President Thaddeus Ross, Sam finds himself in the middle of an international incident. He must discover the reason behind a nefarious global plot before the true mastermind has the entire world seeing red.",
+      "poster_path": "/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+      "media_type": "movie",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        53,
+        878
+      ],
+      "popularity": 157.431,
+      "release_date": "2025-02-12",
+      "video": false,
+      "vote_average": 6.118,
+      "vote_count": 1847
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

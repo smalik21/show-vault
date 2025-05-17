@@ -1,5 +1,6 @@
 import {
   BorderRadius,
+  FetchTrendingResponseType,
   Option,
   Padding,
   PresetColor,
@@ -58,11 +59,15 @@ export type SectionHeaderPropsType = {
 export type CardPropsType = {
   imageSrc: string;
   title: string;
-  releaseYear: number;
+  releaseYear: string;
   imdb: number;
   showType: ShowType;
 };
 
 export type CardsContainerProps = {
   children: React.ReactNode;
+};
+
+export type TrendingSectionPropsType = {
+  GetTrending: (trendingType: string) => Promise<FetchTrendingResponseType>;
 };

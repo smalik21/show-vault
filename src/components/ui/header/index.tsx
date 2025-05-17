@@ -15,12 +15,15 @@ const Header = () => {
       const banner = document.getElementById("home-banner-slideshow");
       if (!banner) return;
       const bannerBottom = banner.getBoundingClientRect().bottom;
-      setScrolled(bannerBottom <= 80);
+      const isScrolled: boolean = bannerBottom <= 80;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [scrolled]);
 
   return (
     <header className={`${styles.header} ${scrolled && styles.headerSolid}`}>
