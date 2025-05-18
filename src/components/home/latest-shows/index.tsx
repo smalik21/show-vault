@@ -3,20 +3,30 @@ import styles from "./latest-shows.module.scss";
 import SectionHeader from "@/components/ui/section-header";
 import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
+import { DataResponseType } from "@/types/types";
+import { CardPropsType } from "@/types/propTypes";
+import { TransformLatestData } from "@/lib/utils";
+import { FetchLatestTV } from "@/lib/apis";
 
-const LatestShows = () => {
+const LatestShows = async () => {
+  const latestTVResponse: DataResponseType = await FetchLatestTV();
+  const latestTVData: CardPropsType[] = TransformLatestData(
+    latestTVResponse,
+    "tv"
+  );
+
   return (
     <div className={styles.latestShows}>
       <SectionHeader title="Latest TV Shows" isTitleLink></SectionHeader>
       <CardsContainer>
-        {Array.from({ length: 10 }).map((_, idx) => (
+        {latestTVData.map((item) => (
           <CardItem
-            key={`card-item-${idx}`}
-            imageSrc={`https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-            title={`Title ${idx + 1}`}
-            releaseYear={2023 - idx}
-            imdb={6.9}
-            showType={idx % 2 === 0 ? "movie" : "show"}
+            key={`card-item-${item.title}`}
+            imageSrc={item.imageSrc}
+            title={item.title}
+            releaseYear={item.releaseYear}
+            imdb={item.imdb}
+            showType={item.showType}
           />
         ))}
       </CardsContainer>

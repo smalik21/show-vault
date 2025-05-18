@@ -34,19 +34,19 @@ export type FooterColumnType = {
   links: LinkType[];
 };
 
-export type FetchTrendingResponseType = {
+export type DataResponseType = {
   page: number;
-  results: TrendingItemType[];
+  results: DataItemType[];
   total_pages: number;
   total_results: number;
 };
 
-export type TrendingItemType = {
+export type DataItemType = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
   id: number;
-  media_type: string;
+  media_type?: string;
   original_language: string;
   original_title?: string;
   overview: string;

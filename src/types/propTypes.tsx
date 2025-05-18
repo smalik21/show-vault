@@ -1,6 +1,6 @@
 import {
   BorderRadius,
-  FetchTrendingResponseType,
+  DataResponseType,
   Option,
   Padding,
   PresetColor,
@@ -69,5 +69,5 @@ export type CardsContainerProps = {
 };
 
 export type TrendingSectionPropsType = {
-  GetTrending: (trendingType: string) => Promise<FetchTrendingResponseType>;
+  GetTrending: (trendingType: string) => Promise<DataResponseType>;
 };
