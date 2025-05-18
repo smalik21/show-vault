@@ -4,6 +4,7 @@ import GetTrendingMovieMock from "@/lib/mocks/GetTrendingMovie.json";
 import GetTrendingTVMock from "@/lib/mocks/GetTrendingTV.json";
 import GetLatestMovieMock from "@/lib/mocks/GetLatestMovie.json";
 import GetLatestTVMock from "@/lib/mocks/GetLatestTV.json";
+import GetUpcomingMovieMock from "@/lib/mocks/GetUpcomingMovie.json";
 import { DataResponseType } from "@/types/types";
 
 export const FetchTrending = async (
@@ -45,5 +46,17 @@ export const FetchLatestTV = async (
     return new Promise((res) => setTimeout(() => res(GetLatestTVMock), 500));
   }
   const url = `https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=${pageNumber}`;
+  return GetApi(url);
+};
+
+export const FetchUpcomingMovie = async (
+  pageNumber: number = 1
+): Promise<DataResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) =>
+      setTimeout(() => res(GetUpcomingMovieMock), 500)
+    );
+  }
+  const url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`;
   return GetApi(url);
 };

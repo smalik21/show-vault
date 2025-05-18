@@ -14,7 +14,7 @@ const CardItem = ({
   return (
     <article className={styles.cardItem}>
       <header className={styles.imageContainer}>
-        <Image fill src={imageSrc} alt={`card-image-${title}`} />
+        <Image loading="lazy" fill src={imageSrc} alt={`card-image-${title}`} />
       </header>
       <section className={styles.cardContent}>
         <div className={styles.title}>{title}</div>
