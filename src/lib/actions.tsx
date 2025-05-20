@@ -1,11 +1,11 @@
 "use server";
 
-import { FetchTrendingResponseType } from "@/types/types";
+import { DataResponseType } from "@/types/types";
 import { FetchTrending } from "./apis";
 
 export const GetTrending = async (
   trendingType: string
-): Promise<FetchTrendingResponseType> => {
+): Promise<DataResponseType> => {
   try {
     return await FetchTrending(trendingType);
   } catch (error) {

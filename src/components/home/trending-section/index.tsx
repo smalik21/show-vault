@@ -11,8 +11,11 @@ import CardItem from "@/components/ui/card-item";
 import { Carousel } from "antd";
 import { CardPropsType, TrendingSectionPropsType } from "@/types/propTypes";
 import { TransformTrendingData } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
+  const router = useRouter();
+
   const [selectedTrendingType, setSelectedTrendingType] =
     useState<string>("all");
   const [trendingData, setTrendingData] = useState<CardPropsType[]>([]);
@@ -28,6 +31,10 @@ const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
   useEffect(() => {
     fetchTrendingData(selectedTrendingType);
   }, [selectedTrendingType, fetchTrendingData]);
+
+  const handleViewAllClick = () => {
+    router.push("/trending");
+  };
 
   return (
     <div className={styles.trendingSection}>
@@ -47,7 +54,7 @@ const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
           />
         </div>
         <div className={styles.viewAllButton}>
-          <Button textColor="gray" textSize="lg">
+          <Button textColor="gray" textSize="lg" onClick={handleViewAllClick}>
             View All
           </Button>
         </div>

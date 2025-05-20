@@ -6,14 +6,20 @@ import HeaderOptions from "./header-options";
 
 import styles from "./header.module.scss";
 import NavMenu from "./nav-menu";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const onScroll = () => {
       const banner = document.getElementById("home-banner-slideshow");
-      if (!banner) return;
+      if (!banner) {
+        setScrolled(true);
+        return;
+      }
       const bannerBottom = banner.getBoundingClientRect().bottom;
       const isScrolled: boolean = bannerBottom <= 80;
       if (isScrolled !== scrolled) {
@@ -23,7 +29,7 @@ const Header = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrolled]);
+  }, [scrolled, pathname]);
 
   return (
     <header className={`${styles.header} ${scrolled && styles.headerSolid}`}>

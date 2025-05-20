@@ -2,3 +2,8 @@
   display: flex !important;
   gap: 2rem !important;
 }
+
+:where(.css-dev-only-do-not-override-19bz483).ant-pagination
+  .ant-pagination-item-active {
+  border: none !important;
+}

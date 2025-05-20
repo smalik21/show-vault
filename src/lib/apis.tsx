@@ -8,7 +8,8 @@ import GetUpcomingMovieMock from "@/lib/mocks/GetUpcomingMovie.json";
 import { DataResponseType } from "@/types/types";
 
 export const FetchTrending = async (
-  trendingType: string
+  trendingType: string,
+  pageNumber: number = 1
 ): Promise<DataResponseType> => {
   if (IsLocalhost()) {
     let mockData;
@@ -25,7 +26,7 @@ export const FetchTrending = async (
     return new Promise((res) => setTimeout(() => res(mockData), 500));
   }
 
-  const url = `https://api.themoviedb.org/3/trending/${trendingType}/week?language=en-US`;
+  const url = `https://api.themoviedb.org/3/trending/${trendingType}/week?language=en-US&page=${pageNumber}`;
   return GetApi(url);
 };
 

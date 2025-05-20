@@ -8,7 +8,7 @@ import { GetTrending } from "@/lib/actions";
 
 export default function Home() {
   return (
-    <div className={styles.home}>
+    <main className={styles.home}>
       <section id="home-banner-slideshow" className={styles.bannerSlideshow}>
         <BannerSlideshow />
       </section>
@@ -24,6 +24,6 @@ export default function Home() {
       <section id="coming-soon-section" className={styles.comingSoon}>
         <ComingSoon />
       </section>
-    </div>
+    </main>
   );
 }
