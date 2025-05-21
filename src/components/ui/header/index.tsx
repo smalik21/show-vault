@@ -6,10 +6,11 @@ import HeaderOptions from "./header-options";
 
 import styles from "./header.module.scss";
 import NavMenu from "./nav-menu";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
+  const router = useRouter();
 
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -31,9 +32,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrolled, pathname]);
 
+  const handleLogoClick = () => {
+    router.push("/");
+  };
+
   return (
     <header className={`${styles.header} ${scrolled && styles.headerSolid}`}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={handleLogoClick}>
         <Logo />
       </div>
       <menu className={styles.navMenu}>

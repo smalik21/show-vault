@@ -24,6 +24,10 @@
 
   .logo {
     display: flex;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .navMenu {

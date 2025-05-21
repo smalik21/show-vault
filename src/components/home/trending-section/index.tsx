@@ -103,9 +103,9 @@ const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
             },
           ]}
         >
-          {trendingData.map((item) => (
+          {trendingData.map((item, idx) => (
             <CardItem
-              key={`card-item-${item.title}`}
+              key={`${idx}-card-item-${item.title}`}
               imageSrc={item.imageSrc}
               title={item.title}
               releaseYear={item.releaseYear}

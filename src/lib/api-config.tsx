@@ -8,6 +8,8 @@ export const GetApi = async (url: string) => {
   const res = await fetch(url, {
     method: "GET",
     headers: API_HEADERS,
+    cache: "force-cache",
+    next: { revalidate: 3600 },
   });
   if (!res.ok) {
     throw new Error(`API error: ${res.status} ${res.statusText}`);

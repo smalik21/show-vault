@@ -71,3 +71,10 @@ export type CardsContainerProps = {
 export type TrendingSectionPropsType = {
   GetTrending: (trendingType: string) => Promise<DataResponseType>;
 };
+
+export type TrendingPagePropsType = {
+  initialPage: number;
+  initialTab: string;
+  initialTotal: number;
+  initialTrendingData: CardPropsType[];
+};
