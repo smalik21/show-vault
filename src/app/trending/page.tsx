@@ -4,10 +4,11 @@ import { FetchTrending } from "@/lib/apis";
 import { TransformTrendingData } from "@/lib/utils";
 
 const Trending = async ({
-  searchParams,
+  searchParams: searchParamsPromise,
 }: {
-  searchParams: { [key: string]: string | undefined };
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) => {
+  const searchParams = await searchParamsPromise;
   const tab = searchParams?.tab || "all";
   const page = Number(searchParams?.page) || 1;
 
