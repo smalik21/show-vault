@@ -1,5 +1,28 @@
-import { CardPropsType } from "@/types/propTypes";
+import { BannerItemType, CardPropsType } from "@/types/propTypes";
 import { DataResponseType, ShowType } from "@/types/types";
+import { GENRE_MAP } from "./constants";
+
+export const TransformBannerData = (
+  bannerDataResponse: DataResponseType
+): BannerItemType[] => {
+  if (!bannerDataResponse || !Array.isArray(bannerDataResponse.results)) {
+    return [];
+  }
+
+  const transformedData: BannerItemType[] = bannerDataResponse.results.map(
+    (item) => {
+      return {
+        title: item.title || item.name || "",
+        description: item.overview || "",
+        imageSrc: getHorizontalImagePath(item.poster_path),
+        imdb: Number(item.vote_average.toFixed(1)),
+        genre: item.genre_ids.map((id) => GENRE_MAP[id] || id.toString()),
+      } as BannerItemType;
+    }
+  );
+
+  return transformedData;
+};
 
 export const TransformTrendingData = (
   trendingDataResponse: DataResponseType
@@ -16,9 +39,7 @@ export const TransformTrendingData = (
           item.release_date?.split("-")[0] ||
           item.first_air_date?.split("-")[0] ||
           "",
-        imageSrc: item.poster_path
-          ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-          : "https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageSrc: getVerticalImagePath(item.poster_path),
         imdb: Number(item.vote_average.toFixed(1)),
         showType: item.media_type,
       } as CardPropsType;
@@ -43,13 +64,23 @@ export const TransformLatestData = (
         item.release_date?.split("-")[0] ||
         item.first_air_date?.split("-")[0] ||
         "",
-      imageSrc: item.poster_path
-        ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-        : "https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageSrc: getVerticalImagePath(item.poster_path),
       imdb: Number(item.vote_average.toFixed(1)),
       showType: showType,
     } as CardPropsType;
   });
 
   return transformedData;
+};
+
+export const getVerticalImagePath = (posterPath?: string) => {
+  return posterPath
+    ? `https://image.tmdb.org/t/p/w500${posterPath}`
+    : "https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+};
+
+export const getHorizontalImagePath = (backdropPath?: string) => {
+  return backdropPath
+    ? `https://image.tmdb.org/t/p/w1280${backdropPath}`
+    : "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 };

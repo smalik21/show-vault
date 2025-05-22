@@ -54,3 +54,5 @@ export const FOOTER_CONTENT: FooterColumnType[] = [
     ],
   },
 ];
+
+export const GENRE_MAP: Record<number, string> = {};

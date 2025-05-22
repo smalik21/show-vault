@@ -6,7 +6,7 @@ import LatestShows from "@/components/home/latest-shows";
 import ComingSoon from "@/components/home/coming-soon";
 import { GetTrending } from "@/lib/actions";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className={styles.home}>
       <section id="home-banner-slideshow" className={styles.bannerSlideshow}>
@@ -26,4 +26,6 @@ export default function Home() {
       </section>
     </main>
   );
-}
+};
+
+export default Home;

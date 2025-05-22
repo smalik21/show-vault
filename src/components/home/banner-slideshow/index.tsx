@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./banner-slideshow.module.scss";
 import { Carousel } from "antd";
-import { BANNER_ITEMS } from "@/lib/sampleData";
 import BannerItem from "./banner-item";
 import { BannerItemType } from "@/types/propTypes";
+import { FetchTrending } from "@/lib/apis";
+import { TransformBannerData } from "@/lib/utils";
 
-const BannerSlideshow = () => {
+const BannerSlideshow = async () => {
+  const trendingData = await FetchTrending();
+  const bannerItems = TransformBannerData(trendingData).slice(0, 5);
+
   return (
     <div className={styles.bannerSlideshow}>
       <Carousel
@@ -15,9 +19,9 @@ const BannerSlideshow = () => {
         arrows
         draggable
       >
-        {BANNER_ITEMS.map((bannerItem: BannerItemType) => {
+        {bannerItems.map((bannerItem: BannerItemType, idx) => {
           return (
-            <div key={`banner-item-${bannerItem.title}`}>
+            <div key={`${idx}-banner-item-${bannerItem.title}`}>
               <BannerItem
                 title={bannerItem.title}
                 description={bannerItem.description}

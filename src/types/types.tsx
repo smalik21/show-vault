@@ -60,3 +60,10 @@ export type DataItemType = {
   vote_average: number;
   vote_count: number;
 };
+
+export type GenreResponseType = {
+  genres: {
+    id: number;
+    name: string;
+  }[];
+};
