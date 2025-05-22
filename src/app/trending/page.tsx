@@ -2,6 +2,7 @@ import TrendingPage from "@/components/trending/trending-page";
 import styles from "./trending.module.scss";
 import { FetchTrending } from "@/lib/apis";
 import { TransformTrendingData } from "@/lib/utils";
+import { GetTrending } from "@/lib/actions";
 
 const Trending = async ({
   searchParams: searchParamsPromise,
@@ -23,6 +24,7 @@ const Trending = async ({
         initialPage={page}
         initialTotal={initialTotal}
         initialTrendingData={initialTrendingData}
+        GetTrending={GetTrending}
       />
     </main>
   );

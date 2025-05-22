@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import styles from "./trending-section.module.scss";
 import SectionHeader from "@/components/ui/section-header";
@@ -13,12 +13,16 @@ import { CardPropsType, TrendingSectionPropsType } from "@/types/propTypes";
 import { TransformTrendingData } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
-const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
+const TrendingSection = ({
+  initialTrendingData,
+  GetTrending,
+}: TrendingSectionPropsType) => {
   const router = useRouter();
 
   const [selectedTrendingType, setSelectedTrendingType] =
     useState<string>("all");
-  const [trendingData, setTrendingData] = useState<CardPropsType[]>([]);
+  const [trendingData, setTrendingData] =
+    useState<CardPropsType[]>(initialTrendingData);
 
   const fetchTrendingData = useCallback(
     async (type: string) => {
@@ -28,9 +32,10 @@ const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
     [GetTrending]
   );
 
-  useEffect(() => {
-    fetchTrendingData(selectedTrendingType);
-  }, [selectedTrendingType, fetchTrendingData]);
+  const handleTabChange = (type: string) => {
+    setSelectedTrendingType(type);
+    fetchTrendingData(type);
+  };
 
   const handleViewAllClick = () => {
     router.push("/trending");
@@ -42,7 +47,7 @@ const TrendingSection = ({ GetTrending }: TrendingSectionPropsType) => {
         <div className={styles.toggleTypeButtons}>
           <RadioButtons
             selectedValue={selectedTrendingType}
-            setSelectedValue={setSelectedTrendingType}
+            setSelectedValue={handleTabChange}
             options={TRENDING_TYPES}
             padding="sm"
             textColor="white"

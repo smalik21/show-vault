@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from "./trending-page.module.scss";
 import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import RadioButtons from "@/components/ui/radio-buttons";
 import SectionHeader from "@/components/ui/section-header";
-import { GetTrending } from "@/lib/actions";
 import { TransformTrendingData } from "@/lib/utils";
 import { CardPropsType, TrendingPagePropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
@@ -18,39 +17,17 @@ const TrendingPage = ({
   initialPage,
   initialTotal,
   initialTrendingData,
+  GetTrending,
 }: TrendingPagePropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-
-  const isFirstLoad = useRef(true);
 
   const [selectedTab, setSelectedTab] = useState<string>(initialTab);
   const [pageNumber, setPageNumber] = useState<number>(initialPage);
   const [cardData, setCardData] =
     useState<CardPropsType[]>(initialTrendingData);
   const [totalResults, setTotalResults] = useState<number>(initialTotal);
-
-  useEffect(() => {
-    if (
-      isFirstLoad.current &&
-      selectedTab === initialTab &&
-      pageNumber === initialPage
-    ) {
-      isFirstLoad.current = false;
-      return;
-    }
-    let isMounted = true;
-    GetTrending(selectedTab, pageNumber).then((response) => {
-      if (isMounted) {
-        setCardData(TransformTrendingData(response));
-        setTotalResults(response.total_results);
-      }
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, [selectedTab, pageNumber, initialTab, initialPage]);
 
   const createQueryString = useCallback(
     (tab: string, page: number) => {
@@ -63,14 +40,25 @@ const TrendingPage = ({
     [searchParams]
   );
 
+  const fetchNewData = useCallback(
+    async (selectedTab: string, pageNumber: number) => {
+      const newData = await GetTrending(selectedTab, pageNumber);
+      setCardData(TransformTrendingData(newData));
+      setTotalResults(newData.total_results);
+    },
+    [GetTrending]
+  );
+
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab);
     setPageNumber(1);
+    fetchNewData(tab, 1);
     router.push(pathname + "?" + createQueryString(tab, 1));
   };
 
   const handlePageChange = (page: number) => {
     setPageNumber(page);
+    fetchNewData(selectedTab, page);
     router.push(pathname + "?" + createQueryString(selectedTab, page));
   };
 

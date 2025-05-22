@@ -5,15 +5,23 @@ import LatestMovies from "@/components/home/latest-movies";
 import LatestShows from "@/components/home/latest-shows";
 import ComingSoon from "@/components/home/coming-soon";
 import { GetTrending } from "@/lib/actions";
+import { FetchTrending } from "@/lib/apis";
+import { TransformTrendingData } from "@/lib/utils";
 
-const Home = () => {
+const Home = async () => {
+  const initialTrendingDataReponse = await FetchTrending();
+  const initialTrendingData = TransformTrendingData(initialTrendingDataReponse);
+
   return (
     <main className={styles.home}>
       <section id="home-banner-slideshow" className={styles.bannerSlideshow}>
         <BannerSlideshow />
       </section>
       <section id="home-trending-section" className={styles.trending}>
-        <TrendingSection GetTrending={GetTrending} />
+        <TrendingSection
+          initialTrendingData={initialTrendingData}
+          GetTrending={GetTrending}
+        />
       </section>
       <section id="latest-movies-section" className={styles.latestMovies}>
         <LatestMovies />
