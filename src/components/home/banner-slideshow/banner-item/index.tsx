@@ -55,14 +55,16 @@ const BannerItem = (vm: BannerItemType) => {
           </Button>
         </div>
       </div>
-      <Image
-        className={styles.bannerImage}
-        height={100}
-        width={200}
-        priority
-        src={vm.imageSrc}
-        alt={`banner-item-${vm.title}`}
-      />
+      <div className={styles.imageContainer}>
+        <Image
+          className={styles.bannerImage}
+          height={100}
+          width={200}
+          priority
+          src={vm.imageSrc}
+          alt={`banner-item-${vm.title}`}
+        />
+      </div>
     </div>
   );
 };
