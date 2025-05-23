@@ -1,4 +1,4 @@
-import { BannerItemType, CardPropsType } from "@/types/propTypes";
+import { BannerItemPropsType, CardPropsType } from "@/types/propTypes";
 import { DataResponseType, ShowType } from "@/types/types";
 import { GENRE_MAP } from "./constants";
 
@@ -16,12 +16,12 @@ export const getHighImagePath = (backdropPath?: string) => {
 
 export const TransformBannerData = (
   bannerDataResponse: DataResponseType
-): BannerItemType[] => {
+): BannerItemPropsType[] => {
   if (!bannerDataResponse || !Array.isArray(bannerDataResponse.results)) {
     return [];
   }
 
-  const transformedData: BannerItemType[] = bannerDataResponse.results.map(
+  const transformedData: BannerItemPropsType[] = bannerDataResponse.results.map(
     (item) => {
       return {
         title: item.title || item.name || "",
@@ -29,7 +29,7 @@ export const TransformBannerData = (
         imageSrc: getHighImagePath(item.backdrop_path ?? item.poster_path),
         imdb: Number(item.vote_average.toFixed(1)),
         genre: item.genre_ids.map((id) => GENRE_MAP[id] || id.toString()),
-      } as BannerItemType;
+      } as BannerItemPropsType;
     }
   );
 

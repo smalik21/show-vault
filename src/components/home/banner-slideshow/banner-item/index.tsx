@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./banner-item.module.scss";
-import { BannerItemType } from "@/types/propTypes";
+import { BannerItemPropsType } from "@/types/propTypes";
 import Button from "@/components/ui/button";
 import { YellowStarIcon } from "@/lib/icons";
 
-const BannerItem = (vm: BannerItemType) => {
+const BannerItem = (vm: BannerItemPropsType) => {
   return (
     <div className={styles.bannerItem}>
       <div className={styles.itemContent}>

@@ -3,7 +3,7 @@ import { FooterColumnType, LinkType, Option } from "@/types/types";
 export const NAV_LINKS: LinkType[] = [
   { name: "Home", path: "/" },
   { name: "Movies", path: "/movies" },
-  { name: "TV Shows", path: "/shows" },
+  { name: "TV Shows", path: "/tv-shows" },
   { name: "Genre", path: "/genre" },
 ];
 

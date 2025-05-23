@@ -8,7 +8,7 @@ import {
   TextSize,
 } from "./types";
 
-export type BannerItemType = {
+export type BannerItemPropsType = {
   imdb: number;
   genre: string[];
   title: string;
@@ -94,4 +94,12 @@ export type MoviesPagePropsType = {
   initialDataCount: number;
   initialPopularData: CardPropsType[];
   GetPopularMovie: (pageNumber?: number) => Promise<DataResponseType>;
+};
+
+export type TvShowsPagePropsType = {
+  initialPage: number;
+  initialTotal: number;
+  initialDataCount: number;
+  initialPopularData: CardPropsType[];
+  GetPopularTV: (pageNumber?: number) => Promise<DataResponseType>;
 };
