@@ -16,6 +16,7 @@ const TrendingPage = ({
   initialTab,
   initialPage,
   initialTotal,
+  initialDataCount,
   initialTrendingData,
   GetTrending,
 }: TrendingPagePropsType) => {
@@ -84,7 +85,7 @@ const TrendingPage = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={20}
+          pageSize={initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -106,7 +107,7 @@ const TrendingPage = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={20}
+          pageSize={initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"

@@ -13,6 +13,7 @@ import { Pagination } from "antd";
 const MoviesPage = ({
   initialPage,
   initialTotal,
+  initialDataCount,
   initialPopularData,
   GetPopularMovie,
 }: MoviesPagePropsType) => {
@@ -56,7 +57,7 @@ const MoviesPage = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={20}
+          pageSize={initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -78,7 +79,7 @@ const MoviesPage = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={20}
+          pageSize={initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"

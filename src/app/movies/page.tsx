@@ -15,6 +15,7 @@ const Movies = async ({
 
   const initialPopularDataReponse = await FetchPopularMovie(page);
   const initialTotal = initialPopularDataReponse.total_results;
+  const initialDataCount = initialPopularDataReponse.results.length;
   const initialPopularData = TransformPopularData(
     initialPopularDataReponse,
     "movie"
@@ -25,6 +26,7 @@ const Movies = async ({
       <MoviesPage
         initialPage={page}
         initialTotal={initialTotal}
+        initialDataCount={initialDataCount}
         initialPopularData={initialPopularData}
         GetPopularMovie={GetPopularMovie}
       />

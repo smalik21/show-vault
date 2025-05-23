@@ -15,6 +15,7 @@ const Trending = async ({
 
   const initialTrendingDataReponse = await FetchTrending(tab, page);
   const initialTotal = initialTrendingDataReponse.total_results;
+  const initialDataCount = initialTrendingDataReponse.results.length;
   const initialTrendingData = TransformTrendingData(initialTrendingDataReponse);
 
   return (
@@ -23,6 +24,7 @@ const Trending = async ({
         initialTab={tab}
         initialPage={page}
         initialTotal={initialTotal}
+        initialDataCount={initialDataCount}
         initialTrendingData={initialTrendingData}
         GetTrending={GetTrending}
       />
