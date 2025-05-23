@@ -43,7 +43,7 @@ export type DataResponseType = {
 
 export type DataItemType = {
   adult: boolean;
-  backdrop_path: string;
+  backdrop_path?: string | null;
   genre_ids: number[];
   id: number;
   media_type?: string;

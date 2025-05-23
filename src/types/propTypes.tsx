@@ -86,3 +86,10 @@ export type TrendingPagePropsType = {
     pageNumber?: number
   ) => Promise<DataResponseType>;
 };
+
+export type MoviesPagePropsType = {
+  initialPage: number;
+  initialTotal: number;
+  initialPopularData: CardPropsType[];
+  GetPopularMovie: (pageNumber?: number) => Promise<DataResponseType>;
+};

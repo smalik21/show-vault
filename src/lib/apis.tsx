@@ -4,6 +4,8 @@ import GetTrendingMovieMock from "@/lib/mocks/GetTrendingMovie.json";
 import GetTrendingTVMock from "@/lib/mocks/GetTrendingTV.json";
 import GetLatestMovieMock from "@/lib/mocks/GetLatestMovie.json";
 import GetLatestTVMock from "@/lib/mocks/GetLatestTV.json";
+import GetPopularMovieMock from "@/lib/mocks/GetPopularMovie.json";
+import GetPopularTVMock from "@/lib/mocks/GetPopularTV.json";
 import GetUpcomingMovieMock from "@/lib/mocks/GetUpcomingMovie.json";
 import GetMovieGenresMock from "@/lib/mocks/GetMovieGenres.json";
 import GetTVGenresMock from "@/lib/mocks/GetTVGenres.json";
@@ -62,6 +64,28 @@ export const FetchUpcomingMovie = async (
     );
   }
   const url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`;
+  return GetApi(url);
+};
+
+export const FetchPopularMovie = async (
+  pageNumber: number = 1
+): Promise<DataResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) =>
+      setTimeout(() => res(GetPopularMovieMock), 500)
+    );
+  }
+  const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${pageNumber}`;
+  return GetApi(url);
+};
+
+export const FetchPopularTV = async (
+  pageNumber: number = 1
+): Promise<DataResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) => setTimeout(() => res(GetPopularTVMock), 500));
+  }
+  const url = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=${pageNumber}`;
   return GetApi(url);
 };
 
