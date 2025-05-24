@@ -5,7 +5,7 @@ import React, { useCallback, useState } from "react";
 import styles from "./trending-section.module.scss";
 import SectionHeader from "@/components/ui/section-header";
 import RadioButtons from "@/components/ui/radio-buttons";
-import { TRENDING_TYPES } from "@/lib/constants";
+import { ROUTE_PATHS, TRENDING_TYPES } from "@/lib/constants";
 import Button from "@/components/ui/button";
 import CardItem from "@/components/ui/card-item";
 import { Carousel } from "antd";
@@ -38,7 +38,7 @@ const TrendingSection = ({
   };
 
   const handleViewAllClick = () => {
-    router.push("/trending");
+    router.push(ROUTE_PATHS.HOME_TRENDING_VIEW_ALL);
   };
 
   return (

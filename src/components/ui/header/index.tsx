@@ -7,6 +7,7 @@ import HeaderOptions from "./header-options";
 import styles from "./header.module.scss";
 import NavMenu from "./nav-menu";
 import { usePathname, useRouter } from "next/navigation";
+import { ROUTE_PATHS } from "@/lib/constants";
 
 const Header = () => {
   const pathname = usePathname();
@@ -33,7 +34,7 @@ const Header = () => {
   }, [scrolled, pathname]);
 
   const handleLogoClick = () => {
-    router.push("/");
+    router.push(ROUTE_PATHS.APP_LOGO);
   };
 
   return (

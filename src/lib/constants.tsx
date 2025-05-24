@@ -1,5 +1,13 @@
 import { FooterColumnType, LinkType, Option } from "@/types/types";
 
+export const ROUTE_PATHS = {
+  APP_LOGO: "/",
+  HOME_TRENDING_VIEW_ALL: "/trending",
+  HOME_LATEST_MOVIES: "/movies/latest",
+  HOME_LATEST_TV_SHOWS: "/tv-shows/latest",
+  HOME_COMING_SOON_VIEW_ALL: "/upcoming",
+};
+
 export const NAV_LINKS: LinkType[] = [
   { name: "Home", path: "/" },
   { name: "Movies", path: "/movies" },

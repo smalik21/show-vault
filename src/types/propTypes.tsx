@@ -54,6 +54,7 @@ export type RadioButtonsPropsType = {
 export type SectionHeaderPropsType = {
   title: string;
   isTitleLink?: boolean;
+  link?: string;
   children?: React.ReactNode;
 };
 

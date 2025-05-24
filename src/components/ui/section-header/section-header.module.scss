@@ -12,6 +12,9 @@
       align-items: center;
       gap: var(--spacing-lg);
       cursor: pointer;
+      appearance: none;
+      color: inherit;
+      text-decoration: none;
 
       &:hover {
         gap: var(--spacing-xl);

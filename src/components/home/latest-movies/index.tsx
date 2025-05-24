@@ -7,6 +7,7 @@ import { FetchLatestMovie } from "@/lib/apis";
 import { DataResponseType } from "@/types/types";
 import { TransformLatestData } from "@/lib/utils";
 import { CardPropsType } from "@/types/propTypes";
+import { ROUTE_PATHS } from "@/lib/constants";
 
 const LatestMovies = async () => {
   const latestMovieResponse: DataResponseType = await FetchLatestMovie();
@@ -17,7 +18,11 @@ const LatestMovies = async () => {
 
   return (
     <div className={styles.latestMovies}>
-      <SectionHeader title="Latest Movies" isTitleLink></SectionHeader>
+      <SectionHeader
+        title="Latest Movies"
+        isTitleLink
+        link={ROUTE_PATHS.HOME_LATEST_MOVIES}
+      ></SectionHeader>
       <CardsContainer>
         {latestMovieData.map((item) => (
           <CardItem
