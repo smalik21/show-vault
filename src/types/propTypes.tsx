@@ -4,6 +4,7 @@ import {
   Option,
   Padding,
   PresetColor,
+  ShowDataType,
   ShowType,
   TextSize,
 } from "./types";
@@ -88,18 +89,13 @@ export type TrendingPagePropsType = {
   ) => Promise<DataResponseType>;
 };
 
-export type MoviesPagePropsType = {
+export type PaginatedCardsPropsType = {
+  headerTitle: string;
   initialPage: number;
   initialTotal: number;
   initialDataCount: number;
-  initialPopularData: CardPropsType[];
-  GetPopularMovie: (pageNumber?: number) => Promise<DataResponseType>;
-};
-
-export type TvShowsPagePropsType = {
-  initialPage: number;
-  initialTotal: number;
-  initialDataCount: number;
-  initialPopularData: CardPropsType[];
-  GetPopularTV: (pageNumber?: number) => Promise<DataResponseType>;
+  initialData: CardPropsType[];
+  mediaType: ShowType;
+  showDataType: ShowDataType;
+  GetData: (pageNumber?: number) => Promise<DataResponseType>;
 };

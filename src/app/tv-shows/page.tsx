@@ -3,7 +3,7 @@ import styles from "./tv-shows.module.scss";
 import { FetchPopularTV } from "@/lib/apis";
 import { TransformPopularData } from "@/lib/utils";
 import { GetPopularTV } from "@/lib/actions";
-import TvShowsPage from "@/components/tv-shows/tv-shows-page";
+import PaginatedCards from "@/components/ui/paginated-cards";
 
 const TVShows = async ({
   searchParams: searchParamsPromise,
@@ -23,12 +23,15 @@ const TVShows = async ({
 
   return (
     <main className={styles.tvShows}>
-      <TvShowsPage
+      <PaginatedCards
+        headerTitle="Popular TV Shows"
         initialPage={page}
         initialTotal={initialTotal}
         initialDataCount={initialDataCount}
-        initialPopularData={initialPopularData}
-        GetPopularTV={GetPopularTV}
+        initialData={initialPopularData}
+        mediaType="tv"
+        showDataType="popular"
+        GetData={GetPopularTV}
       />
     </main>
   );

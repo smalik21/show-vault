@@ -2,27 +2,32 @@
 
 import React, { useCallback, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import styles from "./tv-shows-page.module.scss";
+import styles from "./paginated-cards.module.scss";
 import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import SectionHeader from "@/components/ui/section-header";
-import { TransformPopularData } from "@/lib/utils";
-import { CardPropsType, TvShowsPagePropsType } from "@/types/propTypes";
+import { CardPropsType, PaginatedCardsPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
+import { getTransformDataFunction } from "@/lib/utils";
 
-const TvShowsPage = ({
+const PaginatedCards = ({
+  headerTitle,
   initialPage,
   initialTotal,
   initialDataCount,
-  initialPopularData,
-  GetPopularTV,
-}: TvShowsPagePropsType) => {
+  initialData,
+  mediaType,
+  showDataType,
+  GetData,
+}: PaginatedCardsPropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
+  const TransformData = getTransformDataFunction(showDataType);
+
   const [pageNumber, setPageNumber] = useState<number>(initialPage);
-  const [cardData, setCardData] = useState<CardPropsType[]>(initialPopularData);
+  const [cardData, setCardData] = useState<CardPropsType[]>(initialData);
   const [totalResults, setTotalResults] = useState<number>(initialTotal);
 
   const createQueryString = useCallback(
@@ -37,11 +42,11 @@ const TvShowsPage = ({
 
   const fetchNewData = useCallback(
     async (pageNumber: number) => {
-      const newData = await GetPopularTV(pageNumber);
-      setCardData(TransformPopularData(newData, "tv"));
+      const newData = await GetData(pageNumber);
+      setCardData(TransformData(newData, mediaType));
       setTotalResults(newData.total_results);
     },
-    [GetPopularTV]
+    [GetData, TransformData, mediaType]
   );
 
   const handlePageChange = (page: number) => {
@@ -51,8 +56,8 @@ const TvShowsPage = ({
   };
 
   return (
-    <div className={styles.tvShowsPage}>
-      <SectionHeader title="Popular TV Shows"></SectionHeader>
+    <div className={styles.paginatedCards}>
+      <SectionHeader title={headerTitle}></SectionHeader>
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
@@ -89,4 +94,4 @@ const TvShowsPage = ({
   );
 };
 
-export default TvShowsPage;
+export default PaginatedCards;

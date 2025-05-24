@@ -1,5 +1,5 @@
 import { BannerItemPropsType, CardPropsType } from "@/types/propTypes";
-import { DataResponseType, ShowType } from "@/types/types";
+import { DataResponseType, ShowDataType, ShowType } from "@/types/types";
 import { GENRE_MAP } from "./constants";
 
 export const getMediumImagePath = (posterPath?: string) => {
@@ -12,6 +12,17 @@ export const getHighImagePath = (backdropPath?: string) => {
   return backdropPath
     ? `https://image.tmdb.org/t/p/w1280${backdropPath}`
     : "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+};
+
+export const getTransformDataFunction = (showDataType: ShowDataType) => {
+  switch (showDataType) {
+    case "popular":
+      return TransformPopularData;
+    case "latest":
+      return TransformLatestData;
+    default:
+      return TransformPopularData;
+  }
 };
 
 export const TransformBannerData = (

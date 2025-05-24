@@ -3,7 +3,7 @@ import styles from "./movies.module.scss";
 import { FetchPopularMovie } from "@/lib/apis";
 import { TransformPopularData } from "@/lib/utils";
 import { GetPopularMovie } from "@/lib/actions";
-import MoviesPage from "@/components/movies/movies-page";
+import PaginatedCards from "@/components/ui/paginated-cards";
 
 const Movies = async ({
   searchParams: searchParamsPromise,
@@ -23,12 +23,15 @@ const Movies = async ({
 
   return (
     <main className={styles.movies}>
-      <MoviesPage
+      <PaginatedCards
+        headerTitle="Popular Movies"
         initialPage={page}
         initialTotal={initialTotal}
         initialDataCount={initialDataCount}
-        initialPopularData={initialPopularData}
-        GetPopularMovie={GetPopularMovie}
+        initialData={initialPopularData}
+        mediaType="movie"
+        showDataType="popular"
+        GetData={GetPopularMovie}
       />
     </main>
   );

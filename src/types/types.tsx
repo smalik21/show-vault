@@ -24,6 +24,8 @@ export type Option = {
 
 export type ShowType = "movie" | "tv";
 
+export type ShowDataType = "popular" | "latest";
+
 export type LinkType = {
   name: string;
   path: string;
