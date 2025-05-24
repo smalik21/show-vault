@@ -52,7 +52,7 @@ const PaginatedCards = ({
   const handlePageChange = (page: number) => {
     setPageNumber(page);
     fetchNewData(page);
-    router.push(pathname + "?" + createQueryString(page));
+    router.replace(pathname + "?" + createQueryString(page));
   };
 
   return (

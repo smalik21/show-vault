@@ -54,13 +54,13 @@ const TrendingPage = ({
     setSelectedTab(tab);
     setPageNumber(1);
     fetchNewData(tab, 1);
-    router.push(pathname + "?" + createQueryString(tab, 1));
+    router.replace(pathname + "?" + createQueryString(tab, 1));
   };
 
   const handlePageChange = (page: number) => {
     setPageNumber(page);
     fetchNewData(selectedTab, page);
-    router.push(pathname + "?" + createQueryString(selectedTab, page));
+    router.replace(pathname + "?" + createQueryString(selectedTab, page));
   };
 
   return (
