@@ -12,23 +12,17 @@ import { CardPropsType, TrendingPagePropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { TRENDING_TYPES } from "@/lib/constants";
 
-const TrendingPage = ({
-  initialTab,
-  initialPage,
-  initialTotal,
-  initialDataCount,
-  initialTrendingData,
-  GetTrending,
-}: TrendingPagePropsType) => {
+const TrendingPage = (vm: TrendingPagePropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const [selectedTab, setSelectedTab] = useState<string>(initialTab);
-  const [pageNumber, setPageNumber] = useState<number>(initialPage);
-  const [cardData, setCardData] =
-    useState<CardPropsType[]>(initialTrendingData);
-  const [totalResults, setTotalResults] = useState<number>(initialTotal);
+  const [selectedTab, setSelectedTab] = useState<string>(vm.initialTab);
+  const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
+  const [cardData, setCardData] = useState<CardPropsType[]>(
+    vm.initialTrendingData
+  );
+  const [totalResults, setTotalResults] = useState<number>(vm.initialTotal);
 
   const createQueryString = useCallback(
     (tab: string, page: number) => {
@@ -43,11 +37,11 @@ const TrendingPage = ({
 
   const fetchNewData = useCallback(
     async (selectedTab: string, pageNumber: number) => {
-      const newData = await GetTrending(selectedTab, pageNumber);
+      const newData = await vm.GetTrending(selectedTab, pageNumber);
       setCardData(TransformTrendingData(newData));
       setTotalResults(newData.total_results);
     },
-    [GetTrending]
+    [vm]
   );
 
   const handleTabChange = (tab: string) => {
@@ -85,7 +79,7 @@ const TrendingPage = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={initialDataCount}
+          pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -107,7 +101,7 @@ const TrendingPage = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={initialDataCount}
+          pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"

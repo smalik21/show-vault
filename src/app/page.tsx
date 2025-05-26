@@ -6,16 +6,21 @@ import LatestShows from "@/components/home/latest-shows";
 import ComingSoon from "@/components/home/coming-soon";
 import { GetTrending } from "@/lib/actions";
 import { FetchTrending } from "@/lib/apis";
-import { TransformTrendingData } from "@/lib/utils";
+import { TransformBannerData, TransformTrendingData } from "@/lib/utils";
 
 const Home = async () => {
   const initialTrendingDataReponse = await FetchTrending();
   const initialTrendingData = TransformTrendingData(initialTrendingDataReponse);
+  const initialBannerSlideshowData = TransformBannerData(
+    initialTrendingDataReponse
+  ).slice(0, 5);
 
   return (
     <main className={styles.home}>
       <section id="home-banner-slideshow" className={styles.bannerSlideshow}>
-        <BannerSlideshow />
+        <BannerSlideshow
+          initialBannerSlideshowData={initialBannerSlideshowData}
+        />
       </section>
       <section id="home-trending-section" className={styles.trending}>
         <TrendingSection

@@ -10,25 +10,16 @@ import { CardPropsType, PaginatedCardsPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { getTransformDataFunction } from "@/lib/utils";
 
-const PaginatedCards = ({
-  headerTitle,
-  initialPage,
-  initialTotal,
-  initialDataCount,
-  initialData,
-  mediaType,
-  showDataType,
-  GetData,
-}: PaginatedCardsPropsType) => {
+const PaginatedCards = (vm: PaginatedCardsPropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const TransformData = getTransformDataFunction(showDataType);
+  const TransformData = getTransformDataFunction(vm.showDataType);
 
-  const [pageNumber, setPageNumber] = useState<number>(initialPage);
-  const [cardData, setCardData] = useState<CardPropsType[]>(initialData);
-  const [totalResults, setTotalResults] = useState<number>(initialTotal);
+  const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
+  const [cardData, setCardData] = useState<CardPropsType[]>(vm.initialData);
+  const [totalResults, setTotalResults] = useState<number>(vm.initialTotal);
 
   const createQueryString = useCallback(
     (page: number) => {
@@ -42,11 +33,11 @@ const PaginatedCards = ({
 
   const fetchNewData = useCallback(
     async (pageNumber: number) => {
-      const newData = await GetData(pageNumber);
-      setCardData(TransformData(newData, mediaType));
+      const newData = await vm.GetData(pageNumber);
+      setCardData(TransformData(newData, vm.mediaType));
       setTotalResults(newData.total_results);
     },
-    [GetData, TransformData, mediaType]
+    [vm, TransformData]
   );
 
   const handlePageChange = (page: number) => {
@@ -57,12 +48,12 @@ const PaginatedCards = ({
 
   return (
     <div className={styles.paginatedCards}>
-      <SectionHeader title={headerTitle}></SectionHeader>
+      <SectionHeader title={vm.headerTitle}></SectionHeader>
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={initialDataCount}
+          pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -84,7 +75,7 @@ const PaginatedCards = ({
         <Pagination
           current={pageNumber}
           total={totalResults}
-          pageSize={initialDataCount}
+          pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"

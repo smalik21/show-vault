@@ -4,28 +4,27 @@ import React from "react";
 import styles from "./card-item.module.scss";
 import { YellowStarIcon } from "@/lib/icons";
 
-const CardItem = ({
-  title,
-  releaseYear,
-  imageSrc,
-  imdb,
-  showType,
-}: CardPropsType) => {
+const CardItem = (vm: CardPropsType) => {
   return (
     <article className={styles.cardItem}>
       <header className={styles.imageContainer}>
-        <Image loading="lazy" fill src={imageSrc} alt={`card-image-${title}`} />
+        <Image
+          loading="lazy"
+          fill
+          src={vm.imageSrc}
+          alt={`card-image-${vm.title}`}
+        />
       </header>
       <section className={styles.cardContent}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title}>{vm.title}</div>
         <div className={styles.cardDetails}>
-          <span className={styles.releaseYear}>{releaseYear}</span>
+          <span className={styles.releaseYear}>{vm.releaseYear}</span>
           <span className={styles.imdb}>
             <YellowStarIcon width={13} height={12} />
-            <span>{imdb}</span>
+            <span>{vm.imdb}</span>
           </span>
           <span className={styles.showType}>
-            {showType === "movie" ? "Movie" : "TV"}
+            {vm.showType === "movie" ? "Movie" : "TV"}
           </span>
         </div>
       </section>

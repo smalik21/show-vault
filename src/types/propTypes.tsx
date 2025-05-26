@@ -100,3 +100,7 @@ export type PaginatedCardsPropsType = {
   showDataType: ShowDataType;
   GetData: (pageNumber?: number) => Promise<DataResponseType>;
 };
+
+export type BannerSlideshowPropsType = {
+  initialBannerSlideshowData: BannerItemPropsType[];
+};

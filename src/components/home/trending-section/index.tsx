@@ -13,23 +13,21 @@ import { CardPropsType, TrendingSectionPropsType } from "@/types/propTypes";
 import { TransformTrendingData } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
-const TrendingSection = ({
-  initialTrendingData,
-  GetTrending,
-}: TrendingSectionPropsType) => {
+const TrendingSection = (vm: TrendingSectionPropsType) => {
   const router = useRouter();
 
   const [selectedTrendingType, setSelectedTrendingType] =
     useState<string>("all");
-  const [trendingData, setTrendingData] =
-    useState<CardPropsType[]>(initialTrendingData);
+  const [trendingData, setTrendingData] = useState<CardPropsType[]>(
+    vm.initialTrendingData
+  );
 
   const fetchTrendingData = useCallback(
     async (type: string) => {
-      const data = await GetTrending(type);
+      const data = await vm.GetTrending(type);
       setTrendingData(TransformTrendingData(data));
     },
-    [GetTrending]
+    [vm]
   );
 
   const handleTabChange = (type: string) => {

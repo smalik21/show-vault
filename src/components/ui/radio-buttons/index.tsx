@@ -3,35 +3,26 @@ import React from "react";
 import Button from "../button";
 import styles from "./radio-buttons.module.scss";
 
-const RadioButtons = ({
-  selectedValue,
-  setSelectedValue,
-  padding,
-  options,
-  textColor,
-  bgColor,
-  highlightColor,
-  borderRadius,
-  textSize,
-  fontWeight,
-}: RadioButtonsPropsType) => {
+const RadioButtons = (vm: RadioButtonsPropsType) => {
   const handleButtonClick = (value: string) => {
-    setSelectedValue(value);
+    vm.setSelectedValue(value);
   };
 
   return (
     <div className={styles.radioButtons}>
-      {options.map((option) => {
+      {vm.options.map((option) => {
         return (
           <Button
             key={`radio-btn-${option.value}`}
             onClick={() => handleButtonClick(option.value)}
-            padding={padding}
-            textColor={textColor}
-            bgColor={selectedValue === option.value ? highlightColor : bgColor}
-            borderRadius={borderRadius}
-            textSize={textSize}
-            fontWeight={fontWeight}
+            padding={vm.padding}
+            textColor={vm.textColor}
+            bgColor={
+              vm.selectedValue === option.value ? vm.highlightColor : vm.bgColor
+            }
+            borderRadius={vm.borderRadius}
+            textSize={vm.textSize}
+            fontWeight={vm.fontWeight}
           >
             {option.label}
           </Button>
