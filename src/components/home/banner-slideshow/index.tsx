@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./banner-slideshow.module.scss";
 import { Carousel } from "antd";
 import BannerItem from "./banner-item";
-import { BannerItemType } from "@/types/propTypes";
+import { BannerItemPropsType } from "@/types/propTypes";
 import { FetchTrending } from "@/lib/apis";
 import { TransformBannerData } from "@/lib/utils";
 
@@ -19,7 +19,7 @@ const BannerSlideshow = async () => {
         arrows
         draggable
       >
-        {bannerItems.map((bannerItem: BannerItemType, idx) => {
+        {bannerItems.map((bannerItem: BannerItemPropsType, idx) => {
           return (
             <div key={`${idx}-banner-item-${bannerItem.title}`}>
               <BannerItem
