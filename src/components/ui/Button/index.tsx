@@ -4,38 +4,25 @@ import { ButtonPropsType } from "@/types/propTypes";
 import styles from "./button.module.scss";
 import clsx from "clsx";
 
-const Button = ({
-  children,
-  textSize,
-  padding,
-  borderRadius,
-  textColor,
-  bgColor,
-  outlineColor,
-  fontWeight,
-  fullWidth = false,
-  disabled = false,
-  outline = false,
-  onClick,
-}: ButtonPropsType) => {
+const Button = (vm: ButtonPropsType) => {
   return (
     <button
       className={clsx(
         styles.button,
-        textSize && styles[`text-${textSize}`],
-        padding && styles[`padding-${padding}`],
-        borderRadius && styles[`radius-${borderRadius}`],
-        fullWidth && styles.fullWidth,
-        outline && styles.outline,
-        textColor && styles[`text-${textColor}`],
-        bgColor && !outline && styles[`bg-${bgColor}`],
-        outline && outlineColor && styles[`outline-${outlineColor}`]
+        vm.textSize && styles[`text-${vm.textSize}`],
+        vm.padding && styles[`padding-${vm.padding}`],
+        vm.borderRadius && styles[`radius-${vm.borderRadius}`],
+        vm.fullWidth && styles.fullWidth,
+        vm.outline && styles.outline,
+        vm.textColor && styles[`text-${vm.textColor}`],
+        vm.bgColor && !vm.outline && styles[`bg-${vm.bgColor}`],
+        vm.outline && vm.outlineColor && styles[`outline-${vm.outlineColor}`]
       )}
-      style={{ fontWeight: fontWeight }}
-      onClick={onClick}
-      disabled={disabled}
+      style={{ fontWeight: vm.fontWeight }}
+      onClick={vm.onClick}
+      disabled={vm.disabled ?? false}
     >
-      {children}
+      {vm.children}
     </button>
   );
 };

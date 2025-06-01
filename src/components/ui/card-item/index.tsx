@@ -1,12 +1,25 @@
+"use client";
+
 import { CardPropsType } from "@/types/propTypes";
 import Image from "next/image";
 import React from "react";
 import styles from "./card-item.module.scss";
 import { YellowStarIcon } from "@/lib/icons";
+import { useRouter } from "next/navigation";
 
 const CardItem = (vm: CardPropsType) => {
+  const router = useRouter();
+
+  const handleCardItemClick = (id: number) => {
+    const route = vm.showType === "movie" ? "movies" : "tv-shows";
+    router.push(`/${route}/${id}`);
+  };
+
   return (
-    <article className={styles.cardItem}>
+    <article
+      className={styles.cardItem}
+      onClick={() => handleCardItemClick(vm.id)}
+    >
       <header className={styles.imageContainer}>
         <Image
           loading="lazy"

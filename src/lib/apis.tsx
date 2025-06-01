@@ -9,7 +9,12 @@ import GetPopularTVMock from "@/lib/mocks/GetPopularTV.json";
 import GetUpcomingMovieMock from "@/lib/mocks/GetUpcomingMovie.json";
 import GetMovieGenresMock from "@/lib/mocks/GetMovieGenres.json";
 import GetTVGenresMock from "@/lib/mocks/GetTVGenres.json";
-import { DataResponseType, GenreResponseType } from "@/types/types";
+import GetMovieDetailsMock from "@/lib/mocks/GetMovieDetails.json";
+import {
+  DataResponseType,
+  GenreResponseType,
+  MovieDetailsResponseType,
+} from "@/types/types";
 import { GENRE_MAP } from "./constants";
 
 export const FetchTrending = async (
@@ -102,6 +107,18 @@ export const FetchTVGenres = async (): Promise<GenreResponseType> => {
     return new Promise((res) => setTimeout(() => res(GetTVGenresMock), 500));
   }
   const url = `https://api.themoviedb.org/3/genre/tv/list`;
+  return GetApi(url);
+};
+
+export const FetchMovieDetails = async (
+  movieId: string | number
+): Promise<MovieDetailsResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) =>
+      setTimeout(() => res(GetMovieDetailsMock), 500)
+    );
+  }
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?append_to_response=videos&language=en-US`;
   return GetApi(url);
 };
 

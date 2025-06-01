@@ -88,7 +88,8 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
       <CardsContainer>
         {cardData.map((item, idx) => (
           <CardItem
-            key={`${idx}-card-item-${item.title}`}
+            key={`${idx}-card-item-${item.id}`}
+            id={item.id}
             imageSrc={item.imageSrc}
             title={item.title}
             releaseYear={item.releaseYear}

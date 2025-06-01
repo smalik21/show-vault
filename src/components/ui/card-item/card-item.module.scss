@@ -10,6 +10,10 @@
   font-family: var(--font-primary);
   color: var(--primary-text-color);
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .imageContainer {
     flex-grow: 1;
     position: relative;

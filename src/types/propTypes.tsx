@@ -10,6 +10,7 @@ import {
 } from "./types";
 
 export type BannerItemPropsType = {
+  id: number;
   imdb: number;
   genre: string[];
   title: string;
@@ -59,6 +60,7 @@ export type SectionHeaderPropsType = {
 };
 
 export type CardPropsType = {
+  id: number;
   imageSrc: string;
   title: string;
   releaseYear: string;

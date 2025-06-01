@@ -20,8 +20,9 @@ const BannerSlideshow = (vm: BannerSlideshowPropsType) => {
         {vm.initialBannerSlideshowData.map(
           (bannerItem: BannerItemPropsType, idx) => {
             return (
-              <div key={`${idx}-banner-item-${bannerItem.title}`}>
+              <div key={`${idx}-banner-item-${bannerItem.id}`}>
                 <BannerItem
+                  id={bannerItem.id}
                   title={bannerItem.title}
                   description={bannerItem.description}
                   imageSrc={bannerItem.imageSrc}

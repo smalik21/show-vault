@@ -26,7 +26,8 @@ const LatestShows = async () => {
       <CardsContainer>
         {latestTVData.map((item) => (
           <CardItem
-            key={`card-item-${item.title}`}
+            key={`card-item-${item.id}`}
+            id={item.id}
             imageSrc={item.imageSrc}
             title={item.title}
             releaseYear={item.releaseYear}

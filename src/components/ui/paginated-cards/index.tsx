@@ -8,14 +8,14 @@ import CardsContainer from "@/components/ui/cards-container";
 import SectionHeader from "@/components/ui/section-header";
 import { CardPropsType, PaginatedCardsPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
-import { getTransformDataFunction } from "@/lib/utils";
+import { GetTransformDataFunction } from "@/lib/utils";
 
 const PaginatedCards = (vm: PaginatedCardsPropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const TransformData = getTransformDataFunction(vm.showDataType);
+  const TransformData = GetTransformDataFunction(vm.showDataType);
 
   const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
   const [cardData, setCardData] = useState<CardPropsType[]>(vm.initialData);
@@ -62,6 +62,7 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
       <CardsContainer>
         {cardData.map((item, idx) => (
           <CardItem
+            id={item.id}
             key={`${idx}-card-item-${item.title}`}
             imageSrc={item.imageSrc}
             title={item.title}
