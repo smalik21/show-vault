@@ -172,7 +172,9 @@ export const TransformMovieDetailsData = (
     genre: dataResponse.genres?.map((g) => g.name).join(", ") || "",
     country:
       dataResponse.production_countries?.map((c) => c.name).join(", ") || "",
-    budget: dataResponse.budget || 0,
+    budget: dataResponse.budget
+      ? Number((dataResponse.budget / 1_000_000).toFixed(2))
+      : 0,
     production:
       dataResponse.production_companies?.map((c) => c.name).join(", ") || "",
   };

@@ -57,7 +57,7 @@ const DetailSection = (vm: DetailSectionPropsType) => {
           </div>
           <div className={`${styles.budget} ${styles.field}`}>
             <span className={styles.label}>Budget:</span>
-            <div className={styles.value}>{vm.budget}</div>
+            <div className={styles.value}>${vm.budget} M</div>
           </div>
           <div className={`${styles.production} ${styles.field}`}>
             <span className={styles.label}>Production:</span>
