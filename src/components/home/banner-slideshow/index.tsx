@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./banner-slideshow.module.scss";
 import { Carousel } from "antd";
-import BannerItem from "./banner-item";
-import {
-  BannerItemPropsType,
-  BannerSlideshowPropsType,
-} from "@/types/propTypes";
+import BannerItem, { BannerItemPropsType } from "./banner-item";
+
+export type BannerSlideshowPropsType = {
+  initialBannerSlideshowData: BannerItemPropsType[];
+};
 
 const BannerSlideshow = (vm: BannerSlideshowPropsType) => {
   return (

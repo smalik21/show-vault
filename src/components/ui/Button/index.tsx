@@ -1,8 +1,23 @@
 "use client";
 
-import { ButtonPropsType } from "@/types/propTypes";
+import { BorderRadius, Padding, PresetColor, TextSize } from "@/types/types";
 import styles from "./button.module.scss";
 import clsx from "clsx";
+
+export type ButtonPropsType = {
+  children?: React.ReactNode;
+  textSize?: TextSize;
+  padding?: Padding;
+  borderRadius?: BorderRadius;
+  textColor?: PresetColor;
+  bgColor?: PresetColor;
+  outlineColor?: PresetColor;
+  fontWeight?: number;
+  fullWidth?: boolean;
+  disabled?: boolean;
+  outline?: boolean;
+  onClick?: () => void;
+};
 
 const Button = (vm: ButtonPropsType) => {
   return (

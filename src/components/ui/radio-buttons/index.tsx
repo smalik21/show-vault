@@ -1,7 +1,26 @@
-import { RadioButtonsPropsType } from "@/types/propTypes";
 import React from "react";
 import Button from "../button";
 import styles from "./radio-buttons.module.scss";
+import {
+  BorderRadius,
+  Option,
+  Padding,
+  PresetColor,
+  TextSize,
+} from "@/types/types";
+
+export type RadioButtonsPropsType = {
+  selectedValue: string;
+  setSelectedValue: (value: string) => void;
+  options: Option[];
+  textColor?: PresetColor;
+  bgColor?: PresetColor;
+  highlightColor?: PresetColor;
+  borderRadius?: BorderRadius;
+  padding?: Padding;
+  textSize?: TextSize;
+  fontWeight?: number;
+};
 
 const RadioButtons = (vm: RadioButtonsPropsType) => {
   const handleButtonClick = (value: string) => {

@@ -9,9 +9,18 @@ import { ROUTE_PATHS, TRENDING_TYPES } from "@/lib/constants";
 import Button from "@/components/ui/button";
 import CardItem from "@/components/ui/card-item";
 import { Carousel } from "antd";
-import { CardPropsType, TrendingSectionPropsType } from "@/types/propTypes";
+import { CardPropsType } from "@/types/propTypes";
 import { TransformTrendingData } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { DataResponseType } from "@/types/types";
+
+export type TrendingSectionPropsType = {
+  initialTrendingData: CardPropsType[];
+  GetTrending: (
+    trendingType?: string,
+    pageNumber?: number
+  ) => Promise<DataResponseType>;
+};
 
 const TrendingSection = (vm: TrendingSectionPropsType) => {
   const router = useRouter();

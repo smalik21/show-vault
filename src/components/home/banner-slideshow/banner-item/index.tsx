@@ -1,9 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./banner-item.module.scss";
-import { BannerItemPropsType } from "@/types/propTypes";
 import Button from "@/components/ui/button";
 import { YellowStarIcon } from "@/lib/icons";
+
+export type BannerItemPropsType = {
+  id: number;
+  imdb: number;
+  genre: string[];
+  title: string;
+  description: string;
+  imageSrc: string;
+};
 
 const BannerItem = (vm: BannerItemPropsType) => {
   return (

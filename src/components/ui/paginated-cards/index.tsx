@@ -6,9 +6,21 @@ import styles from "./paginated-cards.module.scss";
 import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import SectionHeader from "@/components/ui/section-header";
-import { CardPropsType, PaginatedCardsPropsType } from "@/types/propTypes";
+import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { GetTransformDataFunction } from "@/lib/utils";
+import { DataResponseType, ShowDataType, ShowType } from "@/types/types";
+
+export type PaginatedCardsPropsType = {
+  headerTitle: string;
+  initialPage: number;
+  initialTotal: number;
+  initialDataCount: number;
+  initialData: CardPropsType[];
+  mediaType: ShowType;
+  showDataType: ShowDataType;
+  GetData: (pageNumber?: number) => Promise<DataResponseType>;
+};
 
 const PaginatedCards = (vm: PaginatedCardsPropsType) => {
   const router = useRouter();

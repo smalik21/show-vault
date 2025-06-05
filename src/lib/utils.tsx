@@ -1,4 +1,4 @@
-import { BannerItemPropsType, CardPropsType } from "@/types/propTypes";
+import { CardPropsType } from "@/types/propTypes";
 import {
   DataResponseType,
   MovieDetailsResponseType,
@@ -7,6 +7,8 @@ import {
   VideoType,
 } from "@/types/types";
 import { GENRE_MAP } from "./constants";
+import { DetailSectionPropsType } from "@/components/ui/detail-section";
+import { BannerItemPropsType } from "@/components/home/banner-slideshow/banner-item";
 
 export const GetMediumImagePath = (posterPath?: string) => {
   return posterPath
@@ -154,6 +156,26 @@ export const TransformPopularData = (
 
 export const TransformMovieDetailsData = (
   dataResponse: MovieDetailsResponseType
-) => {
-  return GetVideoKey(dataResponse.videos?.results) || undefined;
+): { videoKey?: string; detailSection: DetailSectionPropsType } => {
+  const videoKey = GetVideoKey(dataResponse.videos?.results);
+
+  const detailSection: DetailSectionPropsType = {
+    type: "movie",
+    title: dataResponse.title || dataResponse.original_title || "",
+    imdb: Number(dataResponse.vote_average?.toFixed(1)) || 0,
+    imageSrc: dataResponse.poster_path
+      ? GetMediumImagePath(dataResponse.poster_path)
+      : "",
+    description: dataResponse.overview || "",
+    releasedDate: dataResponse.release_date || "",
+    duration: dataResponse.runtime || 0,
+    genre: dataResponse.genres?.map((g) => g.name).join(", ") || "",
+    country:
+      dataResponse.production_countries?.map((c) => c.name).join(", ") || "",
+    budget: dataResponse.budget || 0,
+    production:
+      dataResponse.production_companies?.map((c) => c.name).join(", ") || "",
+  };
+
+  return { videoKey, detailSection };
 };

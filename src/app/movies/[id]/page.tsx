@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./movie-details.module.scss";
 import { FetchMovieDetails } from "@/lib/apis";
 import { GetVideoUrl, TransformMovieDetailsData } from "@/lib/utils";
+import DetailSection from "@/components/ui/detail-section";
 
 const MovieDetails = async ({
   params: paramsPromise,
@@ -13,7 +14,8 @@ const MovieDetails = async ({
 
   const movieDetailsResponse = await FetchMovieDetails(id);
 
-  const videoKey = TransformMovieDetailsData(movieDetailsResponse);
+  const { videoKey, detailSection } =
+    TransformMovieDetailsData(movieDetailsResponse);
   const videoUrl = GetVideoUrl(videoKey);
 
   return (
@@ -30,7 +32,9 @@ const MovieDetails = async ({
           />
         </div>
       )}
-      <div className={styles.exp}></div>
+      <section className={styles.detailSection}>
+        <DetailSection {...detailSection} />
+      </section>
     </main>
   );
 };

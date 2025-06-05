@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./section-header.module.scss";
-import { SectionHeaderPropsType } from "@/types/propTypes";
 import { DoubleRightArrowIcon } from "@/lib/icons";
 import Link from "next/link";
+
+export type SectionHeaderPropsType = {
+  title: string;
+  isTitleLink?: boolean;
+  link?: string;
+  children?: React.ReactNode;
+};
 
 const SectionHeader = (vm: SectionHeaderPropsType) => {
   return (

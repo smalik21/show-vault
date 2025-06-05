@@ -8,9 +8,22 @@ import CardsContainer from "@/components/ui/cards-container";
 import RadioButtons from "@/components/ui/radio-buttons";
 import SectionHeader from "@/components/ui/section-header";
 import { TransformTrendingData } from "@/lib/utils";
-import { CardPropsType, TrendingPagePropsType } from "@/types/propTypes";
+import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { TRENDING_TYPES } from "@/lib/constants";
+import { DataResponseType } from "@/types/types";
+
+export type TrendingPagePropsType = {
+  initialPage: number;
+  initialTab: string;
+  initialTotal: number;
+  initialDataCount: number;
+  initialTrendingData: CardPropsType[];
+  GetTrending: (
+    trendingType?: string,
+    pageNumber?: number
+  ) => Promise<DataResponseType>;
+};
 
 const TrendingPage = (vm: TrendingPagePropsType) => {
   const router = useRouter();
