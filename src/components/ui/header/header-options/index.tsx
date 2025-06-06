@@ -1,7 +1,7 @@
 import ThemeSwitcher from "./theme-switcher";
 import SearchBar from "./search-bar";
 import styles from "./header-options.module.scss";
-import Button from "../../Button";
+import Button from "../../button";
 
 const HeaderOptions = () => {
   return (

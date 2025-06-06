@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./banner-item.module.scss";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/button";
 import { YellowStarIcon } from "@/lib/icons";
 
 export type BannerItemPropsType = {
