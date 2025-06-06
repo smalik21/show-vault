@@ -10,10 +10,12 @@ import GetUpcomingMovieMock from "@/lib/mocks/GetUpcomingMovie.json";
 import GetMovieGenresMock from "@/lib/mocks/GetMovieGenres.json";
 import GetTVGenresMock from "@/lib/mocks/GetTVGenres.json";
 import GetMovieDetailsMock from "@/lib/mocks/GetMovieDetails.json";
+import GetTVDetailsMock from "@/lib/mocks/GetTVDetails.json";
 import {
   DataResponseType,
   GenreResponseType,
   MovieDetailsResponseType,
+  TVDetailsResponseType,
 } from "@/types/types";
 import { GENRE_MAP } from "./constants";
 
@@ -118,7 +120,17 @@ export const FetchMovieDetails = async (
       setTimeout(() => res(GetMovieDetailsMock), 500)
     );
   }
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?append_to_response=videos&language=en-US`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?append_to_response=videos%2Ccredits%2Csimilar&language=en-US`;
+  return GetApi(url);
+};
+
+export const FetchTVDetails = async (
+  tvId: string | number
+): Promise<TVDetailsResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) => setTimeout(() => res(GetTVDetailsMock), 500));
+  }
+  const url = `https://api.themoviedb.org/3/tv/${tvId}?append_to_response=videos%2Ccredits%2Csimilar&language=en-US`;
   return GetApi(url);
 };
 

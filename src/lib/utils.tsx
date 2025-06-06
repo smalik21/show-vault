@@ -5,19 +5,20 @@ import {
   PersonType,
   ShowDataType,
   ShowType,
+  TVDetailsResponseType,
   VideoType,
 } from "@/types/types";
 import { GENRE_MAP } from "./constants";
 import { DetailSectionPropsType } from "@/components/ui/detail-section";
 import { BannerItemPropsType } from "@/components/home/banner-slideshow/banner-item";
 
-export const GetMediumImagePath = (posterPath?: string) => {
+export const GetMediumImagePath = (posterPath?: string | null) => {
   return posterPath
     ? `https://image.tmdb.org/t/p/w500${posterPath}`
     : "https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 };
 
-export const GetHighImagePath = (backdropPath?: string) => {
+export const GetHighImagePath = (backdropPath?: string | null) => {
   return backdropPath
     ? `https://image.tmdb.org/t/p/w1280${backdropPath}`
     : "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -164,4 +165,38 @@ export const TransformMovieDetailsData = (
   const similarMovies: DataResponseType = dataResponse.similar;
 
   return { videoKey, detailSection, cast, similarMovies };
+};
+
+export const TransformTVDetailsData = (
+  dataResponse: TVDetailsResponseType
+): {
+  videoKey?: string;
+  detailSection: DetailSectionPropsType;
+  cast: PersonType[];
+  similarTV: DataResponseType;
+} => {
+  const videoKey = GetVideoKey(dataResponse.videos?.results);
+
+  const detailSection: DetailSectionPropsType = {
+    type: "movie",
+    title: dataResponse.name || dataResponse.original_name || "",
+    imdb: Number(dataResponse.vote_average?.toFixed(1)) || 0,
+    imageSrc: dataResponse.poster_path
+      ? GetMediumImagePath(dataResponse.poster_path)
+      : "",
+    description: dataResponse.overview || "",
+    releasedDate: dataResponse.first_air_date || "",
+    seasons: dataResponse.number_of_seasons || 0,
+    genre: dataResponse.genres?.map((g) => g.name).join(", ") || "",
+    country:
+      dataResponse.production_countries?.map((c) => c.name).join(", ") || "",
+    networks: dataResponse.networks?.map((n) => n.name).join(", ") || "",
+    production:
+      dataResponse.production_companies?.map((c) => c.name).join(", ") || "",
+  };
+
+  const cast: PersonType[] = dataResponse.credits.cast;
+  const similarTV: DataResponseType = dataResponse.similar;
+
+  return { videoKey, detailSection, cast, similarTV };
 };

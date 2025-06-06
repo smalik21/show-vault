@@ -10,10 +10,12 @@ export type DetailSectionPropsType = {
   imageSrc: string;
   description: string;
   releasedDate: string;
-  duration: number;
+  duration?: number;
+  seasons?: number;
   genre: string;
   country: string;
-  budget: number;
+  budget?: number;
+  networks?: string;
   production: string;
 };
 
@@ -43,10 +45,18 @@ const DetailSection = (vm: DetailSectionPropsType) => {
             <span className={styles.label}>Released:</span>
             <div className={styles.value}>{vm.releasedDate}</div>
           </div>
-          <div className={`${styles.duration} ${styles.field}`}>
-            <span className={styles.label}>Duration:</span>
-            <div className={styles.value}>{vm.duration} minutes</div>
-          </div>
+          {vm.duration && (
+            <div className={`${styles.duration} ${styles.field}`}>
+              <span className={styles.label}>Duration:</span>
+              <div className={styles.value}>{vm.duration} minutes</div>
+            </div>
+          )}
+          {vm.seasons && (
+            <div className={`${styles.seasons} ${styles.field}`}>
+              <span className={styles.label}>Seasons:</span>
+              <div className={styles.value}>{vm.seasons}</div>
+            </div>
+          )}
           <div className={`${styles.genre} ${styles.field}`}>
             <span className={styles.label}>Genre:</span>
             <div className={styles.value}>{vm.genre}</div>
@@ -55,10 +65,18 @@ const DetailSection = (vm: DetailSectionPropsType) => {
             <span className={styles.label}>Country:</span>
             <div className={styles.value}>{vm.country}</div>
           </div>
-          <div className={`${styles.budget} ${styles.field}`}>
-            <span className={styles.label}>Budget:</span>
-            <div className={styles.value}>${vm.budget} M</div>
-          </div>
+          {vm.budget && (
+            <div className={`${styles.budget} ${styles.field}`}>
+              <span className={styles.label}>Budget:</span>
+              <div className={styles.value}>${vm.budget} M</div>
+            </div>
+          )}
+          {vm.networks && (
+            <div className={`${styles.networks} ${styles.field}`}>
+              <span className={styles.label}>Networks:</span>
+              <div className={styles.value}>{vm.networks}</div>
+            </div>
+          )}
           <div className={`${styles.production} ${styles.field}`}>
             <span className={styles.label}>Production:</span>
             <div className={styles.value}>{vm.production}</div>
