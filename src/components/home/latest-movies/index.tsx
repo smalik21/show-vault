@@ -5,13 +5,13 @@ import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import { FetchLatestMovie } from "@/lib/apis";
 import { DataResponseType } from "@/types/types";
-import { TransformLatestData } from "@/lib/utils";
 import { CardPropsType } from "@/types/propTypes";
 import { ROUTE_PATHS } from "@/lib/constants";
+import { TransformDataResponse } from "@/lib/utils";
 
 const LatestMovies = async () => {
   const latestMovieResponse: DataResponseType = await FetchLatestMovie();
-  const latestMovieData: CardPropsType[] = TransformLatestData(
+  const latestMovieData: CardPropsType[] = TransformDataResponse(
     latestMovieResponse,
     "movie"
   );
@@ -20,7 +20,7 @@ const LatestMovies = async () => {
     <div className={styles.latestMovies}>
       <SectionHeader
         title="Latest Movies"
-        isTitleLink
+        isLink
         link={ROUTE_PATHS.HOME_LATEST_MOVIES}
       ></SectionHeader>
       <CardsContainer>

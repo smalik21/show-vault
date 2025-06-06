@@ -6,12 +6,10 @@ import styles from "./trending-section.module.scss";
 import SectionHeader from "@/components/ui/section-header";
 import RadioButtons from "@/components/ui/radio-buttons";
 import { ROUTE_PATHS, TRENDING_TYPES } from "@/lib/constants";
-import Button from "@/components/ui/button";
 import CardItem from "@/components/ui/card-item";
 import { Carousel } from "antd";
 import { CardPropsType } from "@/types/propTypes";
 import { TransformTrendingData } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 import { DataResponseType } from "@/types/types";
 
 export type TrendingSectionPropsType = {
@@ -23,8 +21,6 @@ export type TrendingSectionPropsType = {
 };
 
 const TrendingSection = (vm: TrendingSectionPropsType) => {
-  const router = useRouter();
-
   const [selectedTrendingType, setSelectedTrendingType] =
     useState<string>("all");
   const [trendingData, setTrendingData] = useState<CardPropsType[]>(
@@ -44,13 +40,13 @@ const TrendingSection = (vm: TrendingSectionPropsType) => {
     fetchTrendingData(type);
   };
 
-  const handleViewAllClick = () => {
-    router.push(ROUTE_PATHS.HOME_TRENDING_VIEW_ALL);
-  };
-
   return (
     <div className={styles.trendingSection}>
-      <SectionHeader title="Trending">
+      <SectionHeader
+        title="Trending"
+        link={ROUTE_PATHS.HOME_TRENDING_VIEW_ALL}
+        viewAllBtn
+      >
         <div className={styles.toggleTypeButtons}>
           <RadioButtons
             selectedValue={selectedTrendingType}
@@ -64,11 +60,6 @@ const TrendingSection = (vm: TrendingSectionPropsType) => {
             borderRadius="md"
             fontWeight={200}
           />
-        </div>
-        <div className={styles.viewAllButton}>
-          <Button textColor="gray" textSize="lg" onClick={handleViewAllClick}>
-            View All
-          </Button>
         </div>
       </SectionHeader>
       <div className={styles.trendingContent}>

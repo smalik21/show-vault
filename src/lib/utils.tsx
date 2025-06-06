@@ -2,6 +2,7 @@ import { CardPropsType } from "@/types/propTypes";
 import {
   DataResponseType,
   MovieDetailsResponseType,
+  PersonType,
   ShowDataType,
   ShowType,
   VideoType,
@@ -47,11 +48,11 @@ export const GetVideoThumbnail = (videoKey?: string) => {
 export const GetTransformDataFunction = (showDataType: ShowDataType) => {
   switch (showDataType) {
     case "popular":
-      return TransformPopularData;
+      return TransformDataResponse;
     case "latest":
-      return TransformLatestData;
+      return TransformDataResponse;
     default:
-      return TransformPopularData;
+      return TransformDataResponse;
   }
 };
 
@@ -104,32 +105,7 @@ export const TransformTrendingData = (
   return transformedData;
 };
 
-export const TransformLatestData = (
-  dataResponse: DataResponseType,
-  showType: ShowType
-): CardPropsType[] => {
-  if (!dataResponse || !Array.isArray(dataResponse.results)) {
-    return [];
-  }
-
-  const transformedData: CardPropsType[] = dataResponse.results.map((item) => {
-    return {
-      id: item.id,
-      title: item.title || item.name || "",
-      releaseYear:
-        item.release_date?.split("-")[0] ||
-        item.first_air_date?.split("-")[0] ||
-        "",
-      imageSrc: GetMediumImagePath(item.poster_path),
-      imdb: Number(item.vote_average.toFixed(1)),
-      showType: showType,
-    } as CardPropsType;
-  });
-
-  return transformedData;
-};
-
-export const TransformPopularData = (
+export const TransformDataResponse = (
   dataResponse: DataResponseType,
   showType: ShowType
 ): CardPropsType[] => {
@@ -156,7 +132,12 @@ export const TransformPopularData = (
 
 export const TransformMovieDetailsData = (
   dataResponse: MovieDetailsResponseType
-): { videoKey?: string; detailSection: DetailSectionPropsType } => {
+): {
+  videoKey?: string;
+  detailSection: DetailSectionPropsType;
+  cast: PersonType[];
+  similarMovies: DataResponseType;
+} => {
   const videoKey = GetVideoKey(dataResponse.videos?.results);
 
   const detailSection: DetailSectionPropsType = {
@@ -179,5 +160,8 @@ export const TransformMovieDetailsData = (
       dataResponse.production_companies?.map((c) => c.name).join(", ") || "",
   };
 
-  return { videoKey, detailSection };
+  const cast: PersonType[] = dataResponse.credits.cast;
+  const similarMovies: DataResponseType = dataResponse.similar;
+
+  return { videoKey, detailSection, cast, similarMovies };
 };

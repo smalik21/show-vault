@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./latest.module.scss";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { FetchLatestMovie } from "@/lib/apis";
-import { TransformLatestData } from "@/lib/utils";
 import { GetLatestMovie } from "@/lib/actions";
+import { TransformDataResponse } from "@/lib/utils";
 
 const LatestMovies = async ({
   searchParams: searchParamsPromise,
@@ -16,7 +16,7 @@ const LatestMovies = async ({
   const initialLatestDataReponse = await FetchLatestMovie(page);
   const initialTotal = initialLatestDataReponse.total_results;
   const initialDataCount = initialLatestDataReponse.results.length;
-  const initialLatestData = TransformLatestData(
+  const initialLatestData = TransformDataResponse(
     initialLatestDataReponse,
     "movie"
   );

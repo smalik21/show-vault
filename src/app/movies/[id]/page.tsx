@@ -1,8 +1,17 @@
 import React from "react";
 import styles from "./movie-details.module.scss";
 import { FetchMovieDetails } from "@/lib/apis";
-import { GetVideoUrl, TransformMovieDetailsData } from "@/lib/utils";
+import {
+  GetVideoUrl,
+  TransformDataResponse,
+  TransformMovieDetailsData,
+} from "@/lib/utils";
 import DetailSection from "@/components/ui/detail-section";
+import CastSection from "@/components/ui/cast-section";
+import SectionHeader from "@/components/ui/section-header";
+import CardsContainer from "@/components/ui/cards-container";
+import CardItem from "@/components/ui/card-item";
+import { ROUTE_PATHS } from "@/lib/constants";
 
 const MovieDetails = async ({
   params: paramsPromise,
@@ -14,9 +23,12 @@ const MovieDetails = async ({
 
   const movieDetailsResponse = await FetchMovieDetails(id);
 
-  const { videoKey, detailSection } =
+  const { videoKey, detailSection, cast, similarMovies } =
     TransformMovieDetailsData(movieDetailsResponse);
+
   const videoUrl = GetVideoUrl(videoKey);
+
+  const similarMoviesData = TransformDataResponse(similarMovies, "movie");
 
   return (
     <main className={styles.movieDetails}>
@@ -34,6 +46,29 @@ const MovieDetails = async ({
       )}
       <section className={styles.detailSection}>
         <DetailSection {...detailSection} />
+      </section>
+      <section className={styles.castSection}>
+        <CastSection cast={cast} />
+      </section>
+      <section className={styles.similarSection}>
+        <SectionHeader
+          title="You May Also Like"
+          link={ROUTE_PATHS.HOME_LATEST_MOVIES}
+          viewAllBtn
+        ></SectionHeader>
+        <CardsContainer>
+          {similarMoviesData.map((item) => (
+            <CardItem
+              key={`card-item-${item.id}`}
+              id={item.id}
+              imageSrc={item.imageSrc}
+              title={item.title}
+              releaseYear={item.releaseYear}
+              imdb={item.imdb}
+              showType={item.showType}
+            />
+          ))}
+        </CardsContainer>
       </section>
     </main>
   );

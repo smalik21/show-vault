@@ -5,13 +5,13 @@ import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import { DataResponseType } from "@/types/types";
 import { CardPropsType } from "@/types/propTypes";
-import { TransformLatestData } from "@/lib/utils";
 import { FetchLatestTV } from "@/lib/apis";
 import { ROUTE_PATHS } from "@/lib/constants";
+import { TransformDataResponse } from "@/lib/utils";
 
 const LatestShows = async () => {
   const latestTVResponse: DataResponseType = await FetchLatestTV();
-  const latestTVData: CardPropsType[] = TransformLatestData(
+  const latestTVData: CardPropsType[] = TransformDataResponse(
     latestTVResponse,
     "tv"
   );
@@ -20,7 +20,7 @@ const LatestShows = async () => {
     <div className={styles.latestShows}>
       <SectionHeader
         title="Latest TV Shows"
-        isTitleLink
+        isLink
         link={ROUTE_PATHS.HOME_LATEST_TV_SHOWS}
       ></SectionHeader>
       <CardsContainer>
