@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./section-header.module.scss";
 import { DoubleRightArrowIcon } from "@/lib/icons";
 import Link from "next/link";
-import Button from "../button";
+import Button from "../Button";
 
 export type SectionHeaderPropsType = {
   title: string;

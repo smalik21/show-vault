@@ -1,7 +1,7 @@
 "use client";
 
 import { BorderRadius, Padding, PresetColor, TextSize } from "@/types/types";
-import styles from "./button.module.scss";
+import styles from "./Button.module.scss";
 import clsx from "clsx";
 
 export type ButtonPropsType = {
