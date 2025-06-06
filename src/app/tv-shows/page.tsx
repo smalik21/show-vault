@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./tv-shows.module.scss";
 import { FetchPopularTV } from "@/lib/apis";
-import { TransformPopularData } from "@/lib/utils";
 import { GetPopularTV } from "@/lib/actions";
 import PaginatedCards from "@/components/ui/paginated-cards";
+import { TransformDataResponse } from "@/lib/utils";
 
 const TVShows = async ({
   searchParams: searchParamsPromise,
@@ -16,7 +16,7 @@ const TVShows = async ({
   const initialPopularDataReponse = await FetchPopularTV(page);
   const initialTotal = initialPopularDataReponse.total_results;
   const initialDataCount = initialPopularDataReponse.results.length;
-  const initialPopularData = TransformPopularData(
+  const initialPopularData = TransformDataResponse(
     initialPopularDataReponse,
     "tv"
   );

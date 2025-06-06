@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./latest.module.scss";
 import PaginatedCards from "@/components/ui/paginated-cards";
-import { TransformLatestData } from "@/lib/utils";
+import { TransformDataResponse } from "@/lib/utils";
 import { FetchLatestTV } from "@/lib/apis";
 import { GetLatestTV } from "@/lib/actions";
 
@@ -16,7 +16,10 @@ const LatestTVShows = async ({
   const initialLatestDataReponse = await FetchLatestTV(page);
   const initialTotal = initialLatestDataReponse.total_results;
   const initialDataCount = initialLatestDataReponse.results.length;
-  const initialLatestData = TransformLatestData(initialLatestDataReponse, "tv");
+  const initialLatestData = TransformDataResponse(
+    initialLatestDataReponse,
+    "tv"
+  );
 
   return (
     <main className={styles.latestTVShows}>
