@@ -32,10 +32,12 @@ const CardItem = (vm: CardPropsType) => {
         <div className={styles.title}>{vm.title}</div>
         <div className={styles.cardDetails}>
           <span className={styles.releaseYear}>{vm.releaseYear}</span>
-          <span className={styles.imdb}>
-            <YellowStarIcon width={13} height={12} />
-            <span>{vm.imdb}</span>
-          </span>
+          {vm.imdb && (
+            <span className={styles.imdb}>
+              <YellowStarIcon width={13} height={12} />
+              <span>{vm.imdb}</span>
+            </span>
+          )}
           <span className={styles.showType}>
             {vm.showType === "movie" ? "Movie" : "TV"}
           </span>

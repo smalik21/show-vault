@@ -33,11 +33,13 @@ const DetailSection = (vm: DetailSectionPropsType) => {
       <div className={styles.detailContent}>
         <div className={styles.detailHeader}>
           <div className={styles.title}>{vm.title}</div>
-          <div className={styles.imdb}>
-            <YellowStarIcon />
-            <span className={styles.rating}>{vm.imdb}</span>
-            <span>/ 10</span>
-          </div>
+          {vm.imdb && (
+            <div className={styles.imdb}>
+              <YellowStarIcon />
+              <span className={styles.rating}>{vm.imdb}</span>
+              <span>/ 10</span>
+            </div>
+          )}
         </div>
         <div className={styles.description}>{vm.description}</div>
         <div className={styles.details}>

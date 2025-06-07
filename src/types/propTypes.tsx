@@ -11,6 +11,6 @@ export type CardPropsType = {
   imageSrc: string;
   title: string;
   releaseYear: string;
-  imdb: number;
+  imdb?: number;
   showType: ShowType;
 };

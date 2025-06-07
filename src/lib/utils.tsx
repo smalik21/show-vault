@@ -60,10 +60,10 @@ export const GetTransformDataFunction = (showDataType: ShowDataType) => {
 export const formatBudget = (budget?: number): string => {
   if (!budget || budget <= 0) return "N/A";
   if (budget >= 1_000_000_000) {
-    return `$${(budget / 1_000_000_000).toFixed(2)} B`;
+    return `$${(budget / 1_000_000_000)?.toFixed(2)} B`;
   }
   if (budget >= 1_000_000) {
-    return `$${(budget / 1_000_000).toFixed(2)} M`;
+    return `$${(budget / 1_000_000)?.toFixed(2)} M`;
   }
   if (budget >= 1_000) {
     return `$${budget.toLocaleString()}`;
@@ -85,7 +85,7 @@ export const TransformBannerData = (
         title: item.title || item.name || "",
         description: item.overview || "",
         imageSrc: GetHighImagePath(item.backdrop_path ?? item.poster_path),
-        imdb: Number(item.vote_average.toFixed(1)),
+        imdb: Number(item.vote_average?.toFixed(1)),
         genre: item.genre_ids.map((id) => GENRE_MAP[id] || id.toString()),
       } as BannerItemPropsType;
     }
@@ -111,7 +111,7 @@ export const TransformTrendingData = (
           item.first_air_date?.split("-")[0] ||
           "",
         imageSrc: GetMediumImagePath(item.poster_path),
-        imdb: Number(item.vote_average.toFixed(1)),
+        imdb: Number(item.vote_average?.toFixed(1)),
         showType: item.media_type,
       } as CardPropsType;
     }
@@ -137,7 +137,7 @@ export const TransformDataResponse = (
         item.first_air_date?.split("-")[0] ||
         "",
       imageSrc: GetMediumImagePath(item.poster_path),
-      imdb: Number(item.vote_average.toFixed(1)),
+      imdb: Number(item.vote_average?.toFixed(1)),
       showType: showType,
     } as CardPropsType;
   });
@@ -158,7 +158,7 @@ export const TransformMovieDetailsData = (
   const detailSection: DetailSectionPropsType = {
     type: "movie",
     title: dataResponse.title || dataResponse.original_title || "",
-    imdb: Number(dataResponse.vote_average?.toFixed(1)) || 0,
+    imdb: Number(dataResponse.vote_average?.toFixed(1)),
     imageSrc: dataResponse.poster_path
       ? GetMediumImagePath(dataResponse.poster_path)
       : "",
@@ -192,7 +192,7 @@ export const TransformTVDetailsData = (
   const detailSection: DetailSectionPropsType = {
     type: "movie",
     title: dataResponse.name || dataResponse.original_name || "",
-    imdb: Number(dataResponse.vote_average?.toFixed(1)) || 0,
+    imdb: Number(dataResponse.vote_average?.toFixed(1)),
     imageSrc: dataResponse.poster_path
       ? GetMediumImagePath(dataResponse.poster_path)
       : "",
