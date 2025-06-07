@@ -35,7 +35,6 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
   const [cardData, setCardData] = useState<CardPropsType[]>(
     vm.initialTrendingData
   );
-  const [totalResults, setTotalResults] = useState<number>(vm.initialTotal);
 
   const createQueryString = useCallback(
     (tab: string, page: number) => {
@@ -52,7 +51,6 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
     async (selectedTab: string, pageNumber: number) => {
       const newData = await vm.GetTrending(selectedTab, pageNumber);
       setCardData(TransformTrendingData(newData));
-      setTotalResults(newData.total_results);
     },
     [vm]
   );
@@ -91,7 +89,7 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
-          total={totalResults}
+          total={vm.initialTotal}
           pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
@@ -114,7 +112,7 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
-          total={totalResults}
+          total={vm.initialTotal}
           pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}

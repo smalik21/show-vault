@@ -32,7 +32,6 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
 
   const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
   const [cardData, setCardData] = useState<CardPropsType[]>(vm.initialData);
-  const [totalResults, setTotalResults] = useState<number>(vm.initialTotal);
 
   const createQueryString = useCallback(
     (page: number) => {
@@ -54,7 +53,6 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
           newData = await vm.GetData(pageNumber);
         }
         setCardData(TransformData(newData, vm.mediaType));
-        setTotalResults(newData.total_results);
       } catch {
         setCardData([]);
       }
@@ -74,7 +72,7 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
-          total={totalResults}
+          total={vm.initialTotal}
           pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
@@ -100,7 +98,7 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
-          total={totalResults}
+          total={vm.initialTotal}
           pageSize={vm.initialDataCount}
           onChange={handlePageChange}
           showSizeChanger={false}

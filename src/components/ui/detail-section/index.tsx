@@ -49,11 +49,13 @@ const DetailSection = (vm: DetailSectionPropsType) => {
         </div>
         <div className={styles.description}>{vm.description}</div>
         <div className={styles.details}>
-          <div className={`${styles.releasedDate} ${styles.field}`}>
-            <span className={styles.label}>Released:</span>
-            <div className={styles.value}>{vm.releasedDate}</div>
-          </div>
-          {vm.duration && (
+          {vm.releasedDate && (
+            <div className={`${styles.releasedDate} ${styles.field}`}>
+              <span className={styles.label}>Released:</span>
+              <div className={styles.value}>{vm.releasedDate}</div>
+            </div>
+          )}
+          {typeof vm.duration === "number" && vm.duration > 0 && (
             <div className={`${styles.duration} ${styles.field}`}>
               <span className={styles.label}>Duration:</span>
               <div className={styles.value}>{vm.duration} minutes</div>
@@ -65,14 +67,18 @@ const DetailSection = (vm: DetailSectionPropsType) => {
               <div className={styles.value}>{vm.seasons}</div>
             </div>
           )}
-          <div className={`${styles.genre} ${styles.field}`}>
-            <span className={styles.label}>Genre:</span>
-            <div className={styles.value}>{vm.genre}</div>
-          </div>
-          <div className={`${styles.country} ${styles.field}`}>
-            <span className={styles.label}>Country:</span>
-            <div className={styles.value}>{vm.country}</div>
-          </div>
+          {vm.genre && (
+            <div className={`${styles.genre} ${styles.field}`}>
+              <span className={styles.label}>Genre:</span>
+              <div className={styles.value}>{vm.genre}</div>
+            </div>
+          )}
+          {vm.country && (
+            <div className={`${styles.country} ${styles.field}`}>
+              <span className={styles.label}>Country:</span>
+              <div className={styles.value}>{vm.country}</div>
+            </div>
+          )}
           {vm.budget && (
             <div className={`${styles.budget} ${styles.field}`}>
               <span className={styles.label}>Budget:</span>
@@ -85,10 +91,12 @@ const DetailSection = (vm: DetailSectionPropsType) => {
               <div className={styles.value}>{vm.networks}</div>
             </div>
           )}
-          <div className={`${styles.production} ${styles.field}`}>
-            <span className={styles.label}>Production:</span>
-            <div className={styles.value}>{vm.production}</div>
-          </div>
+          {vm.production && (
+            <div className={`${styles.production} ${styles.field}`}>
+              <span className={styles.label}>Production:</span>
+              <div className={styles.value}>{vm.production}</div>
+            </div>
+          )}
         </div>
       </div>
     </div>
