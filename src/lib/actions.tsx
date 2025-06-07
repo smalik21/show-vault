@@ -6,6 +6,8 @@ import {
   FetchLatestTV,
   FetchPopularMovie,
   FetchPopularTV,
+  FetchSimilarMovie,
+  FetchSimilarTV,
   FetchTrending,
 } from "./apis";
 
@@ -55,6 +57,28 @@ export const GetLatestTV = async (
 ): Promise<DataResponseType> => {
   try {
     return await FetchLatestTV(pageNumber);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetSimilarMovie = async (
+  id: number,
+  pageNumber: number = 1
+): Promise<DataResponseType> => {
+  try {
+    return await FetchSimilarMovie(id, pageNumber);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetSimilarTV = async (
+  id: number,
+  pageNumber: number = 1
+): Promise<DataResponseType> => {
+  try {
+    return await FetchSimilarTV(id, pageNumber);
   } catch (error) {
     throw error;
   }

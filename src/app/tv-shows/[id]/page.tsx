@@ -11,7 +11,6 @@ import CastSection from "@/components/ui/cast-section";
 import SectionHeader from "@/components/ui/section-header";
 import CardsContainer from "@/components/ui/cards-container";
 import CardItem from "@/components/ui/card-item";
-import { ROUTE_PATHS } from "@/lib/constants";
 
 const TvDetails = async ({
   params: paramsPromise,
@@ -53,7 +52,7 @@ const TvDetails = async ({
       <section className={styles.similarSection}>
         <SectionHeader
           title="You May Also Like"
-          link={ROUTE_PATHS.HOME_LATEST_TV_SHOWS}
+          link={`/tv-shows/${id}/similar`}
           viewAllBtn
         ></SectionHeader>
         <CardsContainer>

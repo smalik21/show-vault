@@ -9,7 +9,7 @@ import SectionHeader from "@/components/ui/section-header";
 import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { GetTransformDataFunction } from "@/lib/utils";
-import { DataResponseType, ShowDataType, ShowType } from "@/types/types";
+import { GetDataFunctionType, ShowDataType, ShowType } from "@/types/types";
 
 export type PaginatedCardsPropsType = {
   headerTitle: string;
@@ -19,7 +19,8 @@ export type PaginatedCardsPropsType = {
   initialData: CardPropsType[];
   mediaType: ShowType;
   showDataType: ShowDataType;
-  GetData: (pageNumber?: number) => Promise<DataResponseType>;
+  id?: number;
+  GetData: GetDataFunctionType;
 };
 
 const PaginatedCards = (vm: PaginatedCardsPropsType) => {
@@ -45,7 +46,12 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
 
   const fetchNewData = useCallback(
     async (pageNumber: number) => {
-      const newData = await vm.GetData(pageNumber);
+      let newData;
+      if (vm.id) {
+        newData = await vm.GetData(vm.id, pageNumber);
+      } else {
+        newData = await vm.GetData(pageNumber);
+      }
       setCardData(TransformData(newData, vm.mediaType));
       setTotalResults(newData.total_results);
     },

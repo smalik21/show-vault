@@ -1,3 +1,12 @@
+import {
+  GetLatestMovie,
+  GetLatestTV,
+  GetPopularMovie,
+  GetPopularTV,
+  GetSimilarMovie,
+  GetSimilarTV,
+} from "@/lib/actions";
+
 export type ThemeType = "light" | "dark";
 
 export type TextSize = "xs" | "sm" | "md" | "lg";
@@ -25,6 +34,14 @@ export type Option = {
 export type ShowType = "movie" | "tv";
 
 export type ShowDataType = "popular" | "latest";
+
+export type GetDataFunctionType =
+  | typeof GetPopularMovie
+  | typeof GetPopularTV
+  | typeof GetLatestMovie
+  | typeof GetLatestTV
+  | typeof GetSimilarMovie
+  | typeof GetSimilarTV;
 
 export type LinkType = {
   name: string;

@@ -1,0 +1,407 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/vHP2az8Ly2ZAJWGHFlux7QpAN2Q.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        80,
+        16,
+        28
+      ],
+      "id": 1175942,
+      "original_language": "en",
+      "original_title": "The Bad Guys 2",
+      "overview": "The now-reformed Bad Guys are trying (very, very hard) to be good, but instead find themselves hijacked into a high-stakes, globe-trotting heist, masterminded by a new team of criminals they never saw coming: The Bad Girls.",
+      "popularity": 8.2011,
+      "poster_path": "/mFVdwAnHCUg49S8Q1XFrJotPyIF.jpg",
+      "release_date": "2025-07-25",
+      "title": "The Bad Guys 2",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/b6rlXj7shaWUrNmmDzll8kVBya5.jpg",
+      "genre_ids": [
+        10402,
+        14,
+        12
+      ],
+      "id": 24961,
+      "original_language": "en",
+      "original_title": "The Wiz",
+      "overview": "Dorothy Gale, a shy kindergarten teacher, is swept away to the magic land of Oz where she embarks on a quest to return home.",
+      "popularity": 2.7141,
+      "poster_path": "/rgKukXAbkpIv8pYKwKaj8IDunPq.jpg",
+      "release_date": "1978-10-24",
+      "title": "The Wiz",
+      "video": false,
+      "vote_average": 6,
+      "vote_count": 267
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vmzJix9GgPSFyvxD25WIkXGEpHU.jpg",
+      "genre_ids": [
+        16,
+        10749,
+        878,
+        53
+      ],
+      "id": 28214,
+      "original_language": "ja",
+      "original_title": "11人いる!",
+      "overview": "A group of students from the Cosmo Academy are about to take their final exam: surviving for over fifty days in a derelict ship. But when they arrive, they discover that instead of ten students, there are eleven. One of them doesn't belong there...",
+      "popularity": 1.3175,
+      "poster_path": "/pvjfW8ugP3Z3jjr4F8ANieuNBZg.jpg",
+      "release_date": "1986-11-01",
+      "title": "They Were Eleven",
+      "video": false,
+      "vote_average": 6.391,
+      "vote_count": 23
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mtrfLUfUoQunolDhmQy0GfbRclC.jpg",
+      "genre_ids": [
+        14,
+        12,
+        28
+      ],
+      "id": 27022,
+      "original_language": "en",
+      "original_title": "The Sorcerer's Apprentice",
+      "overview": "Balthazar Blake is a master sorcerer in modern-day Manhattan trying to defend the city from his arch-nemesis, Maxim Horvath. Balthazar can't do it alone, so he recruits Dave Stutler, a seemingly average guy who demonstrates hidden potential, as his reluctant protégé. The sorcerer gives his unwilling accomplice a crash course in the art and science of magic, and together, these unlikely partners work to stop the forces of darkness.",
+      "popularity": 6.0926,
+      "poster_path": "/kffWPQfYLkjsoYEBlFpzqVoTfCV.jpg",
+      "release_date": "2010-07-13",
+      "title": "The Sorcerer's Apprentice",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 5043
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oZQNh7OuSsLyPDyyEXPOFILQ6ko.jpg",
+      "genre_ids": [
+        35,
+        27,
+        878,
+        28
+      ],
+      "id": 28165,
+      "original_language": "en",
+      "original_title": "The Toxic Avenger Part II",
+      "overview": "Melvin Junko was a nerdy weakling until he fell into a vat of toxic waste, turning him into the first ever superhuman creature from New Jersey. This time, he takes on Tokyo.",
+      "popularity": 1.0989,
+      "poster_path": "/m5o7B3VSAjvinjtSYxXD38senvb.jpg",
+      "release_date": "1989-07-15",
+      "title": "The Toxic Avenger Part II",
+      "video": false,
+      "vote_average": 5.5,
+      "vote_count": 177
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7nkc6FEalesKjvW1lWDlObdjWa4.jpg",
+      "genre_ids": [
+        35,
+        27,
+        878,
+        28,
+        14
+      ],
+      "id": 28169,
+      "original_language": "en",
+      "original_title": "The Toxic Avenger Part III: The Last Temptation of Toxie",
+      "overview": "Desperate to raise money for the experimental surgery that could restore his blind fiancee's eyesight, Toxie accepts a lucrative job with the evil multinational conglomerate Apocalypse Inc.",
+      "popularity": 1.0881,
+      "poster_path": "/yEOliKp5hZIBR0lDr9L3mJLijT0.jpg",
+      "release_date": "1989-11-24",
+      "title": "The Toxic Avenger Part III: The Last Temptation of Toxie",
+      "video": false,
+      "vote_average": 5,
+      "vote_count": 129
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ccFavvHGfhA5yI32K0bzDjlyKSN.jpg",
+      "genre_ids": [
+        28,
+        18,
+        878
+      ],
+      "id": 813477,
+      "original_language": "ja",
+      "original_title": "シン・仮面ライダー",
+      "overview": "A man forced to bear power and stripped of humanity. A woman skeptical of happiness. Takeshi Hongo, an Augmentation made by SHOCKER, and Ruriko Midorikawa, a rebel of the organization, escape while fighting off assassins. What’s justice? What’s evil? Will this violence end? Despite his power, Hongo tries to remain human. Along with freedom, Ruriko has regained a heart. What paths will they choose?",
+      "popularity": 4.5845,
+      "poster_path": "/9dTO2RygcDT0cQkawABw4QkDegN.jpg",
+      "release_date": "2023-03-17",
+      "title": "Shin Kamen Rider",
+      "video": false,
+      "vote_average": 6.934,
+      "vote_count": 287
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9mttNP2HkWkWagWOnt8HvZj32EH.jpg",
+      "genre_ids": [
+        12,
+        35,
+        14
+      ],
+      "id": 28482,
+      "original_language": "es",
+      "original_title": "Supersonic Man",
+      "overview": "Kronos, hero of a distant galaxy, tangles with mad scientist Gulik over the fate of mankind.",
+      "popularity": 1.0331,
+      "poster_path": "/wDS3sn31OvkweYxGsGPQRAVLoog.jpg",
+      "release_date": "1979-08-06",
+      "title": "Supersonic Man",
+      "video": false,
+      "vote_average": 3.7,
+      "vote_count": 29
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/eNi2UOw9qg1ySBOJLPwVOdtz6yY.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878,
+        14,
+        18
+      ],
+      "id": 625985,
+      "original_language": "ja",
+      "original_title": "仮面ライダージオウ NEXT TIME ゲイツ、マジェスティ",
+      "overview": "It's September 2018, and a group of high school students are more than ever excited to pursue their dreams. Sougo Tokiwa wants to become a desirable king, and Keito \"Geiz\" Myokoin works tirelessly to become the true judo champion while trying to impress his crush, Alpina Tsukuyomi. However, one day Geiz suffers a career-ending injury during a judo match in a judo tournament, forcing him to give up his dream of become a judo champion. While still grieving, he was met by a mysterious man, who wanted to give Geiz a Ridewatch and a Driver.  \"My name is Woz, I came here to guide you to become a savior. If not, Sougo Tokiwa will become the worst and evillest demon king.\" Meanwhile, a new transfer student leads him to nothing but one grand conspiracy.",
+      "popularity": 0.8179,
+      "poster_path": "/mew5d3ZzFfVxFyPZ8ydJb18UOpr.jpg",
+      "release_date": "2020-02-28",
+      "title": "Kamen Rider Zi-O NEXT TIME: Geiz, Majesty",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 12
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/74cUvovyoMQ1S9zy5f5JmRm4TgU.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 30806,
+      "original_language": "en",
+      "original_title": "Out for a Kill",
+      "overview": "An unsuspecting university professor is an unwitting accomplice in a foiled Chinese cocaine deal. Wrongly imprisoned, he escapes to take his revenge and prove his innocence.",
+      "popularity": 1.4988,
+      "poster_path": "/7YIdZK06KAmbaNCeUy79zjteHmO.jpg",
+      "release_date": "2003-08-14",
+      "title": "Out for a Kill",
+      "video": false,
+      "vote_average": 4,
+      "vote_count": 146
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oVw22uFJaEzl1j0UTewhCXmvRz5.jpg",
+      "genre_ids": [
+        16,
+        35,
+        878
+      ],
+      "id": 30863,
+      "original_language": "en",
+      "original_title": "Mutant Aliens",
+      "overview": "An unlikely crew – an astronaut, his intrepid daughter, and a quintet of sympathetic, albeit violent, alien creatures – seek revenge against a space industry baron.",
+      "popularity": 0.9932,
+      "poster_path": "/f6doYuJsaciPllLKy2VGWGLWXaV.jpg",
+      "release_date": "2002-06-14",
+      "title": "Mutant Aliens",
+      "video": false,
+      "vote_average": 6.185,
+      "vote_count": 27
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sE5gqaRgOSAQ2AYVDjxmsfeJVTu.jpg",
+      "genre_ids": [
+        878,
+        28
+      ],
+      "id": 31278,
+      "original_language": "it",
+      "original_title": "L'uomo puma",
+      "overview": "Thousands of years ago, aliens visited Earth and fathered the Pumaman, a man-god with supernatural powers entrusted by a gold mask with the ability to control people's minds, which in present-day London, falls into the wrong hands.",
+      "popularity": 0.7799,
+      "poster_path": "/1cmJeLWhqezudWa168KKy4REFbp.jpg",
+      "release_date": "1980-02-14",
+      "title": "Pumaman",
+      "video": false,
+      "vote_average": 2.8,
+      "vote_count": 74
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        35,
+        28,
+        80
+      ],
+      "id": 1181426,
+      "original_language": "en",
+      "original_title": "A Gentleman of Leisure",
+      "overview": "A young New York society man makes a bet that he can rob a house and get away without being caught by the police. Things turn out to be not as easy as they seem.",
+      "popularity": 0.5339,
+      "poster_path": "/wd5yWbtbRGBEg3r043DFh6pVycS.jpg",
+      "release_date": "1915-03-01",
+      "title": "A Gentleman of Leisure",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tqnXgk4DCX7fWU0AugkCJHQ4Ybq.jpg",
+      "genre_ids": [
+        878,
+        16,
+        28,
+        14
+      ],
+      "id": 30675,
+      "original_language": "en",
+      "original_title": "Planet Hulk",
+      "overview": "When the Hulk's presence on Earth becomes too great a risk, the Illuminati trick him to board a shuttle destined for a planet where he will be able to live in peace, and launch it into space. The Hulk's struggle to escape causes the shuttle to malfunction and crash land on the planet Sakaar, however, where he is sold into slavery and trained as a gladiator.",
+      "popularity": 2.7774,
+      "poster_path": "/5wCzY3sAs6zHIzzHIcTKN2g0pu8.jpg",
+      "release_date": "2010-02-02",
+      "title": "Planet Hulk",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 513
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/78VgXHQwXKeua0RYLkbIScwXEgR.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 30733,
+      "original_language": "en",
+      "original_title": "Rod Steele 0014: You Only Live Until You Die",
+      "overview": "Rod Steele (aka Agent 0014) is anything but the world's greatest super spy, but when diabolical villainess Tangerina threatens the world again, he's the world's last and only hope.",
+      "popularity": 1.0268,
+      "poster_path": "/vVxKzT8NWqr08Bv9ZbmSjWFFxd1.jpg",
+      "release_date": "1997-01-05",
+      "title": "Rod Steele 0014: You Only Live Until You Die",
+      "video": false,
+      "vote_average": 5.455,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/s4EPSbpbnf20oWq64lKRn28Yx7J.jpg",
+      "genre_ids": [
+        878
+      ],
+      "id": 1003596,
+      "original_language": "en",
+      "original_title": "Avengers: Doomsday",
+      "overview": "The Avengers, Wakandans, Fantastic Four, Thunderbolts, and X-Men all fight against Doctor Doom. Plot TBA.",
+      "popularity": 8.0036,
+      "poster_path": "/6eB2oh1SplddsZYCdayrIdrIGLd.jpg",
+      "release_date": "2026-12-18",
+      "title": "Avengers: Doomsday",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/h0rLRgh21cQS2Mrou9fEcZQuaku.jpg",
+      "genre_ids": [
+        878
+      ],
+      "id": 1003598,
+      "original_language": "en",
+      "original_title": "Avengers: Secret Wars",
+      "overview": "An upcoming film in Phase 6 of the Marvel Cinematic Universe (MCU) and the finale of The Multiverse Saga. Plot TBA.",
+      "popularity": 6.198,
+      "poster_path": "/f0YBuh4hyiAheXhh4JnJWoKi9g5.jpg",
+      "release_date": "2027-12-15",
+      "title": "Avengers: Secret Wars",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zlfNpyumsbMhmQnq9GqSdFqHrzy.jpg",
+      "genre_ids": [
+        12,
+        16,
+        28
+      ],
+      "id": 284274,
+      "original_language": "en",
+      "original_title": "Iron Man & Captain America: Heroes United",
+      "overview": "Iron Man and Captain America battle to keep the Red Skull and his triggerman, Taskmaster, from unleashing an army of Hydra Brutes on the world!  Sequel to the film \"Iron Man & Hulk: Heroes United\" and feature Iron Man teaming up with Captain America, it comes to accompany the live-action film \"Captain America: The Winter Soldier\".",
+      "popularity": 2.4856,
+      "poster_path": "/AcFFHZGkpLUs31bKf42z8UVLimS.jpg",
+      "release_date": "2014-07-29",
+      "title": "Iron Man & Captain America: Heroes United",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 161
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gxs7ArZHUkBvRhBJReOSBaDEYPf.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 284279,
+      "original_language": "no",
+      "original_title": "Børning",
+      "overview": "For all who remember Cannonball Run. Here is a modern twist on the subject. The longest, wildest and funniest car race, ever. From Oslo to the North Cape. The only rule is getting there first!",
+      "popularity": 1.9235,
+      "poster_path": "/vEjOaUbG3AtNlfnS1UIWa13WtlG.jpg",
+      "release_date": "2014-08-13",
+      "title": "Burning",
+      "video": false,
+      "vote_average": 6.347,
+      "vote_count": 98
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xhvzbyZVf6C6Uf64fjeQhzd6UKn.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 284514,
+      "original_language": "es",
+      "original_title": "Anacleto: Agente secreto",
+      "overview": "Adolfo, a thirty something security guard, is going through a bad patch. Not only his lifetime girlfriend has just to finished with him to be a guy with no ambition but, moreover, he becomes the target of a series of thugs led by Vázquez, a dangerous criminal who has just escaped from jail. Also he discovers that his father has a double identity. He is not a farmer engaged in the production of cold meat – as Adolfo has believed all his life, but Anacleto, a secret agent who is a bit down and the man who locked Vázquez up in jail thirty years ago. Adolfo will have to leave his comfort zone and work with his father, the person that Adolfo get on worse with in the world to survive the revenge of Vazquez and while, between shootouts and chases, trying to get his girlfriend back.",
+      "popularity": 1.018,
+      "poster_path": "/fRAlUIsJ0yfcAslfMIZOPm6ftUS.jpg",
+      "release_date": "2015-09-04",
+      "title": "Spy Time",
+      "video": false,
+      "vote_average": 5.6,
+      "vote_count": 214
+    }
+  ],
+  "total_pages": 4316,
+  "total_results": 86307
+}
