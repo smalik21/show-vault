@@ -19,6 +19,14 @@
         height: 180px;
         border-radius: 50%;
         overflow: hidden;
+
+        .placeholderImage {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          background-color: var(--secondary-color);
+        }
       }
 
       .name {

@@ -1,13 +1,13 @@
 import { ShowType } from "@/types/types";
 import styles from "./detail-section.module.scss";
 import Image from "next/image";
-import { YellowStarIcon } from "@/lib/icons";
+import { MovieProjectorIcon, YellowStarIcon } from "@/lib/icons";
 
 export type DetailSectionPropsType = {
   type: ShowType;
   title: string;
   imdb: number;
-  imageSrc: string;
+  imageSrc: string | null;
   description: string;
   releasedDate: string;
   duration?: number;
@@ -23,12 +23,18 @@ const DetailSection = (vm: DetailSectionPropsType) => {
   return (
     <div className={styles.detailSection}>
       <div className={styles.imageContainer}>
-        <Image
-          loading="lazy"
-          fill
-          src={vm.imageSrc}
-          alt={`detail-image-${vm.title}`}
-        />
+        {vm.imageSrc ? (
+          <Image
+            loading="lazy"
+            fill
+            src={vm.imageSrc}
+            alt={`detail-image-${vm.title}`}
+          />
+        ) : (
+          <div className={styles.placeholderImage}>
+            <MovieProjectorIcon width={100} height={100} />
+          </div>
+        )}
       </div>
       <div className={styles.detailContent}>
         <div className={styles.detailHeader}>

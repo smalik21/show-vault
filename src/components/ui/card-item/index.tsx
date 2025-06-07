@@ -4,7 +4,7 @@ import { CardPropsType } from "@/types/propTypes";
 import Image from "next/image";
 import React from "react";
 import styles from "./card-item.module.scss";
-import { YellowStarIcon } from "@/lib/icons";
+import { MovieProjectorIcon, YellowStarIcon } from "@/lib/icons";
 import { useRouter } from "next/navigation";
 
 const CardItem = (vm: CardPropsType) => {
@@ -21,12 +21,18 @@ const CardItem = (vm: CardPropsType) => {
       onClick={() => handleCardItemClick(vm.id)}
     >
       <header className={styles.imageContainer}>
-        <Image
-          loading="lazy"
-          fill
-          src={vm.imageSrc}
-          alt={`card-image-${vm.title}`}
-        />
+        {vm.imageSrc ? (
+          <Image
+            loading="lazy"
+            fill
+            src={vm.imageSrc}
+            alt={`card-image-${vm.title}`}
+          />
+        ) : (
+          <div className={styles.placeholderImage}>
+            <MovieProjectorIcon width={100} height={100} />
+          </div>
+        )}
       </header>
       <section className={styles.cardContent}>
         <div className={styles.title}>{vm.title}</div>

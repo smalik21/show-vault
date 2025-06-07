@@ -8,6 +8,14 @@
     height: 380px;
     min-width: 250px;
     width: auto;
+
+    .placeholderImage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: var(--secondary-color);
+    }
   }
 
   .detailContent {

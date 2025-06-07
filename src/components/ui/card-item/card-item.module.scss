@@ -17,6 +17,14 @@
   .imageContainer {
     flex-grow: 1;
     position: relative;
+
+    .placeholderImage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: var(--secondary-color);
+    }
   }
 
   .cardContent {

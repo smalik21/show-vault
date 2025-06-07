@@ -12,16 +12,18 @@ import { GENRE_MAP } from "./constants";
 import { DetailSectionPropsType } from "@/components/ui/detail-section";
 import { BannerItemPropsType } from "@/components/home/banner-slideshow/banner-item";
 
-export const GetMediumImagePath = (posterPath?: string | null) => {
-  return posterPath
-    ? `https://image.tmdb.org/t/p/w500${posterPath}`
-    : "https://images.unsplash.com/photo-1576473318185-48d76fc03314?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+export const GetMediumImagePath = (
+  posterPath?: string | null
+): string | null => {
+  return posterPath ? `https://image.tmdb.org/t/p/w500${posterPath}` : null;
 };
 
-export const GetHighImagePath = (backdropPath?: string | null) => {
+export const GetHighImagePath = (
+  backdropPath?: string | null
+): string | null => {
   return backdropPath
     ? `https://image.tmdb.org/t/p/w1280${backdropPath}`
-    : "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    : null;
 };
 
 export const GetVideoKey = (videos?: VideoType[]) => {
@@ -161,7 +163,7 @@ export const TransformMovieDetailsData = (
     imdb: Number(dataResponse.vote_average?.toFixed(1)),
     imageSrc: dataResponse.poster_path
       ? GetMediumImagePath(dataResponse.poster_path)
-      : "",
+      : null,
     description: dataResponse.overview || "",
     releasedDate: dataResponse.release_date || "",
     duration: dataResponse.runtime || 0,
@@ -195,7 +197,7 @@ export const TransformTVDetailsData = (
     imdb: Number(dataResponse.vote_average?.toFixed(1)),
     imageSrc: dataResponse.poster_path
       ? GetMediumImagePath(dataResponse.poster_path)
-      : "",
+      : null,
     description: dataResponse.overview || "",
     releasedDate: dataResponse.first_air_date || "",
     seasons: dataResponse.number_of_seasons || 0,

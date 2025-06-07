@@ -8,7 +8,7 @@ export type IconPropsType = {
 
 export type CardPropsType = {
   id: number;
-  imageSrc: string;
+  imageSrc: string | null;
   title: string;
   releaseYear: string;
   imdb?: number;
