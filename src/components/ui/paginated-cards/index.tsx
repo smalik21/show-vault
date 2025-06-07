@@ -46,14 +46,18 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
 
   const fetchNewData = useCallback(
     async (pageNumber: number) => {
-      let newData;
-      if (vm.id) {
-        newData = await vm.GetData(vm.id, pageNumber);
-      } else {
-        newData = await vm.GetData(pageNumber);
+      try {
+        let newData;
+        if (vm.id) {
+          newData = await vm.GetData(vm.id, pageNumber);
+        } else {
+          newData = await vm.GetData(pageNumber);
+        }
+        setCardData(TransformData(newData, vm.mediaType));
+        setTotalResults(newData.total_results);
+      } catch {
+        setCardData([]);
       }
-      setCardData(TransformData(newData, vm.mediaType));
-      setTotalResults(newData.total_results);
     },
     [vm, TransformData]
   );
@@ -77,6 +81,9 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
           align="center"
         />
       </div>
+      {cardData.length === 0 && (
+        <div className={styles.emptyList}>No results found!</div>
+      )}
       <CardsContainer>
         {cardData.map((item, idx) => (
           <CardItem
