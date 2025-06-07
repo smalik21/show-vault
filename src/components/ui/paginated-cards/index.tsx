@@ -32,6 +32,8 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
 
   const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
   const [cardData, setCardData] = useState<CardPropsType[]>(vm.initialData);
+  const [totalResults, setTotalResults] = useState<number>(vm.initialTotal);
+  const [dataCount, setDataCount] = useState<number>(vm.initialDataCount);
 
   const createQueryString = useCallback(
     (page: number) => {
@@ -53,8 +55,12 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
           newData = await vm.GetData(pageNumber);
         }
         setCardData(TransformData(newData, vm.mediaType));
+        setTotalResults(newData.total_results);
+        setDataCount(newData.results.length);
       } catch {
         setCardData([]);
+        setTotalResults(0);
+        setDataCount(0);
       }
     },
     [vm, TransformData]
@@ -72,8 +78,8 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
-          total={vm.initialTotal}
-          pageSize={vm.initialDataCount}
+          total={totalResults}
+          pageSize={dataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -98,8 +104,8 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}
-          total={vm.initialTotal}
-          pageSize={vm.initialDataCount}
+          total={totalResults}
+          pageSize={dataCount}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
