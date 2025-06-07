@@ -14,7 +14,7 @@ export type DetailSectionPropsType = {
   seasons?: number;
   genre: string;
   country: string;
-  budget?: number;
+  budget?: string;
   networks?: string;
   production: string;
 };
@@ -68,7 +68,7 @@ const DetailSection = (vm: DetailSectionPropsType) => {
           {vm.budget && (
             <div className={`${styles.budget} ${styles.field}`}>
               <span className={styles.label}>Budget:</span>
-              <div className={styles.value}>${vm.budget} M</div>
+              <div className={styles.value}>{vm.budget}</div>
             </div>
           )}
           {vm.networks && (

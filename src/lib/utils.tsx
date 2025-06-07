@@ -57,6 +57,20 @@ export const GetTransformDataFunction = (showDataType: ShowDataType) => {
   }
 };
 
+export const formatBudget = (budget?: number): string => {
+  if (!budget || budget <= 0) return "N/A";
+  if (budget >= 1_000_000_000) {
+    return `$${(budget / 1_000_000_000).toFixed(2)} B`;
+  }
+  if (budget >= 1_000_000) {
+    return `$${(budget / 1_000_000).toFixed(2)} M`;
+  }
+  if (budget >= 1_000) {
+    return `$${budget.toLocaleString()}`;
+  }
+  return `$${budget}`;
+};
+
 export const TransformBannerData = (
   bannerDataResponse: DataResponseType
 ): BannerItemPropsType[] => {
@@ -154,9 +168,7 @@ export const TransformMovieDetailsData = (
     genre: dataResponse.genres?.map((g) => g.name).join(", ") || "",
     country:
       dataResponse.production_countries?.map((c) => c.name).join(", ") || "",
-    budget: dataResponse.budget
-      ? Number((dataResponse.budget / 1_000_000).toFixed(2))
-      : 0,
+    budget: formatBudget(dataResponse.budget),
     production:
       dataResponse.production_companies?.map((c) => c.name).join(", ") || "",
   };
