@@ -33,7 +33,7 @@ const DetailSection = (vm: DetailSectionPropsType) => {
       <div className={styles.detailContent}>
         <div className={styles.detailHeader}>
           <div className={styles.title}>{vm.title}</div>
-          {vm.imdb && (
+          {typeof vm.imdb === "number" && vm.imdb > 0 && (
             <div className={styles.imdb}>
               <YellowStarIcon />
               <span className={styles.rating}>{vm.imdb}</span>

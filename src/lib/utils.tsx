@@ -137,7 +137,7 @@ export const TransformDataResponse = (
         item.first_air_date?.split("-")[0] ||
         "",
       imageSrc: GetMediumImagePath(item.poster_path),
-      imdb: Number(item.vote_average?.toFixed(1)),
+      imdb: Number(item.vote_average?.toFixed(1)) || 0,
       showType: showType,
     } as CardPropsType;
   });

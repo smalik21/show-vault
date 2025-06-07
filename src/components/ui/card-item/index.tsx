@@ -32,7 +32,7 @@ const CardItem = (vm: CardPropsType) => {
         <div className={styles.title}>{vm.title}</div>
         <div className={styles.cardDetails}>
           <span className={styles.releaseYear}>{vm.releaseYear}</span>
-          {vm.imdb && (
+          {typeof vm.imdb === "number" && vm.imdb > 0 && (
             <span className={styles.imdb}>
               <YellowStarIcon width={13} height={12} />
               <span>{vm.imdb}</span>
