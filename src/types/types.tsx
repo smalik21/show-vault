@@ -119,6 +119,19 @@ export type PersonType = {
   job?: string;
 };
 
+export type PersonDetailsType = {
+  id: number;
+  name: string;
+  imageSrc: string | null;
+  biography: string;
+  birthday: string | null;
+  placeOfBirth: string | null;
+  knownFor: string;
+  alsoKnownAs: string[];
+  popularity: number;
+  imdbId: string;
+};
+
 export type MovieDetailsResponseType = {
   adult: boolean;
   backdrop_path?: string | null;
@@ -259,4 +272,25 @@ export type TVDetailsResponseType = {
     crew?: PersonType[];
   };
   similar: DataResponseType;
+};
+
+export type PersonDetailsResponseType = {
+  adult: boolean;
+  also_known_as: string[];
+  biography: string;
+  birthday: string | null;
+  deathday: string | null;
+  gender: number;
+  homepage: string | null;
+  id: number;
+  imdb_id: string;
+  known_for_department: string;
+  name: string;
+  place_of_birth: string | null;
+  popularity: number;
+  profile_path: string | null;
+  combined_credits: {
+    cast: DataItemType[];
+    crew?: DataItemType[];
+  };
 };

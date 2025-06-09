@@ -2,6 +2,8 @@ import { CardPropsType } from "@/types/propTypes";
 import {
   DataResponseType,
   MovieDetailsResponseType,
+  PersonDetailsResponseType,
+  PersonDetailsType,
   PersonType,
   ShowDataType,
   ShowType,
@@ -213,4 +215,40 @@ export const TransformTVDetailsData = (
   const similarTV: DataResponseType = dataResponse.similar;
 
   return { videoKey, detailSection, cast, similarTV };
+};
+
+export const TransformPersonDetailsData = (
+  dataResponse: PersonDetailsResponseType
+): {
+  personDetails: PersonDetailsType;
+  featuredContent: CardPropsType[];
+} => {
+  const personDetails: PersonDetailsType = {
+    id: dataResponse.id,
+    name: dataResponse.name,
+    imageSrc: GetMediumImagePath(dataResponse.profile_path),
+    biography: dataResponse.biography || "",
+    birthday: dataResponse.birthday || null,
+    placeOfBirth: dataResponse.place_of_birth || null,
+    knownFor: dataResponse.known_for_department || "",
+    alsoKnownAs: dataResponse.also_known_as || [],
+    popularity: dataResponse.popularity,
+    imdbId: dataResponse.imdb_id,
+  };
+
+  const featuredContent: CardPropsType[] = (
+    dataResponse.combined_credits.cast || []
+  ).map((item) => ({
+    id: item.id,
+    title: item.title || item.name || "",
+    releaseYear:
+      item.release_date?.split("-")[0] ||
+      item.first_air_date?.split("-")[0] ||
+      "",
+    imageSrc: GetMediumImagePath(item.poster_path),
+    imdb: Number(item.vote_average?.toFixed(1)) || 0,
+    showType: item.media_type as ShowType,
+  }));
+
+  return { personDetails, featuredContent };
 };

@@ -12,6 +12,8 @@
       flex-direction: column;
       align-items: center;
       gap: var(--spacing-md);
+      text-decoration: none;
+      color: inherit;
 
       .imageContainer {
         position: relative;

@@ -13,10 +13,12 @@ import GetMovieDetailsMock from "@/lib/mocks/GetMovieDetails.json";
 import GetTVDetailsMock from "@/lib/mocks/GetTVDetails.json";
 import GetSimilarMovieMock from "@/lib/mocks/GetSimilarMovie.json";
 import GetSimilarTVMock from "@/lib/mocks/GetSimilarTV.json";
+import GetPersonDetailsMock from "@/lib/mocks/GetPersonDetails.json";
 import {
   DataResponseType,
   GenreResponseType,
   MovieDetailsResponseType,
+  PersonDetailsResponseType,
   TVDetailsResponseType,
 } from "@/types/types";
 import { GENRE_MAP } from "./constants";
@@ -157,6 +159,18 @@ export const FetchSimilarTV = async (
     return new Promise((res) => setTimeout(() => res(GetSimilarTVMock), 500));
   }
   const url = `https://api.themoviedb.org/3/tv/${tvId}/similar?language=en-US&page=${pageNumber}`;
+  return GetApi(url);
+};
+
+export const FetchPersonDetails = async (
+  personId: number
+): Promise<PersonDetailsResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) =>
+      setTimeout(() => res(GetPersonDetailsMock), 500)
+    );
+  }
+  const url = `https://api.themoviedb.org/3/person/${personId}?append_to_response=combined_credits&language=en-US`;
   return GetApi(url);
 };
 

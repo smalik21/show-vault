@@ -4,6 +4,7 @@ import SectionHeader from "../section-header";
 import { GetMediumImagePath } from "@/lib/utils";
 import Image from "next/image";
 import { ProfileIcon } from "@/lib/icons";
+import Link from "next/link";
 
 export type CastSectionPropsType = {
   cast: PersonType[];
@@ -17,7 +18,11 @@ const CastSection = (vm: CastSectionPropsType) => {
         {vm.cast.map((member) => {
           const imageSrc = GetMediumImagePath(member.profile_path);
           return (
-            <div key={`cast-member-${member.id}`} className={styles.member}>
+            <Link
+              href={`/people/${member.id}`}
+              key={`cast-member-${member.id}`}
+              className={styles.member}
+            >
               <div className={styles.imageContainer}>
                 {imageSrc ? (
                   <Image
@@ -34,7 +39,7 @@ const CastSection = (vm: CastSectionPropsType) => {
                 )}
               </div>
               <div className={styles.name}>{member.name}</div>
-            </div>
+            </Link>
           );
         })}
       </div>
