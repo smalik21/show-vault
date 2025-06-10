@@ -67,7 +67,7 @@ const PersonDetails = async ({
           </div>
         </div>
       </div>
-      <SectionHeader title="Similar Movies and TV Shows" />
+      <SectionHeader title="Featured Movies and TV Shows" />
       <CardsContainer>
         {featuredContent.map((item, idx) => (
           <CardItem
