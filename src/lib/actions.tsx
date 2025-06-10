@@ -9,6 +9,7 @@ import {
   FetchSimilarMovie,
   FetchSimilarTV,
   FetchTrending,
+  FetchUpcomingMovie,
 } from "./apis";
 
 export const GetTrending = async (
@@ -79,6 +80,16 @@ export const GetSimilarTV = async (
 ): Promise<DataResponseType> => {
   try {
     return await FetchSimilarTV(id, pageNumber);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetUpcomingMovie = async (
+  pageNumber: number = 1
+): Promise<DataResponseType> => {
+  try {
+    return await FetchUpcomingMovie(pageNumber);
   } catch (error) {
     throw error;
   }
