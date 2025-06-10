@@ -3,6 +3,9 @@ import React from "react";
 import styles from "./banner-item.module.scss";
 import Button from "@/components/ui/Button";
 import { YellowStarIcon } from "@/lib/icons";
+import { SERVICES_ENABLED } from "@/lib/constants";
+import Link from "next/link";
+import { ShowType } from "@/types/types";
 
 export type BannerItemPropsType = {
   id: number;
@@ -11,9 +14,12 @@ export type BannerItemPropsType = {
   title: string;
   description: string;
   imageSrc: string;
+  showType: ShowType;
 };
 
 const BannerItem = (vm: BannerItemPropsType) => {
+  const showUrl = vm.showType === "movie" ? "movies" : "tv-shows";
+
   return (
     <div className={styles.bannerItem}>
       <div className={styles.itemContent}>
@@ -43,24 +49,28 @@ const BannerItem = (vm: BannerItemPropsType) => {
         <div className={styles.itemTitle}>{vm.title}</div>
         <div className={styles.itemDescription}>{vm.description}</div>
         <div className={styles.actionButtons}>
-          <Button
-            textColor="white"
-            bgColor="orange"
-            padding="md"
-            textSize="xs"
-            borderRadius="full"
-          >
-            WATCH TRAILER
-          </Button>
-          <Button
-            textColor="white"
-            bgColor="dark"
-            padding="md"
-            textSize="xs"
-            borderRadius="full"
-          >
-            ADD TO WATCHLIST
-          </Button>
+          <Link href={`/${showUrl}/${vm.id}`}>
+            <Button
+              textColor="white"
+              bgColor="orange"
+              padding="md"
+              textSize="xs"
+              borderRadius="full"
+            >
+              WATCH TRAILER
+            </Button>
+          </Link>
+          {SERVICES_ENABLED.WATCHLIST && (
+            <Button
+              textColor="white"
+              bgColor="dark"
+              padding="md"
+              textSize="xs"
+              borderRadius="full"
+            >
+              ADD TO WATCHLIST
+            </Button>
+          )}
         </div>
       </div>
       <Image

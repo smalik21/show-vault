@@ -28,6 +28,7 @@ const BannerSlideshow = (vm: BannerSlideshowPropsType) => {
                   imageSrc={bannerItem.imageSrc}
                   genre={bannerItem.genre}
                   imdb={bannerItem.imdb}
+                  showType={bannerItem.showType}
                 />
               </div>
             );
