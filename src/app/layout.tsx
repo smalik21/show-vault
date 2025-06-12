@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   description: "A Movie and TV Shows browsing destination",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  FetchGenreMap();
+  await FetchGenreMap();
 
   return (
     <html lang="en" className={poppins.className}>

@@ -90,7 +90,7 @@ export const TransformBannerData = (
         description: item.overview || "",
         imageSrc: GetHighImagePath(item.backdrop_path ?? item.poster_path),
         imdb: Number(item.vote_average?.toFixed(1)),
-        genre: item.genre_ids.map((id) => GENRE_MAP[id] || id.toString()),
+        genre: item.genre_ids.map((id) => GENRE_MAP[id]),
         showType: item.media_type as ShowType,
       } as BannerItemPropsType;
     }
