@@ -3,7 +3,6 @@ import styles from "./person-details.module.scss";
 import SectionHeader from "@/components/ui/section-header";
 import { TransformPersonDetailsData } from "@/lib/utils";
 import CardsContainer from "@/components/ui/cards-container";
-import CardItem from "@/components/ui/card-item";
 import Image from "next/image";
 import { ProfileIcon } from "@/lib/icons";
 
@@ -68,19 +67,7 @@ const PersonDetails = async ({
         </div>
       </div>
       <SectionHeader title="Featured Movies and TV Shows" />
-      <CardsContainer>
-        {featuredContent.map((item, idx) => (
-          <CardItem
-            key={`${idx}-card-item-${item.id}`}
-            id={item.id}
-            imageSrc={item.imageSrc}
-            title={item.title}
-            releaseYear={item.releaseYear}
-            imdb={item.imdb}
-            showType={item.showType}
-          />
-        ))}
-      </CardsContainer>
+      <CardsContainer cardList={featuredContent} />
     </main>
   );
 };

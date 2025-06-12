@@ -3,7 +3,6 @@
 import React, { useCallback, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from "./trending-page.module.scss";
-import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import RadioButtons from "@/components/ui/radio-buttons";
 import SectionHeader from "@/components/ui/section-header";
@@ -103,19 +102,7 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
           align="center"
         />
       </div>
-      <CardsContainer>
-        {cardData.map((item, idx) => (
-          <CardItem
-            key={`${idx}-card-item-${item.id}`}
-            id={item.id}
-            imageSrc={item.imageSrc}
-            title={item.title}
-            releaseYear={item.releaseYear}
-            imdb={item.imdb}
-            showType={item.showType}
-          />
-        ))}
-      </CardsContainer>
+      <CardsContainer cardList={cardData} />
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}

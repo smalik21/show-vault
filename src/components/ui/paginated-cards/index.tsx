@@ -3,7 +3,6 @@
 import React, { useCallback, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from "./paginated-cards.module.scss";
-import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import SectionHeader from "@/components/ui/section-header";
 import { CardPropsType } from "@/types/propTypes";
@@ -85,19 +84,7 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
       {cardData.length === 0 && (
         <div className={styles.emptyList}>No results found!</div>
       )}
-      <CardsContainer>
-        {cardData.map((item, idx) => (
-          <CardItem
-            id={item.id}
-            key={`${idx}-card-item-${item.title}`}
-            imageSrc={item.imageSrc}
-            title={item.title}
-            releaseYear={item.releaseYear}
-            imdb={item.imdb}
-            showType={item.showType}
-          />
-        ))}
-      </CardsContainer>
+      <CardsContainer cardList={cardData} />
       <div className={styles.pagination}>
         <Pagination
           current={pageNumber}

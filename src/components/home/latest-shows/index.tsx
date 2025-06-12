@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./latest-shows.module.scss";
 import SectionHeader from "@/components/ui/section-header";
-import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import { DataResponseType } from "@/types/types";
 import { CardPropsType } from "@/types/propTypes";
@@ -23,19 +22,7 @@ const LatestShows = async () => {
         isLink
         link={ROUTE_PATHS.HOME_LATEST_TV_SHOWS}
       ></SectionHeader>
-      <CardsContainer>
-        {latestTVData.map((item) => (
-          <CardItem
-            key={`card-item-${item.id}`}
-            id={item.id}
-            imageSrc={item.imageSrc}
-            title={item.title}
-            releaseYear={item.releaseYear}
-            imdb={item.imdb}
-            showType={item.showType}
-          />
-        ))}
-      </CardsContainer>
+      <CardsContainer cardList={latestTVData} />
     </div>
   );
 };

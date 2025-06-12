@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./coming-soon.module.scss";
 import SectionHeader from "@/components/ui/section-header";
-import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import { DataResponseType } from "@/types/types";
 import { FetchUpcomingMovie } from "@/lib/apis";
@@ -23,19 +22,7 @@ const ComingSoon = async () => {
         link={ROUTE_PATHS.HOME_COMING_SOON_VIEW_ALL}
         viewAllBtn
       ></SectionHeader>
-      <CardsContainer>
-        {upcomingMovieData.map((item) => (
-          <CardItem
-            key={`card-item-${item.id}`}
-            id={item.id}
-            imageSrc={item.imageSrc}
-            title={item.title}
-            releaseYear={item.releaseYear}
-            imdb={item.imdb}
-            showType={item.showType}
-          />
-        ))}
-      </CardsContainer>
+      <CardsContainer cardList={upcomingMovieData} />
     </div>
   );
 };

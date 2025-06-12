@@ -10,7 +10,6 @@ import DetailSection from "@/components/ui/detail-section";
 import CastSection from "@/components/ui/cast-section";
 import SectionHeader from "@/components/ui/section-header";
 import CardsContainer from "@/components/ui/cards-container";
-import CardItem from "@/components/ui/card-item";
 
 const TvDetails = async ({
   params: paramsPromise,
@@ -55,19 +54,7 @@ const TvDetails = async ({
           link={`/tv-shows/${id}/similar`}
           viewAllBtn
         ></SectionHeader>
-        <CardsContainer>
-          {similarTVData.map((item) => (
-            <CardItem
-              key={`card-item-${item.id}`}
-              id={item.id}
-              imageSrc={item.imageSrc}
-              title={item.title}
-              releaseYear={item.releaseYear}
-              imdb={item.imdb}
-              showType={item.showType}
-            />
-          ))}
-        </CardsContainer>
+        <CardsContainer cardList={similarTVData} />
       </section>
     </main>
   );

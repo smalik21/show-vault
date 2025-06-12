@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./latest-movies.module.scss";
 import SectionHeader from "@/components/ui/section-header";
-import CardItem from "@/components/ui/card-item";
 import CardsContainer from "@/components/ui/cards-container";
 import { FetchLatestMovie } from "@/lib/apis";
 import { DataResponseType } from "@/types/types";
@@ -23,19 +22,7 @@ const LatestMovies = async () => {
         isLink
         link={ROUTE_PATHS.HOME_LATEST_MOVIES}
       ></SectionHeader>
-      <CardsContainer>
-        {latestMovieData.map((item) => (
-          <CardItem
-            key={`card-item-${item.id}`}
-            id={item.id}
-            imageSrc={item.imageSrc}
-            title={item.title}
-            releaseYear={item.releaseYear}
-            imdb={item.imdb}
-            showType={item.showType}
-          />
-        ))}
-      </CardsContainer>
+      <CardsContainer cardList={latestMovieData} />
     </div>
   );
 };
