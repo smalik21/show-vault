@@ -18,7 +18,6 @@ export const NAV_LINKS: LinkType[] = [
   { name: "Home", path: "/" },
   { name: "Movies", path: "/movies" },
   { name: "TV Shows", path: "/tv-shows" },
-  { name: "Genre", path: "/genre" },
 ];
 
 export const TRENDING_TYPES: Option[] = [
