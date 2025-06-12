@@ -174,9 +174,9 @@ export const FetchPersonDetails = async (
   return GetApi(url);
 };
 
-export const FetchGenreMap = async (): Promise<void> => {
+export const FetchGenreMap = async (): Promise<Record<number, string>> => {
   if (Object.keys(GENRE_MAP)?.length > 0) {
-    return;
+    return GENRE_MAP;
   }
 
   const [movieGenres, tvGenres] = await Promise.all([
@@ -189,4 +189,6 @@ export const FetchGenreMap = async (): Promise<void> => {
   allGenres.forEach((genre) => {
     GENRE_MAP[genre.id] = genre.name;
   });
+
+  return GENRE_MAP;
 };

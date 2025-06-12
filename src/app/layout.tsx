@@ -4,7 +4,6 @@ import "@/_styles/globals.scss";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import { ConfigProvider } from "antd";
-import { FetchGenreMap } from "@/lib/apis";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,13 +16,11 @@ export const metadata: Metadata = {
   description: "A Movie and TV Shows browsing destination",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await FetchGenreMap();
-
   return (
     <html lang="en" className={poppins.className}>
       <head>

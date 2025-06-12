@@ -10,9 +10,9 @@ import {
   TVDetailsResponseType,
   VideoType,
 } from "@/types/types";
-import { GENRE_MAP } from "./constants";
 import { DetailSectionPropsType } from "@/components/ui/detail-section";
 import { BannerItemPropsType } from "@/components/home/banner-slideshow/banner-item";
+import { FetchGenreMap } from "./apis";
 
 export const GetMediumImagePath = (
   posterPath?: string | null
@@ -75,12 +75,14 @@ export const formatBudget = (budget?: number): string => {
   return `$${budget}`;
 };
 
-export const TransformBannerData = (
+export const TransformBannerData = async (
   bannerDataResponse: DataResponseType
-): BannerItemPropsType[] => {
+): Promise<BannerItemPropsType[]> => {
   if (!bannerDataResponse || !Array.isArray(bannerDataResponse.results)) {
     return [];
   }
+
+  const genreMap = await FetchGenreMap();
 
   const transformedData: BannerItemPropsType[] = bannerDataResponse.results.map(
     (item) => {
@@ -90,7 +92,7 @@ export const TransformBannerData = (
         description: item.overview || "",
         imageSrc: GetHighImagePath(item.backdrop_path ?? item.poster_path),
         imdb: Number(item.vote_average?.toFixed(1)),
-        genre: item.genre_ids.map((id) => GENRE_MAP[id]),
+        genre: item.genre_ids.map((id) => genreMap[id]),
         showType: item.media_type as ShowType,
       } as BannerItemPropsType;
     }

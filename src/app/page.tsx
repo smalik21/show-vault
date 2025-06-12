@@ -11,8 +11,8 @@ import { TransformBannerData, TransformTrendingData } from "@/lib/utils";
 const Home = async () => {
   const initialTrendingDataReponse = await FetchTrending();
   const initialTrendingData = TransformTrendingData(initialTrendingDataReponse);
-  const initialBannerSlideshowData = TransformBannerData(
-    initialTrendingDataReponse
+  const initialBannerSlideshowData = (
+    await TransformBannerData(initialTrendingDataReponse)
   ).slice(0, 5);
 
   return (
