@@ -1,11 +1,12 @@
 "use server";
 
-import { DataResponseType } from "@/types/types";
+import { DataResponseType, MultiDataResponseType } from "@/types/types";
 import {
   FetchLatestMovie,
   FetchLatestTV,
   FetchPopularMovie,
   FetchPopularTV,
+  FetchSearchResults,
   FetchSimilarMovie,
   FetchSimilarTV,
   FetchTrending,
@@ -18,6 +19,17 @@ export const GetTrending = async (
 ): Promise<DataResponseType> => {
   try {
     return await FetchTrending(trendingType, pageNumber);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetSearchResults = async (
+  query: string = "",
+  pageNumber: number = 1
+): Promise<MultiDataResponseType> => {
+  try {
+    return await FetchSearchResults(query, pageNumber);
   } catch (error) {
     throw error;
   }

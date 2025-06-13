@@ -31,7 +31,7 @@ export type Option = {
   value: string;
 };
 
-export type ShowType = "movie" | "tv";
+export type ShowType = "movie" | "tv" | "person";
 
 export type ShowDataType = "popular" | "latest";
 
@@ -56,6 +56,13 @@ export type FooterColumnType = {
 export type DataResponseType = {
   page: number;
   results: DataItemType[];
+  total_pages: number;
+  total_results: number;
+};
+
+export type MultiDataResponseType = {
+  page: number;
+  results: (DataItemType | PersonType)[];
   total_pages: number;
   total_results: number;
 };
@@ -107,13 +114,15 @@ export type PersonType = {
   gender: number;
   id: number;
   known_for_department: string;
+  known_for?: DataItemType[];
   name: string;
   original_name: string;
   popularity: number;
   profile_path: string | null;
+  media_type?: ShowType;
   cast_id?: number;
   character?: string;
-  credit_id: string;
+  credit_id?: string;
   order?: number;
   department?: string;
   job?: string;

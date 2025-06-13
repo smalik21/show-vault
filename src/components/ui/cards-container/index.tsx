@@ -18,9 +18,9 @@ const CardsContainer = (vm: CardsContainerProps) => {
   if (cards.length <= columns) {
     return (
       <div className={styles.cardsContainer}>
-        {cards.map((item) => (
+        {cards.map((item, idx) => (
           <CardItem
-            key={`card-item-${item.id}`}
+            key={`card-item-${item.id}-${idx}`}
             id={item.id}
             imageSrc={item.imageSrc}
             title={item.title}

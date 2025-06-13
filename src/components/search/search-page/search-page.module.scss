@@ -1,0 +1,12 @@
+.searchPage {
+  .query {
+    font-size: var(--font-xxl);
+    color: var(--primary-highlight-color);
+    margin-left: -2rem;
+    font-style: italic;
+  }
+
+  .pagination {
+    padding: 2rem 5rem;
+  }
+}

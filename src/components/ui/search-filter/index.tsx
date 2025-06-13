@@ -3,8 +3,21 @@
 import { SearchIcon } from "@/lib/icons";
 import Button from "../Button";
 import styles from "./search-filter.module.scss";
+import { useRouter } from "next/navigation";
+import { useRef, useEffect } from "react";
 
-const SearchFilter = () => {
+type SearchFilterPropsType = {
+  onClose?: () => void;
+};
+
+const SearchFilter = (vm: SearchFilterPropsType) => {
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
@@ -14,8 +27,10 @@ const SearchFilter = () => {
 
     if (!input?.value) return;
 
-    console.log(input?.value);
+    router.push(`/search?query=${encodeURIComponent(input.value)}`);
+
     form.reset();
+    vm.onClose?.();
   };
 
   return (
@@ -23,12 +38,14 @@ const SearchFilter = () => {
       <div className={styles.heading}>Search by Keyword</div>
       <form onSubmit={handleSubmit} className={styles.searchForm}>
         <input
+          ref={inputRef}
           className={styles.searchInput}
           type="text"
           id="search-keyword"
           name="search-keyword"
           autoComplete="off"
           autoCorrect="off"
+          placeholder="Enter keyword to search..."
         />
         <span className={styles.buttonContainer}>
           <Button padding="md" textSize="lg">

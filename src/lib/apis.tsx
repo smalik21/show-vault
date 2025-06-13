@@ -14,14 +14,37 @@ import GetTVDetailsMock from "@/lib/mocks/GetTVDetails.json";
 import GetSimilarMovieMock from "@/lib/mocks/GetSimilarMovie.json";
 import GetSimilarTVMock from "@/lib/mocks/GetSimilarTV.json";
 import GetPersonDetailsMock from "@/lib/mocks/GetPersonDetails.json";
+import GetSearchResultsMock from "@/lib/mocks/GetSearchResults.json";
 import {
+  DataItemType,
   DataResponseType,
   GenreResponseType,
   MovieDetailsResponseType,
+  MultiDataResponseType,
   PersonDetailsResponseType,
+  PersonType,
   TVDetailsResponseType,
 } from "@/types/types";
 import { GENRE_MAP } from "./constants";
+
+export const FetchGenreMap = async (): Promise<Record<number, string>> => {
+  if (Object.keys(GENRE_MAP)?.length > 0) {
+    return GENRE_MAP;
+  }
+
+  const [movieGenres, tvGenres] = await Promise.all([
+    FetchMovieGenres(),
+    FetchTVGenres(),
+  ]);
+
+  const allGenres = [...(movieGenres.genres || []), ...(tvGenres.genres || [])];
+
+  allGenres.forEach((genre) => {
+    GENRE_MAP[genre.id] = genre.name;
+  });
+
+  return GENRE_MAP;
+};
 
 export const FetchTrending = async (
   trendingType: string = "all",
@@ -174,21 +197,26 @@ export const FetchPersonDetails = async (
   return GetApi(url);
 };
 
-export const FetchGenreMap = async (): Promise<Record<number, string>> => {
-  if (Object.keys(GENRE_MAP)?.length > 0) {
-    return GENRE_MAP;
+export const FetchSearchResults = async (
+  query: string = "",
+  pageNumber: number = 1
+): Promise<MultiDataResponseType> => {
+  if (IsLocalhost()) {
+    return new Promise((res) =>
+      setTimeout(
+        () =>
+          res({
+            ...GetSearchResultsMock,
+            results: GetSearchResultsMock.results.map((item) =>
+              item.media_type === "person"
+                ? (item as DataItemType)
+                : (item as PersonType)
+            ),
+          }),
+        500
+      )
+    );
   }
-
-  const [movieGenres, tvGenres] = await Promise.all([
-    FetchMovieGenres(),
-    FetchTVGenres(),
-  ]);
-
-  const allGenres = [...(movieGenres.genres || []), ...(tvGenres.genres || [])];
-
-  allGenres.forEach((genre) => {
-    GENRE_MAP[genre.id] = genre.name;
-  });
-
-  return GENRE_MAP;
+  const url = `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=${pageNumber}`;
+  return GetApi(url);
 };

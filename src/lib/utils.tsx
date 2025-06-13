@@ -1,7 +1,9 @@
 import { CardPropsType } from "@/types/propTypes";
 import {
+  DataItemType,
   DataResponseType,
   MovieDetailsResponseType,
+  MultiDataResponseType,
   PersonDetailsResponseType,
   PersonDetailsType,
   PersonType,
@@ -123,6 +125,43 @@ export const TransformTrendingData = (
       } as CardPropsType;
     }
   );
+
+  return transformedData;
+};
+
+export const TransformSearchData = (
+  dataResponse: MultiDataResponseType
+): CardPropsType[] => {
+  if (!dataResponse || !Array.isArray(dataResponse.results)) {
+    return [];
+  }
+
+  const transformedData: CardPropsType[] = dataResponse.results.map((item) => {
+    if (item.media_type === "person") {
+      const person = item as PersonType;
+      return {
+        id: person.id,
+        title: person.name,
+        releaseYear: "",
+        imageSrc: GetMediumImagePath(person.profile_path),
+        imdb: 0,
+        showType: "person",
+      } as CardPropsType;
+    } else {
+      const dataItem = item as DataItemType;
+      return {
+        id: dataItem.id,
+        title: dataItem.title || dataItem.name || "",
+        releaseYear:
+          dataItem.release_date?.split("-")[0] ||
+          dataItem.first_air_date?.split("-")[0] ||
+          "",
+        imageSrc: GetMediumImagePath(dataItem.poster_path),
+        imdb: Number(dataItem.vote_average?.toFixed(1)),
+        showType: dataItem.media_type,
+      } as CardPropsType;
+    }
+  });
 
   return transformedData;
 };

@@ -10,9 +10,34 @@ import { useRouter } from "next/navigation";
 const CardItem = (vm: CardPropsType) => {
   const router = useRouter();
 
+  const getMediaType = () => {
+    switch (vm.showType) {
+      case "movie":
+        return "Movie";
+      case "tv":
+        return "TV";
+      case "person":
+        return "Person";
+      default:
+        return "Unknown";
+    }
+  };
+
+  const getMediaRoute = () => {
+    switch (vm.showType) {
+      case "movie":
+        return "movies";
+      case "tv":
+        return "tv-shows";
+      case "person":
+        return "people";
+      default:
+        return "unknown";
+    }
+  };
+
   const handleCardItemClick = (id: number) => {
-    const route = vm.showType === "movie" ? "movies" : "tv-shows";
-    router.push(`/${route}/${id}`);
+    router.push(`/${getMediaRoute()}/${id}`);
   };
 
   return (
@@ -44,9 +69,7 @@ const CardItem = (vm: CardPropsType) => {
               <span>{vm.imdb}</span>
             </span>
           )}
-          <span className={styles.showType}>
-            {vm.showType === "movie" ? "Movie" : "TV"}
-          </span>
+          <span className={styles.showType}>{getMediaType()}</span>
         </div>
       </section>
     </article>

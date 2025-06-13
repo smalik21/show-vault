@@ -23,7 +23,7 @@ const HeaderOptions = () => {
       )}
       {isSearchOpen && (
         <Overlay onClickOutside={handleSearchClick}>
-          <SearchFilter />
+          <SearchFilter onClose={handleSearchClick} />
         </Overlay>
       )}
       <Button>
