@@ -5,11 +5,9 @@ import Image from "next/image";
 import React from "react";
 import styles from "./card-item.module.scss";
 import { MovieProjectorIcon, YellowStarIcon } from "@/lib/icons";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const CardItem = (vm: CardPropsType) => {
-  const router = useRouter();
-
   const getMediaType = () => {
     switch (vm.showType) {
       case "movie":
@@ -36,15 +34,8 @@ const CardItem = (vm: CardPropsType) => {
     }
   };
 
-  const handleCardItemClick = (id: number) => {
-    router.push(`/${getMediaRoute()}/${id}`);
-  };
-
   return (
-    <article
-      className={styles.cardItem}
-      onClick={() => handleCardItemClick(vm.id)}
-    >
+    <Link className={styles.cardItem} href={`/${getMediaRoute()}/${vm.id}`}>
       <header className={styles.imageContainer}>
         {vm.imageSrc ? (
           <Image
@@ -72,7 +63,7 @@ const CardItem = (vm: CardPropsType) => {
           <span className={styles.showType}>{getMediaType()}</span>
         </div>
       </section>
-    </article>
+    </Link>
   );
 };
 

@@ -274,7 +274,7 @@ export const TransformPersonDetailsData = (
     placeOfBirth: dataResponse.place_of_birth || null,
     knownFor: dataResponse.known_for_department || "",
     alsoKnownAs: dataResponse.also_known_as || [],
-    popularity: dataResponse.popularity,
+    popularity: Number(dataResponse.popularity?.toFixed(1)),
     imdbId: dataResponse.imdb_id,
   };
 
