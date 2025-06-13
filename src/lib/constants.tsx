@@ -3,7 +3,7 @@ import { FooterColumnType, LinkType, Option } from "@/types/types";
 export const SERVICES_ENABLED = {
   USER_ACCOUNT: false,
   WATCHLIST: false,
-  SEARCH: false,
+  SEARCH: true,
 };
 
 export const ROUTE_PATHS = {

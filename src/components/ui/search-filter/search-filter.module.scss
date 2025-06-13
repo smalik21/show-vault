@@ -1,0 +1,38 @@
+.searchFilter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-top: -6rem;
+
+  .heading {
+    color: var(--secondary-text-color);
+    font-size: var(--font-xxl);
+  }
+
+  .searchForm {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .searchInput {
+      width: 80dvw;
+      max-width: 800px;
+      font-size: 2rem;
+      font-family: var(--font-primary);
+      font-weight: 300;
+      letter-spacing: 1px;
+      padding: 1rem 2rem;
+      padding-right: 5rem;
+      border-radius: var(--spacing-md);
+      background: var(--background-color);
+      color: var(--primary-text-color);
+      border: none;
+    }
+
+    .buttonContainer {
+      position: absolute;
+      margin-left: calc(100% - 85px);
+    }
+  }
+}
