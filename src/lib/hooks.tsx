@@ -22,17 +22,17 @@ export const useCardsColumns = () => {
 };
 
 export const useCurrentTheme = (): ThemeType => {
-  const [theme, setTheme] = useState<ThemeType>(() => {
+  const [theme, setTheme] = useState<ThemeType>("light");
+
+  useEffect(() => {
     let currentTheme = localStorage.getItem("theme") as ThemeType | null;
     if (!currentTheme) {
       currentTheme =
         (document.documentElement.getAttribute("data-theme") as ThemeType) ||
         "light";
     }
-    return currentTheme;
-  });
+    setTheme(currentTheme);
 
-  useEffect(() => {
     // Listen for localStorage changes (cross-tab)
     const onStorage = () => {
       let currentTheme = localStorage.getItem("theme") as ThemeType | null;
