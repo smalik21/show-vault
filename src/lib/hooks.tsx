@@ -1,3 +1,4 @@
+import { ThemeType } from "@/types/types";
 import { useEffect, useState } from "react";
 
 export const useCardsColumns = () => {
@@ -18,4 +19,49 @@ export const useCardsColumns = () => {
   }, []);
 
   return columns;
+};
+
+export const useCurrentTheme = (): ThemeType => {
+  const [theme, setTheme] = useState<ThemeType>(() => {
+    let currentTheme = localStorage.getItem("theme") as ThemeType | null;
+    if (!currentTheme) {
+      currentTheme =
+        (document.documentElement.getAttribute("data-theme") as ThemeType) ||
+        "light";
+    }
+    return currentTheme;
+  });
+
+  useEffect(() => {
+    // Listen for localStorage changes (cross-tab)
+    const onStorage = () => {
+      let currentTheme = localStorage.getItem("theme") as ThemeType | null;
+      if (!currentTheme) {
+        currentTheme =
+          (document.documentElement.getAttribute("data-theme") as ThemeType) ||
+          "light";
+      }
+      setTheme(currentTheme);
+    };
+    window.addEventListener("storage", onStorage);
+
+    // Listen for data-theme attribute changes
+    const observer = new MutationObserver(() => {
+      const currentTheme =
+        (document.documentElement.getAttribute("data-theme") as ThemeType) ||
+        "light";
+      setTheme(currentTheme);
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      observer.disconnect();
+    };
+  }, []);
+
+  return theme;
 };

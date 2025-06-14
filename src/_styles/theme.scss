@@ -7,7 +7,9 @@
   --color-light: #{$light};
   --color-dark: #{$dark};
   --color-yellow: #{$yellow};
+  --color-light-gray: #{$light-gray};
   --color-gray: #{$gray};
+  --color-dark-gray: #{$dark-gray};
   --color-black: #{$black};
   --color-white: #{$white};
   --primary-text-color: #{$white};
@@ -19,21 +21,49 @@
   --secondary-color: #{$slate};
   --header-background-color: #{$dark};
   --footer-background-color: #{$dark};
+  --carousel-arrow-color: #{$white};
+  --banner-gradient: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.9) 85%
+  );
+  --header-gradient: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 [data-theme="light"] {
-  --primary-text-color: #{$white};
-  --secondary-text-color: #{$gray};
-  --background-color: #{$dark-slate};
+  --color-gray: #{$dark-gray};
+  --primary-text-color: #{$black};
+  --secondary-text-color: #{$dark-gray};
+  --background-color: #{$light};
   --primary-highlight-color: #{$orange};
   --secondary-highlight-color: #{$yellow};
-  --primary-color: #{$dark-slate};
-  --secondary-color: #{$slate};
-  --header-background-color: #{$dark};
-  --footer-background-color: #{$dark};
+  --primary-color: #{$slate};
+  --secondary-color: #{$dark-slate};
+  --header-background-color: #{$light-gray};
+  --footer-background-color: #{$light-gray};
+  --carousel-arrow-color: #{$black};
+  --banner-gradient: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0.773) 80%
+  );
+  --header-gradient: linear-gradient(
+    to bottom,
+    rgba(209, 209, 209, 0.8) 30%,
+    rgba(209, 209, 209, 0.6) 60%,
+    rgba(209, 209, 209, 0) 100%
+  );
 }
 
 [data-theme="dark"] {
+  --color-gray: #{$gray};
   --primary-text-color: #{$white};
   --secondary-text-color: #{$gray};
   --background-color: #{$dark-slate};
@@ -43,4 +73,16 @@
   --secondary-color: #{$slate};
   --header-background-color: #{$dark};
   --footer-background-color: #{$dark};
+  --carousel-arrow-color: #{$white};
+  --banner-gradient: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.9) 85%
+  );
+  --header-gradient: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }

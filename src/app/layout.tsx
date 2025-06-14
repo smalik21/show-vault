@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "@/_styles/globals.scss";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
-import { ConfigProvider } from "antd";
+import ThemeProvider from "./providers/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,34 +27,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>
-        <ConfigProvider
-          theme={{
-            components: {
-              Carousel: {
-                arrowOffset: 16,
-                arrowSize: 32,
-              },
-              Pagination: {
-                itemActiveBg: "#f66b0e",
-                itemBg: "transparent",
-                colorBgTextHover: "#151515",
-                colorBgTextActive: "#151515",
-                colorText: "white",
-                colorPrimary: "white",
-                colorPrimaryHover: "white",
-                colorPrimaryTextActive: "white",
-                colorTextDisabled: "#205375",
-                itemSize: 40,
-                fontSize: 16,
-                borderRadius: 50,
-              },
-            },
-          }}
-        >
+        <ThemeProvider>
           <Header />
           {children}
           <Footer />
-        </ConfigProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

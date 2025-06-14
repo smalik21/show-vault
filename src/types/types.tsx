@@ -22,7 +22,9 @@ export type PresetColor =
   | "light"
   | "dark"
   | "yellow"
+  | "light-gray"
   | "gray"
+  | "dark-gray"
   | "black"
   | "white";
 

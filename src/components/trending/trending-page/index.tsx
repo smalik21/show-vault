@@ -11,6 +11,7 @@ import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { TRENDING_TYPES } from "@/lib/constants";
 import { DataResponseType } from "@/types/types";
+import { useCurrentTheme } from "@/lib/hooks";
 
 export type TrendingPagePropsType = {
   initialPage: number;
@@ -28,6 +29,8 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const theme = useCurrentTheme();
 
   const [selectedTab, setSelectedTab] = useState<string>(vm.initialTab);
   const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
@@ -83,9 +86,9 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
             setSelectedValue={handleTabChange}
             options={TRENDING_TYPES}
             padding="sm"
-            textColor="white"
+            textColor={theme === "dark" ? "white" : "black"}
             textSize="lg"
-            bgColor="slate"
+            bgColor={theme === "dark" ? "slate" : "light-gray"}
             highlightColor="orange"
             borderRadius="md"
             fontWeight={200}

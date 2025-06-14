@@ -11,6 +11,7 @@ import { Carousel } from "antd";
 import { CardPropsType } from "@/types/propTypes";
 import { TransformTrendingData } from "@/lib/utils";
 import { DataResponseType } from "@/types/types";
+import { useCurrentTheme } from "@/lib/hooks";
 
 export type TrendingSectionPropsType = {
   initialTrendingData: CardPropsType[];
@@ -21,6 +22,8 @@ export type TrendingSectionPropsType = {
 };
 
 const TrendingSection = (vm: TrendingSectionPropsType) => {
+  const theme = useCurrentTheme();
+
   const [selectedTrendingType, setSelectedTrendingType] =
     useState<string>("all");
   const [trendingData, setTrendingData] = useState<CardPropsType[]>(
@@ -53,9 +56,9 @@ const TrendingSection = (vm: TrendingSectionPropsType) => {
             setSelectedValue={handleTabChange}
             options={TRENDING_TYPES}
             padding="sm"
-            textColor="white"
+            textColor={theme === "dark" ? "white" : "black"}
             textSize="lg"
-            bgColor="slate"
+            bgColor={theme === "dark" ? "slate" : "light-gray"}
             highlightColor="orange"
             borderRadius="md"
             fontWeight={200}
