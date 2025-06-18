@@ -14,6 +14,7 @@
   --color-white: #{$white};
   --primary-text-color: #{$white};
   --secondary-text-color: #{$gray};
+  --banner-description-color: #{$gray};
   --background-color: #{$dark-slate};
   --primary-highlight-color: #{$orange};
   --secondary-highlight-color: #{$yellow};
@@ -39,6 +40,7 @@
   --color-gray: #{$dark-gray};
   --primary-text-color: #{$black};
   --secondary-text-color: #{$dark-gray};
+  --banner-description-color: #{$dark};
   --background-color: #{$light};
   --primary-highlight-color: #{$orange};
   --secondary-highlight-color: #{$yellow};
@@ -66,6 +68,7 @@
   --color-gray: #{$gray};
   --primary-text-color: #{$white};
   --secondary-text-color: #{$gray};
+  --banner-description-color: #{$light-gray};
   --background-color: #{$dark-slate};
   --primary-highlight-color: #{$orange};
   --secondary-highlight-color: #{$yellow};
