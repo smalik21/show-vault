@@ -25,13 +25,14 @@ const CastSection = (vm: CastSectionPropsType) => {
             >
               <div className={styles.imageContainer}>
                 {imageSrc ? (
-                  <Image
-                    height={240}
-                    width={180}
-                    src={imageSrc}
-                    alt={`cast-member-image-${member.id}`}
-                    loading="lazy"
-                  />
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      fill
+                      src={imageSrc}
+                      alt={`cast-member-image-${member.id}`}
+                      loading="lazy"
+                    />
+                  </div>
                 ) : (
                   <div className={styles.placeholderImage}>
                     <ProfileIcon width={100} height={100} />

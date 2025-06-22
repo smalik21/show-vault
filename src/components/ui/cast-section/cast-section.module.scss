@@ -22,6 +22,12 @@
         border-radius: 50%;
         overflow: hidden;
 
+        .imageWrapper {
+          position: relative;
+          width: 180px;
+          height: 240px;
+        }
+
         .placeholderImage {
           display: flex;
           align-items: center;
@@ -34,6 +40,34 @@
       .name {
         text-align: center;
         font-weight: 300;
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .castSection {
+    .castContainer {
+      padding: 0 3rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .castSection {
+    .castContainer {
+      padding: 0 2rem;
+
+      .member {
+        .imageContainer {
+          width: 100px;
+          height: 100px;
+
+          .imageWrapper {
+            width: 100px;
+            height: 132px;
+          }
+        }
       }
     }
   }

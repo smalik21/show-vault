@@ -8,6 +8,7 @@ export default function ThemeProvider({
   children: React.ReactNode;
 }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [paginationItemSize, setPaginationItemSize] = useState<number>(40);
 
   useEffect(() => {
     let currentTheme = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -18,7 +19,8 @@ export default function ThemeProvider({
           | "dark") || "light";
     }
     setTheme(currentTheme);
-    // Listen for changes
+
+    // Listen for theme changes
     const observer = new MutationObserver(() => {
       const htmlTheme = document.documentElement.getAttribute("data-theme") as
         | "light"
@@ -29,7 +31,18 @@ export default function ThemeProvider({
       attributes: true,
       attributeFilter: ["data-theme"],
     });
-    return () => observer.disconnect();
+
+    // Set pagination item size based on screen width
+    const updatePaginationItemSize = () => {
+      setPaginationItemSize(window.innerWidth < 480 ? 30 : 40);
+    };
+    updatePaginationItemSize();
+    window.addEventListener("resize", updatePaginationItemSize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updatePaginationItemSize);
+    };
   }, []);
 
   return (
@@ -50,7 +63,7 @@ export default function ThemeProvider({
             colorPrimaryHover: theme === "dark" ? "white" : "black",
             colorPrimaryTextActive: theme === "dark" ? "white" : "black",
             colorTextDisabled: theme === "dark" ? "#205375" : "black",
-            itemSize: 40,
+            itemSize: paginationItemSize,
             fontSize: 16,
             borderRadius: 50,
           },

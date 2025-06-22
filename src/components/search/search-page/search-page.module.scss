@@ -4,9 +4,19 @@
     color: var(--primary-highlight-color);
     margin-left: -2rem;
     font-style: italic;
+    overflow: hidden;
+    overflow-wrap: break-word;
   }
 
   .pagination {
     padding: 2rem 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchPage {
+    .query {
+      margin-left: 0;
+    }
   }
 }

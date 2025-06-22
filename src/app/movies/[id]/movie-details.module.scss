@@ -17,3 +17,11 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .movieDetails {
+    .videoBackground {
+      height: 50dvh;
+    }
+  }
+}

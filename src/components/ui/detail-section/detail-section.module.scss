@@ -72,3 +72,39 @@
     }
   }
 }
+
+@media (max-width: 980px) {
+  .detailSection {
+    padding: 1rem 3rem 1rem;
+    gap: 2rem;
+
+    .detailContent {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: 756px) {
+  .detailSection {
+    flex-direction: column;
+    padding: 1rem 2rem 0rem;
+    gap: 2rem;
+
+    .imageContainer {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .detailContent {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .detailSection {
+    .imageContainer {
+      height: 320px;
+    }
+  }
+}

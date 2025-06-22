@@ -18,7 +18,7 @@
     .searchInput {
       width: 80dvw;
       max-width: 800px;
-      font-size: 2rem;
+      font-size: var(--font-xxl);
       font-family: var(--font-primary);
       font-weight: 300;
       letter-spacing: 1px;
@@ -33,6 +33,35 @@
     .buttonContainer {
       position: absolute;
       margin-left: calc(100% - 85px);
+    }
+  }
+}
+
+@media (max-width: 756px) {
+  .searchFilter {
+    .searchForm {
+      .searchInput {
+        padding: 0.8rem 1.6rem;
+        padding-right: 5rem;
+        font-size: var(--font-xl);
+      }
+      .buttonContainer {
+        margin-left: calc(100% - 65px);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .searchFilter {
+    .searchForm {
+      .searchInput {
+        width: 90dvw;
+        padding-right: 4rem;
+      }
+      .buttonContainer {
+        margin-left: calc(100% - 50px);
+      }
     }
   }
 }

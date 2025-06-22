@@ -3,3 +3,9 @@
   height: calc(100dvh - 5rem);
   max-height: 1000px;
 }
+
+@media (max-width: 756px) {
+  .bannerSlideshow {
+    height: 60dvh;
+  }
+}
