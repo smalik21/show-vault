@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from "./search-page.module.scss";
 import CardsContainer from "@/components/ui/cards-container";
@@ -27,6 +27,8 @@ const SearchPage = (vm: SearchPagePropsType) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const query = searchParams.get("query") || "";
 
   const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
   const [cardData, setCardData] = useState<CardPropsType[]>(vm.initialData);
@@ -62,6 +64,11 @@ const SearchPage = (vm: SearchPagePropsType) => {
     fetchNewData(vm.initialQuery, page);
     router.replace(pathname + "?" + createQueryString(vm.initialQuery, page));
   };
+
+  useEffect(() => {
+    fetchNewData(query, 1);
+    setPageNumber(1);
+  }, [query, fetchNewData]);
 
   return (
     <div className={styles.searchPage}>
