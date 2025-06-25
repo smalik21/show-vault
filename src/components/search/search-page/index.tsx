@@ -29,8 +29,8 @@ const SearchPage = (vm: SearchPagePropsType) => {
   const searchParams = useSearchParams();
 
   const query = searchParams.get("query") || "";
+  const pageFromUrl = Number(searchParams.get("page")) || 1;
 
-  const [pageNumber, setPageNumber] = useState<number>(vm.initialPage);
   const [cardData, setCardData] = useState<CardPropsType[]>(vm.initialData);
   const [totalResults, setTotalResults] = useState<number>(vm.initialTotal);
 
@@ -60,24 +60,21 @@ const SearchPage = (vm: SearchPagePropsType) => {
   );
 
   const handlePageChange = (page: number) => {
-    setPageNumber(page);
-    fetchNewData(vm.initialQuery, page);
-    router.replace(pathname + "?" + createQueryString(vm.initialQuery, page));
+    router.replace(pathname + "?" + createQueryString(query, page));
   };
 
   useEffect(() => {
-    fetchNewData(query, 1);
-    setPageNumber(1);
-  }, [query, fetchNewData]);
+    fetchNewData(query, pageFromUrl);
+  }, [query, pageFromUrl, fetchNewData]);
 
   return (
     <div className={styles.searchPage}>
       <SectionHeader title="Showing results for">
-        <span className={styles.query}>{vm.initialQuery}</span>
+        <span className={styles.query}>{query}</span>
       </SectionHeader>
       <div className={styles.pagination}>
         <Pagination
-          current={pageNumber}
+          current={pageFromUrl}
           defaultPageSize={vm.initialDataCount}
           total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
@@ -88,7 +85,7 @@ const SearchPage = (vm: SearchPagePropsType) => {
       <CardsContainer cardList={cardData} />
       <div className={styles.pagination}>
         <Pagination
-          current={pageNumber}
+          current={pageFromUrl}
           defaultPageSize={vm.initialDataCount}
           total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
