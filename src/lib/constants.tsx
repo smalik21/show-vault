@@ -14,6 +14,8 @@ export const ROUTE_PATHS = {
   HOME_COMING_SOON_VIEW_ALL: "/upcoming",
 };
 
+export const MAX_PAGES = 500;
+
 export const NAV_LINKS: LinkType[] = [
   { name: "Home", path: "/" },
   { name: "Movies", path: "/movies" },

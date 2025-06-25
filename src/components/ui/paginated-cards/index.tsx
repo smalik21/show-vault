@@ -9,6 +9,7 @@ import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { GetTransformDataFunction } from "@/lib/utils";
 import { GetDataFunctionType, ShowDataType, ShowType } from "@/types/types";
+import { MAX_PAGES } from "@/lib/constants";
 
 export type PaginatedCardsPropsType = {
   headerTitle: string;
@@ -75,7 +76,7 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
         <Pagination
           current={pageNumber}
           defaultPageSize={vm.initialDataCount}
-          total={totalResults}
+          total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -89,7 +90,7 @@ const PaginatedCards = (vm: PaginatedCardsPropsType) => {
         <Pagination
           current={pageNumber}
           defaultPageSize={vm.initialDataCount}
-          total={totalResults}
+          total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"

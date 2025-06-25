@@ -9,6 +9,7 @@ import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
 import { MultiDataResponseType } from "@/types/types";
 import { TransformSearchData } from "@/lib/utils";
+import { MAX_PAGES } from "@/lib/constants";
 
 export type SearchPagePropsType = {
   initialPage: number;
@@ -71,7 +72,7 @@ const SearchPage = (vm: SearchPagePropsType) => {
         <Pagination
           current={pageNumber}
           defaultPageSize={vm.initialDataCount}
-          total={totalResults}
+          total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -82,7 +83,7 @@ const SearchPage = (vm: SearchPagePropsType) => {
         <Pagination
           current={pageNumber}
           defaultPageSize={vm.initialDataCount}
-          total={totalResults}
+          total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"

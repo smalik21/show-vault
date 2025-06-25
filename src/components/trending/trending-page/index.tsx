@@ -9,7 +9,7 @@ import SectionHeader from "@/components/ui/section-header";
 import { TransformTrendingData } from "@/lib/utils";
 import { CardPropsType } from "@/types/propTypes";
 import { Pagination } from "antd";
-import { TRENDING_TYPES } from "@/lib/constants";
+import { MAX_PAGES, TRENDING_TYPES } from "@/lib/constants";
 import { DataResponseType } from "@/types/types";
 import { useCurrentTheme } from "@/lib/hooks";
 
@@ -99,7 +99,7 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
         <Pagination
           current={pageNumber}
           defaultPageSize={vm.initialDataCount}
-          total={totalResults}
+          total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
@@ -110,7 +110,7 @@ const TrendingPage = (vm: TrendingPagePropsType) => {
         <Pagination
           current={pageNumber}
           defaultPageSize={vm.initialDataCount}
-          total={totalResults}
+          total={Math.min(totalResults, MAX_PAGES * vm.initialDataCount)}
           onChange={handlePageChange}
           showSizeChanger={false}
           align="center"
