@@ -16,6 +16,12 @@ A fast, modern web application for browsing movies and TV shows. Discover detail
 - [TypeScript](https://www.typescriptlang.org/)
 - [SCSS](https://sass-lang.com/)
 
+## Screenshots
+
+<img width="1899" height="876" alt="image" src="https://github.com/user-attachments/assets/99c00c1e-2c0d-43a8-ab51-3eca5bd110d9" />
+<img width="1894" height="869" alt="image" src="https://github.com/user-attachments/assets/57380f30-59da-4aeb-966b-6dd0f9752c44" />
+<img width="1893" height="868" alt="image" src="https://github.com/user-attachments/assets/21bf9543-0304-4308-ac42-57aa0abb75b8" />
+
 ## Getting Started
 
 1. **Clone the repository:**
@@ -56,3 +62,4 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## License
 
 [MIT](LICENSE)
+
