@@ -19,8 +19,8 @@ A fast, modern web application for browsing movies and TV shows. Discover detail
 ## Screenshots
 
 <img width="1800" height="900" alt="image" src="https://github.com/user-attachments/assets/99c00c1e-2c0d-43a8-ab51-3eca5bd110d9" />
-<img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/57380f30-59da-4aeb-966b-6dd0f9752c44" />
-<img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/21bf9543-0304-4308-ac42-57aa0abb75b8" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/57380f30-59da-4aeb-966b-6dd0f9752c44" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/21bf9543-0304-4308-ac42-57aa0abb75b8" />
 
 ## Getting Started
 
@@ -62,6 +62,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## License
 
 [MIT](LICENSE)
+
 
 
 
