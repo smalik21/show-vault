@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./similar.module.scss";
 import { FetchSimilarMovie } from "@/lib/apis";
-import { GetSimilarMovie } from "@/lib/actions";
+import { GetSimilarMovie } from "@/lib/actions/tmdb";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { TransformDataResponse } from "@/lib/utils";
 

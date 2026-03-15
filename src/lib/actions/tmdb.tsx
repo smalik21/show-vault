@@ -1,6 +1,12 @@
 "use server";
 
-import { DataResponseType, MultiDataResponseType } from "@/types/types";
+import {
+  DataResponseType,
+  MultiDataResponseType,
+  MovieDetailsResponseType,
+  TVDetailsResponseType,
+  PersonDetailsResponseType,
+} from "@/types/types";
 import {
   FetchLatestMovie,
   FetchLatestTV,
@@ -11,11 +17,14 @@ import {
   FetchSimilarTV,
   FetchTrending,
   FetchUpcomingMovie,
-} from "./apis";
+  FetchMovieDetails,
+  FetchTVDetails,
+  FetchPersonDetails,
+} from "../apis";
 
 export const GetTrending = async (
   trendingType: string = "all",
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchTrending(trendingType, pageNumber);
@@ -26,7 +35,7 @@ export const GetTrending = async (
 
 export const GetSearchResults = async (
   query: string = "",
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<MultiDataResponseType> => {
   try {
     return await FetchSearchResults(query, pageNumber);
@@ -36,7 +45,7 @@ export const GetSearchResults = async (
 };
 
 export const GetPopularMovie = async (
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchPopularMovie(pageNumber);
@@ -46,7 +55,7 @@ export const GetPopularMovie = async (
 };
 
 export const GetPopularTV = async (
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchPopularTV(pageNumber);
@@ -56,7 +65,7 @@ export const GetPopularTV = async (
 };
 
 export const GetLatestMovie = async (
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchLatestMovie(pageNumber);
@@ -66,7 +75,7 @@ export const GetLatestMovie = async (
 };
 
 export const GetLatestTV = async (
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchLatestTV(pageNumber);
@@ -77,7 +86,7 @@ export const GetLatestTV = async (
 
 export const GetSimilarMovie = async (
   id: number,
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchSimilarMovie(id, pageNumber);
@@ -88,7 +97,7 @@ export const GetSimilarMovie = async (
 
 export const GetSimilarTV = async (
   id: number,
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchSimilarTV(id, pageNumber);
@@ -98,10 +107,40 @@ export const GetSimilarTV = async (
 };
 
 export const GetUpcomingMovie = async (
-  pageNumber: number = 1
+  pageNumber: number = 1,
 ): Promise<DataResponseType> => {
   try {
     return await FetchUpcomingMovie(pageNumber);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetMovieDetails = async (
+  movieId: string | number,
+): Promise<MovieDetailsResponseType> => {
+  try {
+    return await FetchMovieDetails(movieId);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetTVDetails = async (
+  tvId: string | number,
+): Promise<TVDetailsResponseType> => {
+  try {
+    return await FetchTVDetails(tvId);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetPersonDetails = async (
+  personId: number,
+): Promise<PersonDetailsResponseType> => {
+  try {
+    return await FetchPersonDetails(personId);
   } catch (error) {
     throw error;
   }

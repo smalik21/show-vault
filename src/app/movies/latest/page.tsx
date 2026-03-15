@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./latest.module.scss";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { FetchLatestMovie } from "@/lib/apis";
-import { GetLatestMovie } from "@/lib/actions";
+import { GetLatestMovie } from "@/lib/actions/tmdb";
 import { TransformDataResponse } from "@/lib/utils";
 
 const LatestMovies = async ({
@@ -18,7 +18,7 @@ const LatestMovies = async ({
   const initialDataCount = initialLatestDataReponse.results.length;
   const initialLatestData = TransformDataResponse(
     initialLatestDataReponse,
-    "movie"
+    "movie",
   );
 
   return (

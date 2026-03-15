@@ -3,7 +3,7 @@ import styles from "./latest.module.scss";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { TransformDataResponse } from "@/lib/utils";
 import { FetchLatestTV } from "@/lib/apis";
-import { GetLatestTV } from "@/lib/actions";
+import { GetLatestTV } from "@/lib/actions/tmdb";
 
 const LatestTVShows = async ({
   searchParams: searchParamsPromise,
@@ -18,7 +18,7 @@ const LatestTVShows = async ({
   const initialDataCount = initialLatestDataReponse.results.length;
   const initialLatestData = TransformDataResponse(
     initialLatestDataReponse,
-    "tv"
+    "tv",
   );
 
   return (

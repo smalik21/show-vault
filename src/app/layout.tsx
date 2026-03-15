@@ -4,6 +4,7 @@ import "@/_styles/globals.scss";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import ThemeProvider from "./providers/theme-provider";
+import Chat from "@/components/ai-chat/chat";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <Header />
+          <Chat />
           {children}
           <Footer />
         </ThemeProvider>

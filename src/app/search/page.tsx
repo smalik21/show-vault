@@ -2,7 +2,7 @@ import { FetchSearchResults } from "@/lib/apis";
 import styles from "./search.module.scss";
 import { TransformSearchData } from "@/lib/utils";
 import SearchPage from "@/components/search/search-page";
-import { GetSearchResults } from "@/lib/actions";
+import { GetSearchResults } from "@/lib/actions/tmdb";
 
 const Search = async ({
   searchParams: searchParamsPromise,

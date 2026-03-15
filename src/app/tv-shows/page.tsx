@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./tv-shows.module.scss";
 import { FetchPopularTV } from "@/lib/apis";
-import { GetPopularTV } from "@/lib/actions";
+import { GetPopularTV } from "@/lib/actions/tmdb";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { TransformDataResponse } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ const TVShows = async ({
   const initialDataCount = initialPopularDataReponse.results.length;
   const initialPopularData = TransformDataResponse(
     initialPopularDataReponse,
-    "tv"
+    "tv",
   );
 
   return (

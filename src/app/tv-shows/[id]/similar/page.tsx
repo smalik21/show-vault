@@ -3,7 +3,7 @@ import styles from "./similar.module.scss";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { TransformDataResponse } from "@/lib/utils";
 import { FetchSimilarTV } from "@/lib/apis";
-import { GetSimilarTV } from "@/lib/actions";
+import { GetSimilarTV } from "@/lib/actions/tmdb";
 
 const SimilarTVShows = async ({
   params: paramsPromise,

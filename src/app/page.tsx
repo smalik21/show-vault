@@ -4,7 +4,7 @@ import TrendingSection from "@/components/home/trending-section";
 import LatestMovies from "@/components/home/latest-movies";
 import LatestShows from "@/components/home/latest-shows";
 import ComingSoon from "@/components/home/coming-soon";
-import { GetTrending } from "@/lib/actions";
+import { GetTrending } from "@/lib/actions/tmdb";
 import { FetchTrending } from "@/lib/apis";
 import { TransformBannerData, TransformTrendingData } from "@/lib/utils";
 

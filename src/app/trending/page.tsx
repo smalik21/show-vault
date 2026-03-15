@@ -2,7 +2,7 @@ import TrendingPage from "@/components/trending/trending-page";
 import styles from "./trending.module.scss";
 import { FetchTrending } from "@/lib/apis";
 import { TransformTrendingData } from "@/lib/utils";
-import { GetTrending } from "@/lib/actions";
+import { GetTrending } from "@/lib/actions/tmdb";
 
 const Trending = async ({
   searchParams: searchParamsPromise,

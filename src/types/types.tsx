@@ -5,7 +5,7 @@ import {
   GetPopularTV,
   GetSimilarMovie,
   GetSimilarTV,
-} from "@/lib/actions";
+} from "@/lib/actions/tmdb";
 
 export type ThemeType = "light" | "dark";
 

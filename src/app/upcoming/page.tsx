@@ -2,7 +2,7 @@ import { FetchUpcomingMovie } from "@/lib/apis";
 import styles from "./upcoming.module.scss";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { TransformDataResponse } from "@/lib/utils";
-import { GetUpcomingMovie } from "@/lib/actions";
+import { GetUpcomingMovie } from "@/lib/actions/tmdb";
 
 const Upcoming = async ({
   searchParams: searchParamsPromise,

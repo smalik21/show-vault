@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./movies.module.scss";
 import { FetchPopularMovie } from "@/lib/apis";
-import { GetPopularMovie } from "@/lib/actions";
+import { GetPopularMovie } from "@/lib/actions/tmdb";
 import PaginatedCards from "@/components/ui/paginated-cards";
 import { TransformDataResponse } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ const Movies = async ({
   const initialDataCount = initialPopularDataReponse.results.length;
   const initialPopularData = TransformDataResponse(
     initialPopularDataReponse,
-    "movie"
+    "movie",
   );
 
   return (
